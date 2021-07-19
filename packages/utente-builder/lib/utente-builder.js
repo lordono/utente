@@ -1,11 +1,12 @@
 #!/usr/bin/env node
+
 const rollup = require("rollup");
 const path = require("path");
 const resolve = require("@rollup/plugin-node-resolve").default;
 const babel = require("@rollup/plugin-babel").default;
 
 const currentWorkingPath = process.cwd();
-const { main, name } = require(path.join(currentWorkingPath, "package.json"));
+const { src, name } = require(path.join(currentWorkingPath, "package.json"));
 
 const inputPath = path.join(currentWorkingPath, src);
 
