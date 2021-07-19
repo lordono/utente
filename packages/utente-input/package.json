@@ -5,13 +5,16 @@
   "keywords": [],
   "author": "Seow Jun Liang <seowjunliang@gmail.com>",
   "license": "ISC",
-  "main": "lib/utente-input.js",
+  "main": "dist/utente-input.cjs.js",
+  "module": "dist/utente-input.esm.js",
+  "src": "lib/utente-input.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "lib",
+    "dist"
   ],
   "publishConfig": {
     "access": "public"

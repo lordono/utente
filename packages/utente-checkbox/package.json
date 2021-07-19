@@ -5,13 +5,16 @@
   "keywords": [],
   "author": "Seow Jun Liang <seowjunliang@gmail.com>",
   "license": "ISC",
-  "main": "lib/utente-checkbox.js",
+  "main": "dist/utente-checkbox.cjs.js",
+  "module": "dist/utente-checkbox.esm.js",
+  "src": "lib/utente-checkbox.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "lib",
+    "dist"
   ],
   "publishConfig": {
     "access": "public"

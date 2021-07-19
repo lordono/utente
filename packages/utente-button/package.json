@@ -5,13 +5,16 @@
   "keywords": [],
   "author": "Seow Jun Liang <seowjunliang@gmail.com>",
   "license": "ISC",
-  "main": "lib/utente-button.js",
+  "main": "dist/utente-button.cjs.js",
+  "module": "dist/utente-button.esm.js",
+  "src": "lib/utente-button.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "lib",
+    "dist"
   ],
   "publishConfig": {
     "access": "public"

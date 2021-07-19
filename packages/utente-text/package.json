@@ -5,13 +5,16 @@
   "keywords": [],
   "author": "Seow Jun Liang <seowjunliang@gmail.com>",
   "license": "ISC",
-  "main": "lib/utente-text.js",
+  "main": "dist/utente-text.cjs.js",
+  "module": "dist/utente-text.esm.js",
+  "src": "lib/utente-text.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "lib",
+    "dist"
   ],
   "publishConfig": {
     "access": "public"

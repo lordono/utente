@@ -5,13 +5,16 @@
   "keywords": [],
   "author": "Seow Jun Liang <seowjunliang@gmail.com>",
   "license": "ISC",
-  "main": "lib/utente-radio.js",
+  "main": "dist/utente-radio.cjs.js",
+  "module": "dist/utente-radio.esm.js",
+  "src": "lib/utente-radio.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "lib",
+    "dist"
   ],
   "publishConfig": {
     "access": "public"

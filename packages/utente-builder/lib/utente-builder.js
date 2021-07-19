@@ -7,7 +7,7 @@ const babel = require("@rollup/plugin-babel").default;
 const currentWorkingPath = process.cwd();
 const { main, name } = require(path.join(currentWorkingPath, "package.json"));
 
-const inputPath = path.join(currentWorkingPath, main);
+const inputPath = path.join(currentWorkingPath, src);
 
 // Little workaround to get package name without scope
 const fileName = name.replace("@lieinapril/", "");
@@ -18,7 +18,7 @@ const postcss = require("rollup-plugin-postcss");
 // see below for details on the options
 const inputOptions = {
   input: inputPath,
-  external: ["react"],
+  external: ["react", "react-dom", "prop-types", "clsx"],
   plugins: [
     postcss({
       modules: true
