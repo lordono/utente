@@ -1,13 +1,13 @@
 import React from "react";
 // We want to always get from source
-import { Button } from "../lib/utente-button";
+import { Radio } from "../lib/utente-radio";
 
 export default {
-  title: "Basic/Button",
-  component: Button,
+  title: "Form/Radio",
+  component: Radio,
   parameters: {
     componentSubtitle:
-      "Displays a graphical control element that provides the user a simple way to trigger an event"
+      "a graphical control element that allows the user to choose only one of a predefined set of mutually exclusive options"
   },
   argTypes: {
     size: {
@@ -16,9 +16,10 @@ export default {
     theme: {
       control: { type: "select", options: ["light", "dark"] }
     },
-    className: {
+    name: {
       control: false
-    }
+    },
+    className: { control: false }
   }
 };
 
@@ -26,21 +27,19 @@ export const Primary = args => (
   <div
     style={{
       width: "calc(100% - 6rem)",
-      height: "100%",
+      height: "calc(100% - 6rem)",
       padding: "3rem",
       backgroundColor: args.theme === "dark" ? "#2c2f33" : "#eeeeee"
     }}
   >
     <div style={{ display: "flex", gap: 20 }}>
-      <Button {...args}>Hello Button</Button>
-      <Button {...args} selected={true}>
-        Selected Button
-      </Button>
+      <Radio {...args} size="small" label="One" name="example1" />
+      <Radio {...args} size="small" label="Two" name="example1" />
+      <Radio {...args} size="small" label="Three" name="example1" />
     </div>
   </div>
 );
 
 Primary.args = {
-  theme: "light",
-  size: "medium"
+  theme: "light"
 };

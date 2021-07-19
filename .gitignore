@@ -1,3 +1,6 @@
 # ignore packages
 node_modules
 dist
+
+# ignore storybook-static
+storybook-static

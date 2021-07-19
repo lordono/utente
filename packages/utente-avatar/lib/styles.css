@@ -1,0 +1,76 @@
+.avatar {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #eeeeee;
+  padding: auto;
+  border-radius: 10px;
+  border: none;
+  box-shadow: -5px -5px 5px rgba(255, 255, 255, 0.55),
+    3px 3px 5px rgba(136, 160, 183, 0.35),
+    inset -5px -5px 5px rgba(255, 255, 255, 0),
+    inset 3px 3px 5px rgba(136, 160, 183, 0);
+  transition: box-shadow 0.6s cubic-bezier(0.79, 0.21, 0.06, 0.81);
+}
+
+.avatar > img {
+  width: 80%;
+  border-radius: 10px;
+}
+
+.avatar > span {
+  width: 85%;
+  padding: 0 7.5%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.avatar.circle {
+  border-radius: 50%;
+}
+
+.avatar.circle > img {
+  border-radius: 50%;
+}
+
+.avatar.indented {
+  box-shadow: -5px -5px 5px rgba(255, 255, 255, 0),
+    3px 3px 5px rgba(136, 160, 183, 0),
+    inset -5px -5px 5px rgba(255, 255, 255, 0.55),
+    inset 3px 3px 5px rgba(136, 160, 183, 0.35);
+}
+
+.avatar.dark {
+  background: #2c2f33;
+  box-shadow: -5px -5px 15px #3b4451, 5px 5px 15px #000000;
+  color: #d9d9d9;
+}
+
+.avatar.dark.indented {
+  box-shadow: 0px 0px 0px 0px #3b4451, 0px 0px 0px 0px #000000,
+    inset -5px -5px 5px #3b4451, inset 3px 3px 5px #000000;
+}
+
+.avatar.medium {
+  height: 58px;
+  width: 58px;
+  font-size: 24px;
+}
+
+.avatar.small {
+  height: 38px;
+  width: 38px;
+  font-size: 20px;
+}
+
+.avatar.large {
+  height: 78px;
+  width: 78px;
+  font-size: 28px;
+  font-weight: 600;
+}

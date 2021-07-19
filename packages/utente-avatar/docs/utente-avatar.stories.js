@@ -1,10 +1,12 @@
 import React from "react";
 // We want to always get from source
-import { Button } from "../lib/utente-button";
+import { Avatar } from "../lib/utente-avatar";
+
+const imgSrc = "https://randomuser.me/api/portraits/women/21.jpg";
 
 export default {
-  title: "Basic/Button",
-  component: Button,
+  title: "Basic/Avatar",
+  component: Avatar,
   parameters: {
     componentSubtitle:
       "Displays a graphical control element that provides the user a simple way to trigger an event"
@@ -15,6 +17,18 @@ export default {
     },
     theme: {
       control: { type: "select", options: ["light", "dark"] }
+    },
+    shape: {
+      control: { type: "select", options: ["square", "circle"] }
+    },
+    text: {
+      control: false
+    },
+    src: {
+      control: false
+    },
+    icon: {
+      control: false
     },
     className: {
       control: false
@@ -32,15 +46,19 @@ export const Primary = args => (
     }}
   >
     <div style={{ display: "flex", gap: 20 }}>
-      <Button {...args}>Hello Button</Button>
-      <Button {...args} selected={true}>
-        Selected Button
-      </Button>
+      <Avatar {...args} text="U" />
+      <Avatar {...args} text="US" />
+      <Avatar {...args} text="USE" />
+      <Avatar {...args} text="USERS" />
+      <Avatar {...args} src={imgSrc} />
+      <Avatar {...args} icon={<i class="fas fa-search"></i>} />
     </div>
   </div>
 );
 
 Primary.args = {
   theme: "light",
-  size: "medium"
+  size: "medium",
+  shape: "square",
+  indented: false
 };

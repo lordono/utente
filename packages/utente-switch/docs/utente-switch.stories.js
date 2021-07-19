@@ -1,24 +1,19 @@
 import React from "react";
 // We want to always get from source
-import { Button } from "../lib/utente-button";
+import { Switch } from "../lib/utente-switch";
 
 export default {
-  title: "Basic/Button",
-  component: Button,
+  title: "Form/Switch",
+  component: Switch,
   parameters: {
     componentSubtitle:
-      "Displays a graphical control element that provides the user a simple way to trigger an event"
+      "a graphical control element that allows the user to choose one from a predefined set of options"
   },
   argTypes: {
-    size: {
-      control: { type: "select", options: ["small", "medium", "large"] }
-    },
     theme: {
       control: { type: "select", options: ["light", "dark"] }
     },
-    className: {
-      control: false
-    }
+    className: { control: false }
   }
 };
 
@@ -26,21 +21,18 @@ export const Primary = args => (
   <div
     style={{
       width: "calc(100% - 6rem)",
-      height: "100%",
+      height: "calc(100% - 6rem)",
       padding: "3rem",
       backgroundColor: args.theme === "dark" ? "#2c2f33" : "#eeeeee"
     }}
   >
     <div style={{ display: "flex", gap: 20 }}>
-      <Button {...args}>Hello Button</Button>
-      <Button {...args} selected={true}>
-        Selected Button
-      </Button>
+      <Switch {...args} />
     </div>
   </div>
 );
 
 Primary.args = {
   theme: "light",
-  size: "medium"
+  label: "English"
 };
