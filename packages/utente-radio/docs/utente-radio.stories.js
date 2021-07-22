@@ -18,7 +18,9 @@ export default {
     name: {
       control: false
     },
-    className: { control: false }
+    className: { control: false },
+    label: { control: false },
+    value: { control: false }
   }
 };
 
@@ -32,9 +34,15 @@ export const Primary = args => (
     }}
   >
     <div style={{ display: "flex", gap: 20 }}>
-      <Radio {...args} size="small" label="One" name="example1" />
-      <Radio {...args} size="small" label="Two" name="example1" />
-      <Radio {...args} size="small" label="Three" name="example1" />
+      <Radio {...args} size="small" label="One" name="example1" value="one" />
+      <Radio {...args} size="small" label="Two" name="example1" value="two" />
+      <Radio
+        {...args}
+        size="small"
+        label="Three"
+        name="example1"
+        value="three"
+      />
     </div>
   </div>
 );

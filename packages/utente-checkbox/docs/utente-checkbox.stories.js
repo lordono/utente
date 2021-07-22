@@ -15,6 +15,8 @@ export default {
     theme: {
       control: { type: "select", options: ["light", "dark"] }
     },
+    label: { control: false },
+    value: { control: false },
     checked: {
       control: {
         options: ["checked", null],
@@ -34,9 +36,9 @@ export const Primary = args => (
     }}
   >
     <div style={{ display: "flex", gap: 20 }}>
-      <Checkbox {...args} size="small" label="Apple" />
-      <Checkbox {...args} size="small" label="Orange" />
-      <Checkbox {...args} size="small" label="Pear" />
+      <Checkbox {...args} size="small" label="Apple" value="apple" />
+      <Checkbox {...args} size="small" label="Orange" value="orange" />
+      <Checkbox {...args} size="small" label="Pear" value="pear" />
     </div>
   </div>
 );

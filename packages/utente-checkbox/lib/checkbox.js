@@ -12,10 +12,11 @@ const Checkbox = React.forwardRef((props, ref) => {
     className,
     checked,
     label,
+    value,
     size,
     theme,
-    onFocus,
-    onBlur,
+    onChange,
+    onClick,
     ...rest
   } = props;
 
@@ -32,7 +33,15 @@ const Checkbox = React.forwardRef((props, ref) => {
   return (
     <label className={classes} {...rest}>
       {label}
-      <input ref={ref} type="checkbox" checked={checked} />
+      <input
+        ref={ref}
+        type="checkbox"
+        checked={checked}
+        value={value}
+        label={label}
+        onChange={onChange}
+        onClick={onClick}
+      />
       <span className={styles.checkmark} />
     </label>
   );
@@ -53,6 +62,14 @@ Checkbox.propTypes = {
    */
   size: PropTypes.oneOf(["small", "medium", "large"]),
   /**
+   * label of checkbox
+   */
+  label: PropTypes.string,
+  /**
+   * value of checkbox
+   */
+  value: PropTypes.string,
+  /**
    * style of checkbox
    */
   style: PropTypes.object,
@@ -65,17 +82,13 @@ Checkbox.propTypes = {
    */
   checked: PropTypes.oneOf([null, "checked"]),
   /**
-   * onFocus function when checkbox is focused
-   */
-  onFocus: PropTypes.func,
-  /**
-   * onBlur function when checkbox is off-focused
-   */
-  onBlur: PropTypes.func,
-  /**
    * onClick function when checkbox is clicked upon
    */
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  /**
+   * onChange function when checkbox change input
+   */
+  onChange: PropTypes.func
 };
 
 export default Checkbox;

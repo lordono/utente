@@ -17,6 +17,7 @@ const Input = React.forwardRef((props, ref) => {
     size,
     theme,
     style,
+    onChange,
     onFocus,
     onBlur,
     ...rest
@@ -41,6 +42,7 @@ const Input = React.forwardRef((props, ref) => {
         {...rest}
         className={styles.input}
         ref={ref}
+        onChange={onChange}
         onFocus={() => {
           setFocus(true);
           if (onFocus) onFocus();
@@ -84,7 +86,19 @@ Input.propTypes = {
   /**
    * style of input
    */
-  style: PropTypes.object
+  style: PropTypes.object,
+  /**
+   * function when input changes
+   */
+  onChange: PropTypes.func,
+  /**
+   * function when input is off focus
+   */
+  onBlur: PropTypes.func,
+  /**
+   * function when focus on input
+   */
+  onFocus: PropTypes.func
 };
 
 export default Input;

@@ -13,10 +13,11 @@ const Radio = React.forwardRef((props, ref) => {
     checked,
     label,
     name,
+    value,
     size,
     theme,
-    onFocus,
-    onBlur,
+    onClick,
+    onChange,
     ...rest
   } = props;
 
@@ -33,7 +34,15 @@ const Radio = React.forwardRef((props, ref) => {
   return (
     <label className={classes} {...rest}>
       {label}
-      <input ref={ref} type="radio" checked={checked} name={name} />
+      <input
+        ref={ref}
+        type="radio"
+        checked={checked}
+        name={name}
+        value={value}
+        onClick={onClick}
+        onChange={onChange}
+      />
       <span className={styles.checkmark}>
         <span className={styles.centermark} />
       </span>
@@ -62,13 +71,25 @@ Radio.propTypes = {
    */
   name: PropTypes.string,
   /**
+   * label of radio input
+   */
+  label: PropTypes.string,
+  /**
+   * value of radio input
+   */
+  value: PropTypes.string,
+  /**
    * class of radio input
    */
   className: PropTypes.string,
   /**
    * style of radio input
    */
-  style: PropTypes.object
+  style: PropTypes.object,
+  /**
+   * onchange function when you change selection
+   */
+  onChange: PropTypes.func
 };
 
 export default Radio;
