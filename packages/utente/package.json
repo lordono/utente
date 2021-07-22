@@ -35,7 +35,9 @@
     "@lieinapril/utente-switch": "^0.2.0",
     "@lieinapril/utente-tab": "^0.2.0",
     "@lieinapril/utente-tag": "^0.2.0",
-    "@lieinapril/utente-text": "^0.2.0"
+    "@lieinapril/utente-text": "^0.2.0",
+    "clsx": "^1.1.1",
+    "react-is": "^17.0.2"
   },
   "devDependencies": {
     "@lieinapril/utente-builder": "^0.2.0"

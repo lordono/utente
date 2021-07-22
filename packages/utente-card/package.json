@@ -38,5 +38,8 @@
   },
   "peerDependencies": {
     "react": "17.x"
+  },
+  "dependencies": {
+    "clsx": "^1.1.1"
   }
 }

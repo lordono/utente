@@ -1,4 +1,4 @@
-.container {
+.checkbox_container {
   position: relative;
   padding-left: 35px;
   margin-bottom: 12px;
@@ -11,7 +11,7 @@
 }
 
 /* Hide the browser's default checkbox */
-.container input {
+.checkbox_container input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -20,7 +20,7 @@
 }
 
 /* Create a custom checkbox */
-.checkmark {
+.checkbox_container > .checkmark {
   position: absolute;
   top: 0;
   left: 0;
@@ -36,8 +36,8 @@
 }
 
 /* On mouse-over, change box-shadow to pop out */
-.container:hover input ~ .checkmark,
-.container input:checked ~ .checkmark {
+.checkbox_container:hover input ~ .checkmark,
+.checkbox_container input:checked ~ .checkmark {
   box-shadow: -5px -5px 5px rgba(255, 255, 255, 0.55),
     3px 3px 5px rgba(136, 160, 183, 0.35),
     inset -5px -5px 5px rgba(255, 255, 255, 0),
@@ -45,19 +45,19 @@
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
+.checkbox_container > .checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
 
 /* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
+.checkbox_container input:checked ~ .checkmark:after {
   display: block;
 }
 
 /* Style the checkmark/indicator */
-.container .checkmark:after {
+.checkbox_container .checkmark:after {
   left: 9px;
   top: 5px;
   width: 5px;
@@ -70,16 +70,16 @@
 }
 
 /* dark version */
-.container.dark {
+.checkbox_container.dark {
   color: #fafafa;
 }
 
-.dark > .checkmark {
+.checkbox_container.dark > .checkmark {
   box-shadow: 0px 0px 0px 0px #3b4451, 0px 0px 0px 0px #000000,
     inset -5px -5px 5px #3b4451, inset 3px 3px 5px #000000;
 }
 
-.dark:hover input ~ .checkmark,
-.container.dark input:checked ~ .checkmark {
+.checkbox_container.dark:hover input ~ .checkmark,
+.checkbox_container.dark input:checked ~ .checkmark {
   box-shadow: -5px -5px 15px #3b4451, 5px 5px 15px #000000;
 }

@@ -21,7 +21,7 @@ const Checkbox = React.forwardRef((props, ref) => {
   } = props;
 
   const classes = cx(
-    styles.container,
+    styles.checkbox_container,
     {
       [styles.dark]: theme === "dark"
     },

@@ -1,4 +1,4 @@
-.separator {
+.panel .separator {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   display: flex;
@@ -16,7 +16,7 @@
   transition: box-shadow 0.6s cubic-bezier(0.79, 0.21, 0.06, 0.81);
 }
 
-.dark > .separator {
+.dark.panel > .separator {
   box-shadow: 0px 0px 0px 0px #3b4451, 0px 0px 0px 0px #000000,
     inset -5px -5px 5px #3b4451, inset 3px 3px 5px #000000;
 }
@@ -33,8 +33,8 @@
 }
 
 /* collapse icon */
-.active > .collapse_icon:hover,
-.collapse_icon {
+.panel.active > .collapse_icon:hover,
+.panel .collapse_icon {
   position: absolute;
   left: 16px;
   top: 22px;
@@ -61,29 +61,29 @@
   cursor: pointer;
 }
 
-.active > .collapse_icon,
-.collapse_icon:hover {
+.panel.active > .collapse_icon,
+.panel .collapse_icon:hover {
   box-shadow: -5px -5px 5px rgba(255, 255, 255, 0),
     3px 3px 5px rgba(136, 160, 183, 0),
     inset -5px -5px 5px rgba(255, 255, 255, 0.55),
     inset 3px 3px 5px rgba(136, 160, 183, 0.35);
 }
 
-.active.dark > .collapse_icon:hover,
-.dark > .collapse_icon {
+.panel.active.dark > .collapse_icon:hover,
+.panel.dark > .collapse_icon {
   background: #2c2f33;
   box-shadow: -5px -5px 15px #3b4451, 5px 5px 15px #000000;
   color: #d9d9d9;
 }
 
-.active.dark > .collapse_icon,
-.dark > .collapse_icon:hover {
+.panel.active.dark > .collapse_icon,
+.panel.dark > .collapse_icon:hover {
   box-shadow: 0px 0px 0px 0px #3b4451, 0px 0px 0px 0px #000000,
     inset -5px -5px 5px #3b4451, inset 3px 3px 5px #000000;
 }
 
-.collapse_icon:before,
-.collapse_icon:after {
+.panel .collapse_icon:before,
+.panel .collapse_icon:after {
   position: absolute;
   left: 15px;
   top: 12.5px;
@@ -94,38 +94,38 @@
   transition: transform 0.3s;
 }
 
-.dark > .collapse_icon:before,
-.dark > .collapse_icon:after {
+.panel.dark > .collapse_icon:before,
+.panel.dark > .collapse_icon:after {
   background-color: #eee;
 }
 
-.collapse_icon:before {
+.panel .collapse_icon:before {
   transform: rotate(45deg) translateX(-5.5px);
 }
-.collapse_icon:after {
+.panel .collapse_icon:after {
   transform: rotate(-45deg) translateX(5.5px);
 }
 
-.active > .collapse_icon:before {
+.panel.active > .collapse_icon:before {
   transform: rotate(135deg) translate(0px, 5px);
 }
 
-.active > .collapse_icon:after {
+.panel.active > .collapse_icon:after {
   transform: rotate(-135deg) translate(0px, 5px);
 }
 
-.header {
+.panel > .header {
   position: relative;
   left: 60px;
   top: 20px;
   font-weight: 600;
 }
 
-.active > .content {
+.active.panel > .content {
   display: block;
 }
 
-.content {
+.panel > .content {
   padding: 42px 24px 24px;
   display: none;
 }

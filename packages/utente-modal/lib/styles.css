@@ -1,4 +1,4 @@
-.mask {
+.modal_mask {
   position: fixed;
   top: 0;
   right: 0;
@@ -13,11 +13,11 @@
   transition: opacity 0.3s;
 }
 
-.mask.dark {
+.modal_mask.dark {
   background-color: #2c2f3399;
 }
 
-.wrap {
+.modal_wrap {
   position: fixed;
   top: 0;
   right: 0;
@@ -31,11 +31,11 @@
   pointer-events: none;
 }
 
-.mask.visible {
+.modal_mask.visible {
   opacity: 1;
 }
 
-.wrap.visible {
+.modal_wrap.visible {
   pointer-events: inherit;
   display: flex;
   justify-content: center;
@@ -89,7 +89,7 @@
 }
 
 /* close icon */
-.closable {
+.modal > .closable {
   position: absolute;
   right: 15px;
   top: 15px;
@@ -99,11 +99,11 @@
   transition: opacity 0.3s;
   cursor: pointer;
 }
-.closable:hover {
+.modal > .closable:hover {
   opacity: 0.8;
 }
-.closable:before,
-.closable:after {
+.modal > .closable:before,
+.modal > .closable:after {
   position: absolute;
   left: 15px;
   content: " ";
@@ -112,14 +112,14 @@
   background-color: #333;
 }
 
-.dark > .closable:before,
-.dark > .closable:after {
+.modal.dark > .closable:before,
+.modal.dark > .closable:after {
   background-color: #eee;
 }
 
-.closable:before {
+.modal > .closable:before {
   transform: rotate(45deg);
 }
-.closable:after {
+.modal > .closable:after {
   transform: rotate(-45deg);
 }

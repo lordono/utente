@@ -22,7 +22,7 @@ const Radio = React.forwardRef((props, ref) => {
   } = props;
 
   const classes = cx(
-    styles.container,
+    styles.radio_container,
     {
       [styles.dark]: theme === "dark"
     },

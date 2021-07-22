@@ -24,8 +24,8 @@ const Modal = React.forwardRef((props, ref) => {
     visible && styles.visible,
     theme === "dark" && styles.dark
   ];
-  const maskClasses = cx(styles.mask, commonClasses);
-  const wrapClasses = cx(styles.wrap, commonClasses);
+  const maskClasses = cx(styles.modal_mask, commonClasses);
+  const wrapClasses = cx(styles.modal_wrap, commonClasses);
   const classes = cx(
     styles.modal,
     commonClasses,

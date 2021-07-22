@@ -21,7 +21,7 @@ const Switch = React.forwardRef((props, ref) => {
   } = props;
 
   const classes = cx(
-    styles.container,
+    styles.switch_container,
     {
       [styles.dark]: theme === "dark"
     },

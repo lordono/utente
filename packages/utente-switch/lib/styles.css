@@ -1,4 +1,4 @@
-.container {
+.switch_container {
   position: relative;
   padding-left: 48px;
   margin-bottom: 12px;
@@ -11,7 +11,7 @@
 }
 
 /* Hide the browser's default checkbox */
-.container input {
+.switch_container input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -20,7 +20,7 @@
 }
 
 /* Create a custom checkbox */
-.checkmark {
+.switch_container > .checkmark {
   position: absolute;
   top: calc(50% - 9px);
   left: 0;
@@ -36,7 +36,7 @@
   transition: background-position 0.3s;
 }
 
-.checkmark > .circlemark {
+.switch_container > .checkmark > .circlemark {
   position: absolute;
   top: calc(50% - 12.5px);
   left: -10px;
@@ -54,26 +54,26 @@
 }
 
 /* On mouse-over, change box-shadow to pop out */
-.container input:checked ~ .checkmark {
+.switch_container input:checked ~ .checkmark {
   background-position: left;
 }
 
-.container input:checked ~ .checkmark > .circlemark {
+.switch_container input:checked ~ .checkmark > .circlemark {
   left: calc(100% - 15px);
 }
 
 /* dark version */
-.container.dark {
+.switch_container.dark {
   color: #fafafa;
 }
 
-.dark > .checkmark {
+.dark.switch_container > .checkmark {
   background: linear-gradient(to left, #2c2f33 50%, #25cede 50%) right;
   background-size: 200%;
   box-shadow: -5px -5px 5px #3b4451, 3px 3px 5px #000000;
 }
 
-.dark > .checkmark > .circlemark {
+.dark.switch_container > .checkmark > .circlemark {
   box-shadow: -1.5px -1.5px 5px rgba(255, 255, 255, 0.35),
     1px 1px 5px rgba(136, 160, 183, 0.25),
     inset -3px -3px 5px rgba(255, 255, 255, 0),

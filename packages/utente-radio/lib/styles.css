@@ -1,4 +1,4 @@
-.container {
+.radio_container {
   position: relative;
   padding-left: 35px;
   margin-bottom: 12px;
@@ -11,7 +11,7 @@
 }
 
 /* Hide the browser's default checkbox */
-.container input {
+.radio_container input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -20,7 +20,7 @@
 }
 
 /* Create a custom checkbox */
-.checkmark {
+.radio_container > .checkmark {
   position: absolute;
   top: 0;
   left: 0;
@@ -36,7 +36,7 @@
   transition: background-color 0.3s;
 }
 
-.checkmark > .centermark {
+.radio_container > .checkmark > .centermark {
   position: absolute;
   top: 25%;
   left: 25%;
@@ -53,12 +53,12 @@
 }
 
 /* On mouse-over, change box-shadow to pop out */
-.container:hover input ~ .checkmark,
-.container input:checked ~ .checkmark {
+.radio_container:hover input ~ .checkmark,
+.radio_container input:checked ~ .checkmark {
   background: #25cede;
 }
 
-.container input:checked ~ .checkmark > .centermark {
+.radio_container input:checked ~ .checkmark > .centermark {
   box-shadow: -3px -3px 5px rgba(255, 255, 255, 0.45),
     2px 2px 5px rgba(136, 160, 183, 0.35),
     inset -3px -3px 5px rgba(255, 255, 255, 0),
@@ -66,25 +66,25 @@
 }
 
 /* dark version */
-.container.dark {
+.radio_container.dark {
   color: #fafafa;
 }
 
-.dark > .checkmark {
+.dark.radio_container > .checkmark {
   box-shadow: -5px -5px 5px #3b4451, 3px 3px 5px #000000;
 }
 
-.dark > .checkmark > .centermark {
+.dark.radio_container > .checkmark > .centermark {
   background-color: #2c2f33;
   box-shadow: inset -5px -5px 5px #3b4451, inset 3px 3px 5px #000000;
 }
 
-.dark:hover input ~ .checkmark,
-.container.dark input:checked ~ .checkmark {
+.dark.radio_container:hover input ~ .checkmark,
+.radio_container.dark input:checked ~ .checkmark {
   background: #25cede;
 }
 
-.dark.container input:checked ~ .checkmark > .centermark {
+.dark.radio_container input:checked ~ .checkmark > .centermark {
   background: #eee;
   box-shadow: -1px -1px 1px rgba(255, 255, 255, 0.45),
     1px 1px 1px rgba(136, 160, 183, 0.35);
