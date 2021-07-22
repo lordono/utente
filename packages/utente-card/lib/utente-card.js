@@ -4,7 +4,7 @@ import cx from "clsx";
 import styles from "./styles.css";
 
 /**
- * - Useful component to segment content
+ * - A card can be used to display content related to a single subject. The content can consist of multiple elements of varying types and sizes.
  * - Ignore CardWrapper: just a wrapper ReactNode in the examples
  */
 const Card = ({

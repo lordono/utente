@@ -3,6 +3,10 @@ import PropTypes from "prop-types";
 import cx from "clsx";
 import styles from "./styles.css";
 
+/**
+ * - If you need to represent the switching between two states or on-off state.
+ * - The difference between `Switch` and `Checkbox` is that `Switch` will trigger a state change directly when you toggle it, while `Checkbox` is generally used for state marking, which should work in conjunction with submit operation.
+ */
 const Switch = React.forwardRef((props, ref) => {
   const { className, checked, label, size, theme, ...rest } = props;
 

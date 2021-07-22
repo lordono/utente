@@ -28,9 +28,13 @@
     "@lieinapril/utente-button": "^0.1.0",
     "@lieinapril/utente-card": "^0.1.0",
     "@lieinapril/utente-checkbox": "^0.1.0",
+    "@lieinapril/utente-collapse": "^0.1.0",
     "@lieinapril/utente-input": "^0.1.0",
+    "@lieinapril/utente-modal": "^0.1.0",
     "@lieinapril/utente-radio": "^0.1.0",
     "@lieinapril/utente-switch": "^0.1.0",
+    "@lieinapril/utente-tab": "^0.1.0",
+    "@lieinapril/utente-tag": "^0.1.0",
     "@lieinapril/utente-text": "^0.1.0"
   },
   "devDependencies": {

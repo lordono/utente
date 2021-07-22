@@ -1,11 +1,33 @@
 # `@lieinapril/utente-radio`
 
-> TODO: description
+> `Neumorphism` Radio.
+
+## Documentation
+
+Refer to the following [storybook](https://lordono.github.io/utente/).
+
+## Installation
+
+```bash
+npm install @lieinapril/utente-radio
+```
 
 ## Usage
 
-```
-const utenteRadio = require('@lieinapril/utente-radio');
+```JSX
+import { Radio } from '@lieinapril/utente-radio';
 
-// TODO: DEMONSTRATE API
+const Example = () => {
+  const args = {
+    theme: "light"
+  };
+
+  return (
+    <div style={{ display: "flex", gap: 20, backgroundColor: "#eee" }}>
+      <Radio {...args} size="small" label="One" name="example1" />
+      <Radio {...args} size="small" label="Two" name="example1" />
+      <Radio {...args} size="small" label="Three" name="example1" />
+    </div>
+  );
+}
 ```

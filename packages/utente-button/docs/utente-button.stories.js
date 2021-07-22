@@ -6,8 +6,7 @@ export default {
   title: "Basic/Button",
   component: Button,
   parameters: {
-    componentSubtitle:
-      "Displays a graphical control element that provides the user a simple way to trigger an event"
+    componentSubtitle: "To trigger an operation."
   },
   argTypes: {
     size: {

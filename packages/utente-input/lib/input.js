@@ -3,6 +3,10 @@ import PropTypes from "prop-types";
 import cx from "clsx";
 import styles from "./styles.css";
 
+/**
+ * - A user input in a form field is needed.
+ * - A search input is required.
+ */
 const Input = React.forwardRef((props, ref) => {
   const [focus, setFocus] = React.useState(false);
 
@@ -66,11 +70,11 @@ Input.propTypes = {
    */
   size: PropTypes.oneOf(["small", "medium", "large"]),
   /**
-   * icon prefix for input. e.g \<i class="fas fa-search" />
+   * icon prefix for input. e.g \<i className="fas fa-search" />
    */
   prefix: PropTypes.node,
   /**
-   * icon suffix for input e.g \<i class="fas fa-search"/>
+   * icon suffix for input e.g \<i className="fas fa-search"/>
    */
   suffix: PropTypes.node,
   /**

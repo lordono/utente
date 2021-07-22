@@ -7,7 +7,7 @@ export default {
   component: Input,
   parameters: {
     componentSubtitle:
-      "a control element of a graphical user interface, that should enable the user to input text information"
+      "A basic widget for getting the user input is a text field. Keyboard and mouse can be used for providing or changing data."
   },
   argTypes: {
     size: {
@@ -37,14 +37,14 @@ export const Primary = args => (
         placeholder="Type to search..."
         style={{ width: 200 }}
         size="small"
-        prefix={<i class="fas fa-search"></i>}
+        prefix={<i className="fas fa-search"></i>}
       />
       <Input
         {...args}
         placeholder="Password"
         style={{ width: 200 }}
         size="medium"
-        suffix={<i class="fas fa-eye-slash"></i>}
+        suffix={<i className="fas fa-eye-slash"></i>}
       />
       <Input
         {...args}

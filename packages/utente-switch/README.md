@@ -1,11 +1,32 @@
 # `@lieinapril/utente-switch`
 
-> TODO: description
+> `Neumorphism` Switching Selector.
+
+## Documentation
+
+Refer to the following [storybook](https://lordono.github.io/utente/).
+
+## Installation
+
+```bash
+npm install @lieinapril/utente-switch
+```
 
 ## Usage
 
-```
-const utenteSwitch = require('@lieinapril/utente-switch');
+```JSX
+import { Switch } from '@lieinapril/utente-switch';
 
-// TODO: DEMONSTRATE API
+const Example = () => {
+  const args = {
+    theme: "light",
+    label: "English"
+  };
+
+  return (
+    <div style={{ backgroundColor: "#eee" }}>
+      <Switch {...args} />
+    </div>
+  );
+}
 ```

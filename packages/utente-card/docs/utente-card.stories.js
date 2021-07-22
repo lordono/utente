@@ -11,8 +11,7 @@ export default {
   title: "Basic/Card",
   component: Card,
   parameters: {
-    componentSubtitle:
-      "Displays a card element to hold other elements in a bucket"
+    componentSubtitle: "Simple rectangular container."
   },
   argTypes: {
     theme: {

@@ -6,8 +6,7 @@ export default {
   title: "Form/Checkbox",
   component: Checkbox,
   parameters: {
-    componentSubtitle:
-      "a graphical element that permits the user to make a choice between multiple possible mutually exclusive options"
+    componentSubtitle: "Checkbox component."
   },
   argTypes: {
     size: {

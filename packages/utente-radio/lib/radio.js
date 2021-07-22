@@ -3,6 +3,10 @@ import PropTypes from "prop-types";
 import cx from "clsx";
 import styles from "./styles.css";
 
+/**
+ * - Used to select a single state from multiple options.
+ * - The difference from `Select` is that `Radio` is visible to the user and can facilitate the comparison of choice, which means there shouldn't be too many of them.
+ */
 const Radio = React.forwardRef((props, ref) => {
   const {
     className,

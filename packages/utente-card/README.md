@@ -1,11 +1,35 @@
 # `@lieinapril/utente-card`
 
-> TODO: description
+> `Neumorphism` Simple rectangular container.
+
+## Documentation
+
+Refer to the following [storybook](https://lordono.github.io/utente/).
+
+## Installation
+
+```bash
+npm install @lieinapril/utente-card
+```
 
 ## Usage
 
-```
-const utenteCard = require('@lieinapril/utente-card');
+```JSX
+import { Card } from '@lieinapril/utente-card';
 
-// TODO: DEMONSTRATE API
+const Example = () => {
+  const args = {
+    theme: "light",
+    hoverable: false,
+    padded: true
+  };
+
+  return (
+    <div style={{ backgroundColor: "#eee" }}>
+      <Card {...args} style={{ width: 300, height: 300 }}>
+        Standard Card
+      </Card>
+    </div>
+  );
+}
 ```

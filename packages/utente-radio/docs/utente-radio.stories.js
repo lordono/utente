@@ -6,8 +6,7 @@ export default {
   title: "Form/Radio",
   component: Radio,
   parameters: {
-    componentSubtitle:
-      "a graphical control element that allows the user to choose only one of a predefined set of mutually exclusive options"
+    componentSubtitle: "Radio."
   },
   argTypes: {
     size: {

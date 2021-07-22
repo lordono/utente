@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 import cx from "clsx";
 import styles from "./styles.css";
 
+/**
+ * A button means an operation (or a series of operations). Clicking a button will trigger corresponding business logic.
+ */
 const Button = React.forwardRef((props, ref) => {
   const { children, className, selected, size, theme, ...rest } = props;
   const classes = cx(

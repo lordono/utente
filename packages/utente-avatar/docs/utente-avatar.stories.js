@@ -9,7 +9,7 @@ export default {
   component: Avatar,
   parameters: {
     componentSubtitle:
-      "Displays a graphical control element that provides the user a simple way to trigger an event"
+      "Avatars can be used to represent people or objects. It supports images, icons or letters."
   },
   argTypes: {
     size: {
@@ -51,7 +51,7 @@ export const Primary = args => (
       <Avatar {...args} text="USE" />
       <Avatar {...args} text="USERS" />
       <Avatar {...args} src={imgSrc} />
-      <Avatar {...args} icon={<i class="fas fa-search"></i>} />
+      <Avatar {...args} icon={<i className="fas fa-search"></i>} />
     </div>
   </div>
 );
