@@ -1,4 +1,46 @@
-.button {
+.separator {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+  background-color: #eeeeee;
+  height: 8px;
+  border-radius: 10px;
+  box-shadow: -5px -5px 5px rgba(255, 255, 255, 0),
+    3px 3px 5px rgba(136, 160, 183, 0),
+    inset -5px -5px 5px rgba(255, 255, 255, 0.55),
+    inset 3px 3px 5px rgba(136, 160, 183, 0.35);
+  transition: box-shadow 0.6s cubic-bezier(0.79, 0.21, 0.06, 0.81);
+}
+
+.dark > .separator {
+  box-shadow: 0px 0px 0px 0px #3b4451, 0px 0px 0px 0px #000000,
+    inset -5px -5px 5px #3b4451, inset 3px 3px 5px #000000;
+}
+
+.panel {
+  position: relative;
+  min-height: 70px;
+  background-color: #eee;
+}
+
+.panel.dark {
+  background-color: #2c2f33;
+  color: #fafafa;
+}
+
+/* collapse icon */
+.active > .collapse_icon:hover,
+.collapse_icon {
+  position: absolute;
+  left: 16px;
+  top: 22px;
+  width: 32px;
+  height: 32px;
+
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   display: flex;
@@ -8,48 +50,82 @@
   cursor: pointer;
   background-color: #eeeeee;
   padding: auto;
-  border-radius: 10px;
-  border: 2px solid rgba(0, 0, 0, 0);
+  border-radius: 50%;
   box-shadow: -5px -5px 5px rgba(255, 255, 255, 0.55),
     3px 3px 5px rgba(136, 160, 183, 0.35),
     inset -5px -5px 5px rgba(255, 255, 255, 0),
     inset 3px 3px 5px rgba(136, 160, 183, 0);
+
+  transition: opacity 0.3s;
   transition: box-shadow 0.6s cubic-bezier(0.79, 0.21, 0.06, 0.81);
+  cursor: pointer;
 }
 
-.button:hover,
-.button.selected {
-  border: 2px solid white;
+.active > .collapse_icon,
+.collapse_icon:hover {
   box-shadow: -5px -5px 5px rgba(255, 255, 255, 0),
     3px 3px 5px rgba(136, 160, 183, 0),
     inset -5px -5px 5px rgba(255, 255, 255, 0.55),
     inset 3px 3px 5px rgba(136, 160, 183, 0.35);
 }
 
-.button.dark {
+.active.dark > .collapse_icon:hover,
+.dark > .collapse_icon {
   background: #2c2f33;
   box-shadow: -5px -5px 15px #3b4451, 5px 5px 15px #000000;
   color: #d9d9d9;
 }
 
-.button.dark:hover,
-.button.dark.selected {
-  border: 2px solid #666;
+.active.dark > .collapse_icon,
+.dark > .collapse_icon:hover {
   box-shadow: 0px 0px 0px 0px #3b4451, 0px 0px 0px 0px #000000,
     inset -5px -5px 5px #3b4451, inset 3px 3px 5px #000000;
 }
 
-.button.medium {
-  padding: 20px;
-  height: 58px;
+.collapse_icon:before,
+.collapse_icon:after {
+  position: absolute;
+  left: 15px;
+  top: 12.5px;
+  content: " ";
+  height: 12.5px;
+  width: 3px;
+  background-color: #333;
+  transition: transform 0.3s;
 }
 
-.button.small {
-  padding: 10px;
-  height: 38px;
+.dark > .collapse_icon:before,
+.dark > .collapse_icon:after {
+  background-color: #eee;
 }
 
-.button.large {
-  padding: 30px;
-  height: 78px;
+.collapse_icon:before {
+  transform: rotate(45deg) translateX(-5.5px);
+}
+.collapse_icon:after {
+  transform: rotate(-45deg) translateX(5.5px);
+}
+
+.active > .collapse_icon:before {
+  transform: rotate(135deg) translate(0px, 5px);
+}
+
+.active > .collapse_icon:after {
+  transform: rotate(-135deg) translate(0px, 5px);
+}
+
+.header {
+  position: relative;
+  left: 60px;
+  top: 20px;
+  font-weight: 600;
+}
+
+.active > .content {
+  display: block;
+}
+
+.content {
+  padding: 42px 24px 24px;
+  display: none;
 }

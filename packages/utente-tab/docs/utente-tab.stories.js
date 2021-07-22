@@ -23,20 +23,51 @@ export const Primary = args => (
   <div
     style={{
       width: "calc(100% - 6rem)",
-      height: "100%",
+      maxWidth: 800,
+      height: "calc(100% - 6rem)",
       padding: "3rem",
       backgroundColor: args.theme === "dark" ? "#2c2f33" : "#eeeeee"
     }}
   >
     <Tab {...args}>
       <TabPane {...args} key="content1" tab="Tab 1">
-        content 1
+        1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis
+        leo est. Proin in tellus posuere, aliquet magna at, bibendum tortor.
+        Fusce scelerisque hendrerit erat, non sodales leo pretium non. Nunc id
+        aliquet nunc, vel vestibulum urna. Nulla placerat blandit nunc, vel
+        elementum tortor feugiat vitae. Vestibulum ante ipsum primis in faucibus
+        orci luctus et ultrices posuere cubilia curae; Fusce auctor malesuada
+        posuere. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Nam laoreet consequat tortor, ac pellentesque turpis
+        congue nec. Quisque bibendum metus quis rhoncus semper. Fusce dignissim
+        laoreet ligula eu dictum. Nunc rhoncus ultricies ultrices. Suspendisse
+        eget dui pulvinar, tincidunt nisi at, auctor odio.
       </TabPane>
       <TabPane {...args} key="content2" tab="Tab 2">
-        content 2
+        2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis
+        leo est. Proin in tellus posuere, aliquet magna at, bibendum tortor.
+        Fusce scelerisque hendrerit erat, non sodales leo pretium non. Nunc id
+        aliquet nunc, vel vestibulum urna. Nulla placerat blandit nunc, vel
+        elementum tortor feugiat vitae. Vestibulum ante ipsum primis in faucibus
+        orci luctus et ultrices posuere cubilia curae; Fusce auctor malesuada
+        posuere. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Nam laoreet consequat tortor, ac pellentesque turpis
+        congue nec. Quisque bibendum metus quis rhoncus semper. Fusce dignissim
+        laoreet ligula eu dictum. Nunc rhoncus ultricies ultrices. Suspendisse
+        eget dui pulvinar, tincidunt nisi at, auctor odio.
       </TabPane>
       <TabPane {...args} key="content3" tab="Tab 3">
-        content 3
+        3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis
+        leo est. Proin in tellus posuere, aliquet magna at, bibendum tortor.
+        Fusce scelerisque hendrerit erat, non sodales leo pretium non. Nunc id
+        aliquet nunc, vel vestibulum urna. Nulla placerat blandit nunc, vel
+        elementum tortor feugiat vitae. Vestibulum ante ipsum primis in faucibus
+        orci luctus et ultrices posuere cubilia curae; Fusce auctor malesuada
+        posuere. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Nam laoreet consequat tortor, ac pellentesque turpis
+        congue nec. Quisque bibendum metus quis rhoncus semper. Fusce dignissim
+        laoreet ligula eu dictum. Nunc rhoncus ultricies ultrices. Suspendisse
+        eget dui pulvinar, tincidunt nisi at, auctor odio.
       </TabPane>
     </Tab>
   </div>

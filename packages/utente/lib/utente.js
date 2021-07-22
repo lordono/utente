@@ -10,6 +10,7 @@ import { Avatar } from "@lieinapril/utente-avatar";
 import { Modal } from "@lieinapril/utente-modal";
 import { Tag } from "@lieinapril/utente-tag";
 import { Tab, TabPane } from "@lieinapril/utente-tab";
+import { Collapse, Panel } from "@lieinapril/utente-collapse";
 
 export {
   Button,
@@ -23,5 +24,7 @@ export {
   Modal,
   Tag,
   Tab,
-  TabPane
+  TabPane,
+  Collapse,
+  Panel
 };
