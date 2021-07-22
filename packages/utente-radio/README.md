@@ -1,6 +1,6 @@
 # `@lieinapril/utente-radio`
 
-> `Neumorphism` Radio.
+> Neumorphism - Radio.
 
 ## Documentation
 

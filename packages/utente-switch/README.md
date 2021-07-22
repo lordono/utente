@@ -1,6 +1,6 @@
 # `@lieinapril/utente-switch`
 
-> `Neumorphism` Switching Selector.
+> Neumorphism - Switching Selector.
 
 ## Documentation
 

@@ -1,6 +1,6 @@
 # `@lieinapril/utente-avatar`
 
-> `Neumorphism` Avatars can be used to represent people or objects. It supports images, icons or letters.
+> Neumorphism - Avatars can be used to represent people or objects. It supports images, icons or letters.
 
 ## Documentation
 

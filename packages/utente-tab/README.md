@@ -1,6 +1,6 @@
 # `@lieinapril/utente-tab`
 
-> `Neumorphism` Tabs make it easy to switch between different views.
+> Neumorphism - Tabs make it easy to switch between different views.
 
 ## Documentation
 

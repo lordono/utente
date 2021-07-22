@@ -1,6 +1,6 @@
 # `@lieinapril/utente`
 
-> `Neumorphism` A new age take on Skeumorphism.
+> Neumorphism - A new age take on Skeumorphism.
 
 ## Documentation
 

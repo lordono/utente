@@ -1,6 +1,6 @@
 # `@lieinapril/utente-modal`
 
-> `Neumorphism` Modal dialogs.
+> Neumorphism - Modal dialogs.
 
 ## Documentation
 

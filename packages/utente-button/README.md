@@ -1,6 +1,6 @@
 # `@lieinapril/utente-button`
 
-> `Neumorphism` To trigger an operation.
+> Neumorphism - To trigger an operation.
 
 ## Documentation
 

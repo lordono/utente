@@ -1,6 +1,6 @@
 # `@lieinapril/utente-input`
 
-> `Neumorphism` A basic widget for getting the user input is a text field. Keyboard and mouse can be used for providing or changing data.
+> Neumorphism - A basic widget for getting the user input is a text field. Keyboard and mouse can be used for providing or changing data.
 
 ## Documentation
 

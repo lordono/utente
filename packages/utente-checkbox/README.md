@@ -1,6 +1,6 @@
 # `@lieinapril/utente-checkbox`
 
-> `Neumorphism` Checkbox component.
+> Neumorphism - Checkbox component.
 
 ## Documentation
 

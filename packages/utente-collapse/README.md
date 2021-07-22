@@ -1,6 +1,6 @@
 # `@lieinapril/utente-collapse`
 
-> `Neumorphism` A content area which can be collapsed and expanded.
+> Neumorphism - A content area which can be collapsed and expanded.
 
 ## Documentation
 

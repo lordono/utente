@@ -1,6 +1,6 @@
 # `@lieinapril/utente-card`
 
-> `Neumorphism` Simple rectangular container.
+> Neumorphism - Simple rectangular container.
 
 ## Documentation
 

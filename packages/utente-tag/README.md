@@ -1,6 +1,6 @@
 # `@lieinapril/utente-tag`
 
-> `Neumorphism` Tag for categorizing or markup.
+> Neumorphism - Tag for categorizing or markup.
 
 ## Documentation
 
