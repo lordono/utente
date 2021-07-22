@@ -4,9 +4,10 @@ import cx from "clsx";
 import styles from "./styles.css";
 
 const TabPane = React.forwardRef((props, ref) => {
-  const { children, className, theme, ...rest } = props;
+  const { children, className, active, theme, ...rest } = props;
   const classes = cx(
     styles.tabpane,
+    active && styles.active,
     theme === "dark" && styles.dark,
     className
   );

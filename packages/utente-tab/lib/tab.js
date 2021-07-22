@@ -5,26 +5,75 @@ import styles from "./styles.css";
 import { parseTabList } from "./utils";
 
 const Tab = React.forwardRef((props, ref) => {
-  const { children, className, size, theme, ...rest } = props;
-
-  // active tab
-  const [activeTab, setActiveTab] = React.useState(0);
+  const {
+    children,
+    className,
+    onChange,
+    borderless,
+    defaultActiveKey,
+    theme,
+    ...rest
+  } = props;
 
   // get tabs
   const tabs = parseTabList(children);
 
+  // active tab
+  const [activeKey, setActiveKey] = React.useState(
+    defaultActiveKey || tabs[0]?.key
+  );
+
+  // change key
+  const changeKey = newKey => {
+    if (newKey !== activeKey) {
+      setActiveKey(newKey);
+      onChange();
+    }
+  };
+
+  // look out for new tabpanes
+  React.useEffect(() => {
+    if (!activeKey && tabs.length > 0) {
+      if (tabs[0]?.key) setActiveKey(tabs[0]?.key);
+    }
+  }, [activeKey]);
+
   const classes = cx(
-    styles.button,
+    styles.tablist,
     theme === "dark" && styles.dark,
-    size && styles[size],
+    borderless && styles.borderless,
     className
   );
 
-  console.log(tabs);
+  // clone children with activeKey props
+  const childrenWithProps = React.Children.map(children, child => {
+    if (React.isValidElement(child)) {
+      return React.cloneElement(child, { active: activeKey === child.key });
+    }
+    return child;
+  });
 
   return (
-    <div {...rest} ref={ref} className={classes}>
-      {children}
+    <div className={styles.tabwrapper}>
+      <div {...rest} ref={ref} className={classes}>
+        {tabs.map(tab => {
+          const tabClasses = cx(
+            styles.tabnode,
+            theme === "dark" && styles.dark,
+            activeKey === tab.key && styles.active
+          );
+          return (
+            <div
+              key={tab.key}
+              className={tabClasses}
+              onClick={() => changeKey(tab.key)}
+            >
+              {tab.tab}
+            </div>
+          );
+        })}
+      </div>
+      {childrenWithProps}
     </div>
   );
 });
@@ -32,8 +81,7 @@ const Tab = React.forwardRef((props, ref) => {
 const { oneOf } = PropTypes;
 
 Tab.defaultProps = {
-  theme: "light",
-  size: "medium"
+  theme: "light"
 };
 
 Tab.propTypes = {
@@ -42,21 +90,25 @@ Tab.propTypes = {
    */
   theme: oneOf(["light", "dark"]),
   /**
-   * size of the tab
-   */
-  size: oneOf(["small", "medium", "large"]),
-  /**
    * additional styles for tab
    */
   style: PropTypes.object,
+  /**
+   * Initial active TabPane's key
+   */
+  defaultActiveKey: PropTypes.string,
+  /**
+   * Initial active TabPane's key
+   */
+  borderless: PropTypes.bool,
   /**
    * additional classes for tab
    */
   className: PropTypes.string,
   /**
-   * onClick function for tab
+   * onChange function for tab
    */
-  onClick: PropTypes.func
+  onChange: PropTypes.func
 };
 
 export default Tab;
