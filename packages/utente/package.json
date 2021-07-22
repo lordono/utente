@@ -1,6 +1,6 @@
 {
   "name": "@lieinapril/utente",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Utente UI Library",
   "keywords": [],
   "author": "Seow Jun Liang <seowjunliang@gmail.com>",
@@ -35,7 +35,7 @@
     "@lieinapril/utente-switch": "^0.2.2",
     "@lieinapril/utente-tab": "^0.2.2",
     "@lieinapril/utente-tag": "^0.2.2",
-    "@lieinapril/utente-text": "^0.2.1",
+    "@lieinapril/utente-text": "^0.2.3",
     "clsx": "^1.1.1",
     "react-is": "^17.0.2"
   },
