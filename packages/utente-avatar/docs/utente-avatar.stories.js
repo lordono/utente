@@ -5,7 +5,7 @@ import { Avatar } from "../lib/utente-avatar";
 const imgSrc = "https://randomuser.me/api/portraits/women/21.jpg";
 
 export default {
-  title: "Basic/Avatar",
+  title: "Display/Avatar",
   component: Avatar,
   parameters: {
     componentSubtitle:

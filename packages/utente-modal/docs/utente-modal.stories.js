@@ -4,7 +4,7 @@ import { Modal } from "../lib/utente-modal";
 import { Button } from "@lieinapril/utente-button";
 
 export default {
-  title: "Basic/Modal",
+  title: "Feedback/Modal",
   component: Modal,
   parameters: {
     componentSubtitle: "Modal dialogs."

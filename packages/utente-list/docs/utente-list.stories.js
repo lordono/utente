@@ -4,7 +4,7 @@ import { List, ListItem } from "../lib/utente-list";
 import { simple_data, complex_data } from "./data";
 
 export default {
-  title: "Basic/List",
+  title: "Display/List",
   component: List,
   subcomponents: { ListItem },
   parameters: {

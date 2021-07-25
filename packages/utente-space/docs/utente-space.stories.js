@@ -4,7 +4,7 @@ import { Checkbox } from "@lieinapril/utente-checkbox";
 import { Space } from "../lib/utente-space";
 
 export default {
-  title: "Basic/Space",
+  title: "Layout/Space",
   component: Space,
   parameters: {
     componentSubtitle: "Set components spacing."

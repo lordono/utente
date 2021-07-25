@@ -3,7 +3,7 @@ import React from "react";
 import { Tab, TabPane } from "../lib/utente-tab";
 
 export default {
-  title: "Basic/Tab",
+  title: "Display/Tab",
   component: Tab,
   subcomponents: { TabPane },
   parameters: {

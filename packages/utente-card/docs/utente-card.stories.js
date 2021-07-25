@@ -8,7 +8,7 @@ const watchImg =
   "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZHVjdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60";
 
 export default {
-  title: "Basic/Card",
+  title: "Display/Card",
   component: Card,
   parameters: {
     componentSubtitle: "Simple rectangular container."

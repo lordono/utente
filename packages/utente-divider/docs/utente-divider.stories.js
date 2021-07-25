@@ -3,7 +3,7 @@ import React from "react";
 import { Divider } from "../lib/utente-divider";
 
 export default {
-  title: "Basic/Divider",
+  title: "Layout/Divider",
   component: Divider,
   parameters: {
     componentSubtitle: "A divider line separates different content."

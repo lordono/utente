@@ -3,7 +3,7 @@ import React from "react";
 import { Collapse, Panel } from "../lib/utente-collapse";
 
 export default {
-  title: "Basic/Collapse",
+  title: "Display/Collapse",
   component: Collapse,
   parameters: {
     componentSubtitle: "A content area which can be collapsed and expanded."

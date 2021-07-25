@@ -3,7 +3,7 @@ import React from "react";
 import { Tag } from "../lib/utente-tag";
 
 export default {
-  title: "Basic/Tag",
+  title: "Display/Tag",
   component: Tag,
   parameters: {
     componentSubtitle: "Tag for categorizing or markup."

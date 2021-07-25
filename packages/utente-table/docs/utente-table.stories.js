@@ -4,7 +4,7 @@ import { Table } from "../lib/utente-table";
 import { simple_col, simple_data } from "./data";
 
 export default {
-  title: "Basic/Table",
+  title: "Display/Table",
   component: Table,
   parameters: {
     componentSubtitle: "A table displays rows of data."
