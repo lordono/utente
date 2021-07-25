@@ -14,7 +14,6 @@ const Divider = React.forwardRef((props, ref) => {
     style,
     className,
     size,
-    type,
     margin,
     width,
     theme,
@@ -78,11 +77,7 @@ Divider.propTypes = {
   /**
    * percentage width of the divider
    */
-  width: PropTypes.string,
-  /**
-   * direction of divider
-   */
-  type: PropTypes.oneOf(["horizontal", "vertical"])
+  width: PropTypes.string
 };
 
 export { Divider };

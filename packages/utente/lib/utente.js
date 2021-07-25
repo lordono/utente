@@ -11,6 +11,10 @@ import { Modal } from "@lieinapril/utente-modal";
 import { Tag } from "@lieinapril/utente-tag";
 import { Tab, TabPane } from "@lieinapril/utente-tab";
 import { Collapse, Panel } from "@lieinapril/utente-collapse";
+import { Space } from "@lieinapril/utente-space";
+import { Divider } from "@lieinapril/utente-divider";
+import { Table } from "@lieinapril/utente-table";
+import { List, ListItem } from "@lieinapril/utente-list";
 
 export {
   Button,
@@ -26,5 +30,10 @@ export {
   Tab,
   TabPane,
   Collapse,
-  Panel
+  Panel,
+  Space,
+  Divider,
+  Table,
+  List,
+  ListItem
 };
