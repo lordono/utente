@@ -1,8 +1,10 @@
 .switch_container {
   position: relative;
   padding-left: 48px;
-  margin-bottom: 12px;
   display: block;
+  height: fit-content;
+  width: fit-content;
+  margin: 10px 15px;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;

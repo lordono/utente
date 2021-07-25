@@ -1,0 +1,108 @@
+.list {
+}
+
+/* scrollbar */
+/* width */
+.list::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.list::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Track */
+.dark.list::-webkit-scrollbar-track {
+  background: #1f1f1f;
+}
+
+/* Handle */
+.dark.list::-webkit-scrollbar-thumb {
+  background: #666;
+}
+
+/* Handle on hover */
+.dark.list::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+.listitem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0 0;
+}
+
+.listitem .listitem_separator {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #d9d9d9;
+  height: 5px;
+  width: calc(100% - 40px);
+  align-self: center;
+  justify-self: center;
+  border-radius: 2.5px;
+  box-shadow: -5px -5px 5px rgba(255, 255, 255, 0),
+    3px 3px 5px rgba(136, 160, 183, 0),
+    inset -5px -5px 5px rgba(255, 255, 255, 0.55),
+    inset 3px 3px 5px rgba(136, 160, 183, 0.35);
+  transition: box-shadow 0.6s cubic-bezier(0.79, 0.21, 0.06, 0.81);
+}
+
+.dark.listitem .listitem_separator {
+  background: #3d3f44;
+  box-shadow: -5px -5px 15px #3b4451, 5px 5px 15px #000000;
+}
+
+.listitem > .listitem_content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  width: calc(100% - 40px);
+  height: 100%;
+  gap: 20px;
+}
+
+.listitem > .listitem_content .listitem_title {
+  font-weight: 600;
+}
+
+.listitem > .listitem_content > .listitem_words {
+  width: calc(100% - 80px);
+}
+
+.listitem > .listitem_content > .listitem_words_only {
+  width: 100%;
+}
+
+.listitem > .listitem_content .listitem_desc {
+  color: #666;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dark.listitem > .listitem_content .listitem_desc {
+  color: #888;
+}
+
+.dark.listitem > .listitem_content {
+  color: #fafafa;
+}

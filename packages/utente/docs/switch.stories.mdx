@@ -1,0 +1,47 @@
+<!--- Switch.stories.mdx --->
+
+import { Meta, Story, Canvas } from "@storybook/addon-docs";
+
+import { Switch, Avatar } from "../lib/utente";
+
+<Meta title="Example/Cards" />
+
+# Switch
+
+Let's define a story for our `Switch` component:
+
+<Switch theme="light" label="English" />
+
+We can drop it in a `Canvas` to get a code snippet:
+
+<Canvas>
+  <Story name="simple_canvas">
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: 10
+      }}
+    >
+      <Avatar
+        src="https://randomuser.me/api/portraits/women/21.jpg"
+        size="large"
+      />
+      <Switch theme="light" label="English" />
+    </div>
+  </Story>
+</Canvas>
+
+We can even preview multiple stories in a block. This
+gets rendered as a group, but defines individual stories
+with unique URLs and isolated snapshot tests.
+
+<Canvas>
+  <Story name="light_1">
+    <Switch theme="light" label="English" />
+  </Story>
+  <Story name="light_2">
+    <Switch theme="light" label="English" />
+  </Story>
+</Canvas>
