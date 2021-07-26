@@ -32,7 +32,7 @@ const Collapse = props => {
     if (index > -1) newActiveKey.splice(index, 1);
     else newActiveKey.unshift(newKey);
     setActiveKey(newActiveKey);
-    if (onChange) onChange();
+    if (onChange) onChange(newActiveKey);
   };
 
   // clone children with activeKey props

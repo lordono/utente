@@ -10,10 +10,12 @@ export default {
   },
   argTypes: {
     size: {
-      control: { type: "select", options: ["small", "medium", "large"] }
+      options: ["small", "medium", "large"],
+      control: { type: "select" }
     },
     theme: {
-      control: { type: "select", options: ["light", "dark"] }
+      options: ["light", "dark"],
+      control: { type: "select" }
     },
     className: {
       control: false

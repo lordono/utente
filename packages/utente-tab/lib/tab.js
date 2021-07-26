@@ -27,7 +27,7 @@ const Tab = React.forwardRef((props, ref) => {
   const changeKey = newKey => {
     if (newKey !== activeKey) {
       setActiveKey(newKey);
-      onChange();
+      onChange(newKey);
     }
   };
 

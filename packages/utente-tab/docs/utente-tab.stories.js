@@ -30,7 +30,16 @@ export const Primary = args => (
     }}
   >
     <Tab {...args}>
-      <TabPane {...args} key="content1" tab="Tab 1">
+      <TabPane
+        theme={args.theme}
+        key="content1"
+        tab={
+          <span>
+            <i className="fab fa-twitch" />
+            &nbsp;Tab 1
+          </span>
+        }
+      >
         1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis
         leo est. Proin in tellus posuere, aliquet magna at, bibendum tortor.
         Fusce scelerisque hendrerit erat, non sodales leo pretium non. Nunc id
@@ -43,7 +52,7 @@ export const Primary = args => (
         laoreet ligula eu dictum. Nunc rhoncus ultricies ultrices. Suspendisse
         eget dui pulvinar, tincidunt nisi at, auctor odio.
       </TabPane>
-      <TabPane {...args} key="content2" tab="Tab 2">
+      <TabPane theme={args.theme} key="content2" tab="Tab 2">
         2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis
         leo est. Proin in tellus posuere, aliquet magna at, bibendum tortor.
         Fusce scelerisque hendrerit erat, non sodales leo pretium non. Nunc id
@@ -56,7 +65,7 @@ export const Primary = args => (
         laoreet ligula eu dictum. Nunc rhoncus ultricies ultrices. Suspendisse
         eget dui pulvinar, tincidunt nisi at, auctor odio.
       </TabPane>
-      <TabPane {...args} key="content3" tab="Tab 3">
+      <TabPane theme={args.theme} key="content3" tab="Tab 3">
         3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis
         leo est. Proin in tellus posuere, aliquet magna at, bibendum tortor.
         Fusce scelerisque hendrerit erat, non sodales leo pretium non. Nunc id

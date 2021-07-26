@@ -13,22 +13,30 @@ const Checkbox = React.forwardRef((props, ref) => {
     checked,
     label,
     value,
-    size,
     theme,
     onChange,
     onClick,
     ...rest
   } = props;
 
+  const [internalChecked, setInternalChecked] = React.useState(false);
+
   const classes = cx(
     styles.checkbox_container,
     {
       [styles.dark]: theme === "dark"
     },
-    size && styles[size],
     focus && styles.focus,
     className
   );
+
+  const controlled = typeof checked === "boolean";
+  const finalChecked = controlled ? checked : internalChecked;
+
+  const clickInput = () => {
+    if (!controlled) setInternalChecked(e => !e);
+    if (onClick) onClick();
+  };
 
   return (
     <label className={classes} {...rest}>
@@ -36,11 +44,12 @@ const Checkbox = React.forwardRef((props, ref) => {
       <input
         ref={ref}
         type="checkbox"
-        checked={checked}
         value={value}
         label={label}
+        onClick={clickInput}
         onChange={onChange}
-        onClick={onClick}
+        className={styles.input}
+        checked={finalChecked}
       />
       <span className={styles.checkmark} />
     </label>
@@ -49,7 +58,7 @@ const Checkbox = React.forwardRef((props, ref) => {
 
 Checkbox.defaultProps = {
   theme: "light",
-  size: "medium"
+  checked: null
 };
 
 Checkbox.propTypes = {
@@ -57,10 +66,6 @@ Checkbox.propTypes = {
    * color theme
    */
   theme: PropTypes.oneOf(["light", "dark"]),
-  /**
-   * size of the checkbox
-   */
-  size: PropTypes.oneOf(["small", "medium", "large"]),
   /**
    * label of checkbox
    */
@@ -80,7 +85,7 @@ Checkbox.propTypes = {
   /**
    * state of checkbox
    */
-  checked: PropTypes.oneOf([null, "checked"]),
+  checked: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(["null"])]),
   /**
    * onClick function when checkbox is clicked upon
    */

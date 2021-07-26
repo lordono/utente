@@ -1,21 +1,89 @@
 import React from "react";
 // We want to always get from source
-import { Text } from "../lib/utente-text";
+import { Text, Paragraph, Title } from "../lib/utente-text";
+import { Space } from "@lieinapril/utente-space";
 
 export default {
   title: "Basic/Text",
+  component: Text,
+  subcomponents: { Title, Paragraph },
+  parameters: {
+    componentSubtitle:
+      "Basic text writing, including headings, body text, lists, and more."
+  },
   argTypes: {
-    variant: {
-      control: { type: "select", options: ["Body", "Hero", "Heading"] }
-    }
+    theme: {
+      options: ["light", "dark"],
+      control: { type: "select" }
+    },
+    code: { control: false },
+    deleted: { control: false },
+    disabled: { control: false },
+    ellipsis: { control: false },
+    keyboard: { control: false },
+    mark: { control: false },
+    strong: { control: false },
+    italic: { control: false },
+    underline: { control: false }
   }
 };
 
-export const Body = args => <Text {...args}>Body Text</Text>;
+const TextWrapper = props => (
+  <div
+    style={{
+      width: "calc(100% - 6rem)",
+      height: "calc(100% - 6rem)",
+      padding: "3rem",
+      backgroundColor: props.theme === "dark" ? "#2c2f33" : "#eeeeee"
+    }}
+  >
+    {props.children}
+  </div>
+);
 
-Body.args = {
-  variant: "Body"
+export const Primary = args => (
+  <TextWrapper theme={args.theme}>
+    <Space direction="vertical" align="start">
+      <Text {...args} code>
+        Code Text
+      </Text>
+      <Text {...args} keyboard>
+        Keyboard Text
+      </Text>
+      <Text {...args} strong code>
+        Bold and Code Text
+      </Text>
+      <Text {...args} mark>
+        Mark Text
+      </Text>
+      <Text {...args} strong>
+        Bold Text
+      </Text>
+      <Text {...args} italic>
+        Italic Text
+      </Text>
+      <Text {...args} underline>
+        Underline Text
+      </Text>
+      <Text {...args} strong italic>
+        Bold and Italic Text
+      </Text>
+      <Text {...args} deleted>
+        Deleted Text
+      </Text>
+    </Space>
+  </TextWrapper>
+);
+
+Primary.args = {
+  theme: "light",
+  code: false,
+  deleted: false,
+  disabled: false,
+  ellipsis: false,
+  keyboard: false,
+  mark: false,
+  strong: false,
+  italic: false,
+  underline: false
 };
-
-export const Hero = () => <Text variant="Hero">Hero Text</Text>;
-export const Heading = () => <Text variant="Heading">Heading Text</Text>;

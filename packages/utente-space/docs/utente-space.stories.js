@@ -1,6 +1,5 @@
 import React from "react";
 // We want to always get from source
-import { Checkbox } from "@lieinapril/utente-checkbox";
 import { Space } from "../lib/utente-space";
 
 export default {
@@ -42,9 +41,10 @@ export const Primary = args => (
     }}
   >
     <Space {...args}>
-      <Checkbox theme="light" size="small" label="Apple" value="apple" />
-      <Checkbox theme="light" size="small" label="Orange" value="orange" />
-      <Checkbox theme="light" size="small" label="Pear" value="pear" />
+      <span>ABC</span>
+      <span>DEF</span>
+      <span>GHI</span>
+      <span>JKF</span>
     </Space>
   </div>
 );
