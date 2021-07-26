@@ -8,6 +8,8 @@ Refer to the following [storybook](https://lordono.github.io/utente/).
 
 ## Installation
 
+Install guide
+
 ```bash
 npm install @lieinapril/utente-list
 ```

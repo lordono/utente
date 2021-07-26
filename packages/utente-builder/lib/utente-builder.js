@@ -19,7 +19,14 @@ const postcss = require("rollup-plugin-postcss");
 // see below for details on the options
 const inputOptions = {
   input: inputPath,
-  external: ["react", "react-dom", "prop-types", "clsx", "react-is"],
+  external: [
+    "react",
+    "react-dom",
+    "prop-types",
+    "clsx",
+    "react-is",
+    "react-table"
+  ],
   plugins: [
     postcss({
       modules: true
