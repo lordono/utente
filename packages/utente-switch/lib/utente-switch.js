@@ -20,6 +20,17 @@ const Switch = React.forwardRef((props, ref) => {
     ...rest
   } = props;
 
+  // checked state
+  const [internalChecked, setInternalChecked] = React.useState(false);
+
+  const controlled = typeof checked === "boolean";
+  const finalChecked = controlled ? checked : internalChecked;
+
+  const clickInput = e => {
+    if (!controlled) setInternalChecked(z => !z);
+    if (onClick) onClick(e);
+  };
+
   const classes = cx(
     styles.switch_container,
     {
@@ -36,10 +47,10 @@ const Switch = React.forwardRef((props, ref) => {
       <input
         ref={ref}
         type="checkbox"
-        checked={checked}
+        checked={finalChecked}
         value={value}
         label={label}
-        onClick={onClick}
+        onClick={clickInput}
         onChange={onChange}
       />
       <span className={styles.checkmark}>
@@ -53,7 +64,8 @@ const { oneOf } = PropTypes;
 
 Switch.defaultProps = {
   theme: "light",
-  size: "medium"
+  size: "medium",
+  onChange: () => null
 };
 
 Switch.propTypes = {
@@ -84,7 +96,11 @@ Switch.propTypes = {
   /**
    * onclick function when you click input
    */
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  /**
+   * state of checkbox
+   */
+  checked: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(["null"])])
 };
 
 export { Switch };

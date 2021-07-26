@@ -17,10 +17,7 @@ export default {
     },
     label: { control: false },
     value: { control: false },
-    checked: {
-      options: [true, false],
-      control: { type: "select" }
-    }
+    checked: { control: false }
   }
 };
 
@@ -33,29 +30,29 @@ export const Uncontrolled = args => (
       backgroundColor: args.theme === "dark" ? "#2c2f33" : "#eeeeee"
     }}
   >
-    <div style={{ display: "flex", gap: 20 }}>
+    <Space size={20}>
       <Checkbox
         {...args}
         size="small"
         label="Apple"
         value="apple"
-        onChange={() => console.log("apple")}
+        onChange={e => console.log("apple", e.target.checked)}
       />
       <Checkbox
         {...args}
         size="small"
         label="Orange"
         value="orange"
-        onChange={() => console.log("orange")}
+        onChange={e => console.log("orange", e.target.checked)}
       />
       <Checkbox
         {...args}
         size="small"
         label="Pear"
         value="pear"
-        onChange={() => console.log("pear")}
+        onChange={e => console.log("pear", e.target.checked)}
       />
-    </div>
+    </Space>
   </div>
 );
 
@@ -95,6 +92,7 @@ export const Controlled = args => {
             value="apple"
             checked={check1}
             onClick={() => setCheck1(e => !e)}
+            onChange={e => console.log(e.target.checked)}
           />
           <Checkbox
             {...args}
@@ -103,6 +101,7 @@ export const Controlled = args => {
             value="orange"
             checked={check2}
             onClick={() => setCheck2(e => !e)}
+            onChange={e => console.log(e.target.checked)}
           />
           <Checkbox
             {...args}
@@ -111,6 +110,7 @@ export const Controlled = args => {
             value="pear"
             checked={check3}
             onClick={() => setCheck3(e => !e)}
+            onChange={e => console.log(e.target.checked)}
           />
         </Space>
       </Space>

@@ -44,7 +44,7 @@ export const Simple = args => {
         itemSize={65}
         height={200}
         width={400}
-        component={null}
+        component={ListItem}
       />
     </CardWrapper>
   );

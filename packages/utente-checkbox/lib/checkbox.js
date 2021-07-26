@@ -19,8 +19,18 @@ const Checkbox = React.forwardRef((props, ref) => {
     ...rest
   } = props;
 
+  // checked state
   const [internalChecked, setInternalChecked] = React.useState(false);
 
+  const controlled = typeof checked === "boolean";
+  const finalChecked = controlled ? checked : internalChecked;
+
+  const clickInput = e => {
+    if (!controlled) setInternalChecked(z => !z);
+    if (onClick) onClick(e);
+  };
+
+  // styling
   const classes = cx(
     styles.checkbox_container,
     {
@@ -29,14 +39,6 @@ const Checkbox = React.forwardRef((props, ref) => {
     focus && styles.focus,
     className
   );
-
-  const controlled = typeof checked === "boolean";
-  const finalChecked = controlled ? checked : internalChecked;
-
-  const clickInput = () => {
-    if (!controlled) setInternalChecked(e => !e);
-    if (onClick) onClick();
-  };
 
   return (
     <label className={classes} {...rest}>
@@ -47,9 +49,11 @@ const Checkbox = React.forwardRef((props, ref) => {
         value={value}
         label={label}
         onClick={clickInput}
-        onChange={onChange}
         className={styles.input}
         checked={finalChecked}
+        onChange={e => {
+          onChange(e);
+        }}
       />
       <span className={styles.checkmark} />
     </label>

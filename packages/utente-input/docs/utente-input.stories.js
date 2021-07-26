@@ -1,6 +1,8 @@
 import React from "react";
 // We want to always get from source
 import { Input } from "../lib/utente-input";
+import { Button } from "@lieinapril/utente-button";
+import { Space } from "@lieinapril/utente-space";
 
 export default {
   title: "Form/Input",
@@ -10,9 +12,7 @@ export default {
       "A basic widget for getting the user input is a text field. Keyboard and mouse can be used for providing or changing data."
   },
   argTypes: {
-    size: {
-      control: { type: "select", options: ["small", "medium", "large"] }
-    },
+    size: { control: false },
     theme: {
       control: { type: "select", options: ["light", "dark"] }
     },
@@ -31,7 +31,7 @@ export const Primary = args => (
       backgroundColor: args.theme === "dark" ? "#2c2f33" : "#eeeeee"
     }}
   >
-    <div style={{ display: "flex", gap: 20 }}>
+    <Space size={20}>
       <Input
         {...args}
         placeholder="Type to search..."
@@ -52,11 +52,44 @@ export const Primary = args => (
         size="large"
         style={{ width: 200 }}
       />
-    </div>
+    </Space>
   </div>
 );
 
 Primary.args = {
-  theme: "light",
-  size: "medium"
+  theme: "light"
+};
+
+export const Controlled = args => {
+  const [search, setSearch] = React.useState("");
+  const onClick = () => setSearch("Search");
+  return (
+    <div
+      style={{
+        width: "calc(100% - 6rem)",
+        height: "calc(100% - 6rem)",
+        padding: "3rem",
+        backgroundColor: args.theme === "dark" ? "#2c2f33" : "#eeeeee"
+      }}
+    >
+      <Space direction="vertical" size={20} align="start">
+        <Button size="small" theme={args.them} onClick={onClick}>
+          Write `Search`
+        </Button>
+        <Input
+          {...args}
+          placeholder="Type to search..."
+          style={{ width: 200 }}
+          size="small"
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          prefix={<i className="fas fa-search"></i>}
+        />
+      </Space>
+    </div>
+  );
+};
+
+Controlled.args = {
+  theme: "light"
 };

@@ -15,6 +15,7 @@ const Input = React.forwardRef((props, ref) => {
     prefix,
     suffix,
     size,
+    value,
     theme,
     style,
     onChange,
@@ -22,6 +23,10 @@ const Input = React.forwardRef((props, ref) => {
     onBlur,
     ...rest
   } = props;
+
+  // checked state
+  const controlled = typeof value === "string";
+  const controlledValueProps = controlled ? { value } : {};
 
   const classes = cx(
     styles.input_container,
@@ -42,7 +47,8 @@ const Input = React.forwardRef((props, ref) => {
         {...rest}
         className={styles.input}
         ref={ref}
-        onChange={onChange}
+        {...controlledValueProps}
+        onChange={e => onChange(e)}
         onFocus={() => {
           setFocus(true);
           if (onFocus) onFocus();

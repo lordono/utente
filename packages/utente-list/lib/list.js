@@ -108,7 +108,7 @@ List.propTypes = {
   /**
    * react component for list item
    */
-  component: PropTypes.node,
+  component: PropTypes.any,
   /**
    * wrapper-div class
    */
