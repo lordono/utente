@@ -1,6 +1,6 @@
 {
   "name": "@lieinapril/utente-text",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "Basic text writing, including headings, body text, lists, and more.",
   "keywords": [],
   "author": "Seow Jun Liang <seowjunliang@gmail.com>",
@@ -24,8 +24,8 @@
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "devDependencies": {
-    "@lieinapril/utente-builder": "^0.2.0",
-    "@lieinapril/utente-space": "^0.2.3",
+    "@lieinapril/utente-builder": "^0.3.0",
+    "@lieinapril/utente-space": "^0.3.0",
     "react": "^17.0.2"
   },
   "peerDependencies": {
