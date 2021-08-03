@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import cx from "clsx";
 import styles from "./styles.css";
-import { parseTabList } from "./utils";
+import { parseTabList } from "./misc";
 
 const Tab = React.forwardRef((props, ref) => {
   const {

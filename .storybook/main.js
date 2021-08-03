@@ -10,20 +10,30 @@ module.exports = {
       f => f.test.toString() !== "/\\.css$/"
     );
 
-    // push our custom easy one
+    // push our custom css
     config.module.rules.push({
       test: /\.css$/,
       use: [
         "style-loader",
         {
           loader: "css-loader",
-          options: {
-            // Key config
-            modules: true
-          }
+          options: { modules: true }
         }
       ]
     });
+    // // push our custom scss
+    config.module.rules.push({
+      test: /\.scss$/,
+      use: [
+        "style-loader",
+        {
+          loader: "css-loader",
+          options: { modules: true }
+        },
+        "sass-loader"
+      ]
+    });
+
     // This is where we change the order of resolution of main fields
     config.resolve.mainFields = ["src", "module", "main"];
 

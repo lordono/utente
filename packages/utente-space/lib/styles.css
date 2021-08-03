@@ -19,6 +19,10 @@
   justify-content: center;
 }
 
+.space.colored {
+  background-color: var(--baseColor);
+}
+
 .space.justify-end {
   justify-content: end;
 }

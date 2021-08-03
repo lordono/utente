@@ -15,6 +15,7 @@ import { Space } from "@lieinapril/utente-space";
 import { Divider } from "@lieinapril/utente-divider";
 import { Table } from "@lieinapril/utente-table";
 import { List, ListItem } from "@lieinapril/utente-list";
+import { Theme } from "@lieinapril/utente-theme";
 
 export {
   Button,
@@ -35,5 +36,6 @@ export {
   Divider,
   Table,
   List,
-  ListItem
+  ListItem,
+  Theme
 };

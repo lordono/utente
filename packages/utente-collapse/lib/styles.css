@@ -1,24 +1,23 @@
-.panel .separator {
+.collapse_card {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  cursor: pointer;
+
   background-color: #eeeeee;
-  height: 8px;
+  width: 100%;
+  height: fit-content;
   border-radius: 10px;
-  box-shadow: -5px -5px 5px rgba(255, 255, 255, 0),
-    3px 3px 5px rgba(136, 160, 183, 0),
-    inset -5px -5px 5px rgba(255, 255, 255, 0.55),
-    inset 3px 3px 5px rgba(136, 160, 183, 0.35);
+  border: none;
+  box-shadow: -5px -5px 5px rgba(255, 255, 255, 0.55),
+    3px 3px 5px rgba(136, 160, 183, 0.35),
+    inset -5px -5px 5px rgba(255, 255, 255, 0),
+    inset 3px 3px 5px rgba(136, 160, 183, 0);
   transition: box-shadow 0.6s cubic-bezier(0.79, 0.21, 0.06, 0.81);
 }
 
-.dark.panel > .separator {
-  box-shadow: 0px 0px 0px 0px #3b4451, 0px 0px 0px 0px #000000,
-    inset -5px -5px 5px #3b4451, inset 3px 3px 5px #000000;
+.collapse_card.dark {
+  background: #2c2f33;
+  box-shadow: -5px -5px 15px #3b4451, 5px 5px 15px #000000;
+  color: #d9d9d9;
 }
 
 .panel {
@@ -27,17 +26,32 @@
   background-color: #eee;
 }
 
+.collapse_card .panel:first-of-type {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.collapse_card .panel:last-of-type {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
 .panel.dark {
   background-color: #2c2f33;
   color: #fafafa;
 }
 
+.panel .header_wrapper {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 20px 20px 0 20px;
+}
+
 /* collapse icon */
 .panel.active > .collapse_icon:hover,
 .panel .collapse_icon {
-  position: absolute;
-  left: 16px;
-  top: 22px;
+  position: relative;
   width: 32px;
   height: 32px;
 
@@ -126,6 +140,6 @@
 }
 
 .panel > .content {
-  padding: 42px 24px 24px;
+  padding: 24px 24px 24px;
   display: none;
 }

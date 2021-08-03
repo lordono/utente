@@ -21,13 +21,20 @@ const List = ({
   height,
   width,
   itemSize,
+  separator_size,
   dataSource,
   component,
+  card,
   className,
   children,
   ...rest
 }) => {
-  const classes = cx(styles.list, theme === "dark" && styles.dark, className);
+  const classes = cx(
+    styles.list,
+    card && styles.list_card,
+    theme === "dark" && styles.dark,
+    className
+  );
 
   const Row = component || ListItem;
 
@@ -46,7 +53,8 @@ const List = ({
             itemCount={dataSource.length}
             itemData={{
               items: dataSource,
-              theme
+              theme,
+              separator_size
             }}
             {...rest}
           >
@@ -65,6 +73,7 @@ const List = ({
         itemCount={dataSource.length}
         itemData={{
           items: dataSource,
+          separator_size,
           theme
         }}
         {...rest}
@@ -81,7 +90,8 @@ List.defaultProps = {
   width: 400,
   component: ListItem,
   itemSize: 50,
-  dataSource: []
+  dataSource: [],
+  separator_size: 2
 };
 
 List.propTypes = {
@@ -89,6 +99,14 @@ List.propTypes = {
    * color theme
    */
   theme: PropTypes.oneOf(["light", "dark"]),
+  /**
+   * separator height
+   */
+  separator_size: PropTypes.number,
+  /**
+   * enable `Card` styles
+   */
+  card: PropTypes.bool,
   /**
    * height of list - either a number or "auto"
    */

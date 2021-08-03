@@ -50,7 +50,8 @@ export const Simple = args => {
   );
 };
 Simple.args = {
-  theme: "light"
+  theme: "light",
+  card: false
 };
 
 export const Complex = args => {
@@ -69,7 +70,8 @@ export const Complex = args => {
   );
 };
 Complex.args = {
-  theme: "light"
+  theme: "light",
+  card: false
 };
 
 export const AutoHeight = args => {
@@ -90,7 +92,8 @@ export const AutoHeight = args => {
   );
 };
 AutoHeight.args = {
-  theme: "light"
+  theme: "light",
+  card: false
 };
 
 export const AutoBoth = args => {
@@ -111,5 +114,6 @@ export const AutoBoth = args => {
   );
 };
 AutoBoth.args = {
-  theme: "light"
+  theme: "light",
+  card: false
 };

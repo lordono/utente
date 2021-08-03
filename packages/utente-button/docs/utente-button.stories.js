@@ -1,6 +1,8 @@
 import React from "react";
 // We want to always get from source
 import { Button } from "../lib/utente-button";
+import { Space } from "@lieinapril/utente-space";
+import { Theme } from "@lieinapril/utente-theme";
 
 export default {
   title: "Basic/Button",
@@ -9,12 +11,9 @@ export default {
     componentSubtitle: "To trigger an operation."
   },
   argTypes: {
+    shape: { control: false },
     size: {
       options: ["small", "medium", "large"],
-      control: { type: "select" }
-    },
-    theme: {
-      options: ["light", "dark"],
       control: { type: "select" }
     },
     className: {
@@ -27,21 +26,45 @@ export const Primary = args => (
   <div
     style={{
       width: "calc(100% - 6rem)",
-      height: "100%",
+      height: "calc(100% - 6rem)",
       padding: "3rem",
       backgroundColor: args.theme === "dark" ? "#2c2f33" : "#eeeeee"
     }}
   >
-    <div style={{ display: "flex", gap: 20 }}>
-      <Button {...args}>Hello Button</Button>
-      <Button {...args} selected={true}>
-        Selected Button
+    <Space size={20} style={{ padding: 20 }}>
+      <Button {...args} variant="fill">
+        Fill
       </Button>
-    </div>
+      <Button {...args} variant="shadow">
+        Shadow
+      </Button>
+      <Button {...args} variant="border">
+        Border
+      </Button>
+      <Button {...args} variant="border" shape="circle">
+        <i class="fas fa-calendar"></i>
+      </Button>
+    </Space>
+    <Theme color="#2c2f33" secondaryColor="#faad14">
+      <Space colored size={20} style={{ padding: 20 }}>
+        <Button {...args} variant="fill">
+          Fill
+        </Button>
+        <Button {...args} variant="shadow">
+          Shadow
+        </Button>
+        <Button {...args} variant="border">
+          Border
+        </Button>
+        <Button {...args} variant="border" shape="circle">
+          <i class="fas fa-calendar"></i>
+        </Button>
+      </Space>
+    </Theme>
   </div>
 );
 
 Primary.args = {
-  theme: "light",
-  size: "medium"
+  size: "medium",
+  bordered: false
 };

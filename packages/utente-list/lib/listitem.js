@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import cx from "clsx";
 
 import { Avatar } from "@lieinapril/utente-avatar";
+import { Divider } from "@lieinapril/utente-divider";
 import styles from "./styles.css";
 
 /**
@@ -13,7 +14,7 @@ import styles from "./styles.css";
  * - Refer to [react-window](https://github.com/bvaughn/react-window) for more information.
  */
 const ListItem = ({ data, index, style }) => {
-  const { items, theme } = data;
+  const { items, theme, separator_size } = data;
   const item = items[index];
 
   const classes = cx(theme === "dark" && styles.dark, styles.listitem);
@@ -22,7 +23,9 @@ const ListItem = ({ data, index, style }) => {
   if (isString) {
     return (
       <div className={classes} style={style}>
-        <div className={styles.listitem_separator} />
+        {index !== 0 && (
+          <Divider margin={0} size={separator_size} theme={theme} />
+        )}
         <div className={styles.listitem_content}>
           <div className={styles.listitem_words_only}>
             <span className={styles.listitem_title}>{item}</span>
@@ -35,7 +38,9 @@ const ListItem = ({ data, index, style }) => {
 
     return (
       <div className={classes} style={style}>
-        <div className={styles.listitem_separator} />
+        {index !== 0 && (
+          <Divider margin={0} size={separator_size} theme={theme} />
+        )}
         <div className={styles.listitem_content}>
           {avatarSrc && (
             <Avatar theme={theme} shape="circle" src={item.avatar} />

@@ -8,6 +8,7 @@ import styles from "./styles.css";
  * Avoid components clinging together and set a unified space.
  */
 const Space = ({
+  colored,
   children,
   direction,
   size,
@@ -20,6 +21,7 @@ const Space = ({
 }) => {
   const classes = cx(
     styles.space,
+    colored && styles.colored,
     direction === "vertical" && styles.vertical,
     wrap && styles.wrap,
     justify && styles[`justify-${justify}`],
@@ -65,7 +67,13 @@ Space.propTypes = {
   /**
    * vertical alignment of children
    */
-  align: PropTypes.oneOf(["start", "center", "end", "baseline"]),
+  align: PropTypes.oneOf([
+    "start",
+    "center",
+    "end",
+    "baseline",
+    "space-between"
+  ]),
   /**
    * horizontal alignment of children
    */

@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import cx from "clsx";
+import styles from "./styles.css";
 
 /**
  * - Can be used to group or hide complex regions to keep the page clean.
@@ -10,7 +12,9 @@ const Collapse = props => {
     children,
     className,
     onChange = null,
+    separator_size,
     defaultActiveKey,
+    card,
     accordion,
     theme,
     ...rest
@@ -36,25 +40,37 @@ const Collapse = props => {
   };
 
   // clone children with activeKey props
-  const childrenWithProps = React.Children.map(children, child => {
+  const childrenWithProps = React.Children.map(children, (child, idx) => {
     if (React.isValidElement(child)) {
       return React.cloneElement(child, {
         active: activeKey.includes(child.key),
         identifier: child.key,
-        changeKey
+        separator_size,
+        changeKey,
+        idx
       });
     }
     return child;
   });
 
-  return <>{childrenWithProps}</>;
+  if (card) {
+    const cardClasses = cx(
+      styles.collapse_card,
+      theme === "dark" && styles.dark
+    );
+    return <div className={cardClasses}>{childrenWithProps}</div>;
+  } else {
+    return <>{childrenWithProps}</>;
+  }
 };
 
 Collapse.defaultProps = {
   theme: "light",
   accordion: false,
   defaultActiveKey: [],
-  onChange: null
+  onChange: null,
+  separator_size: 2,
+  card: false
 };
 
 Collapse.propTypes = {
@@ -66,6 +82,14 @@ Collapse.propTypes = {
    * enable `Accordion` mode
    */
   accordion: PropTypes.bool,
+  /**
+   * enable `Card` styles
+   */
+  card: PropTypes.bool,
+  /**
+   * separator height
+   */
+  separator_size: PropTypes.number,
   /**
    * Initial active Panel's key e.g. ["example1"]
    */

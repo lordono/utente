@@ -1,0 +1,41 @@
+<!--- Introduction.stories.mdx -->
+
+import { Button, Space, Text, Theme } from "../lib/utente";
+import { Meta } from "@storybook/addon-docs";
+
+<Meta title="Introduction" />
+
+# Introduction
+
+`Neumorphism` is a new type of `Skeuomorphism`. It combines the realism with a modern look and feel to achieve a subtle soft pop-out effect on the html elements.
+
+## How to use
+
+In this UI Library package, there are two main themes, namely `light` and `dark`. Most of the elements has this argument in them. Below is an example of a Button
+
+<Space size={20}>
+  <Button variant="shadow">Light</Button>
+  <Theme color="#2c2f33">
+    <Button variant="shadow">Dark</Button>
+  </Theme>
+</Space>
+
+As you can see, using them without the right background produces unpleasant results. It is advised to use the right background color like below.
+
+<Space size={20} style={{ background: "#eee", padding: 20 }}>
+  <Button variant="shadow">Neumorphism</Button>
+  <Button variant="fill">Flat</Button>
+  <Text>#eee</Text>
+</Space>
+
+<Space size={20} style={{ background: "#2c2f33", padding: 20 }}>
+  <Theme color="#2c2f33">
+    <Button variant="shadow">Neumorphism</Button>
+    <Button variant="fill">Flat</Button>
+    <Text style={{ color: "#eee" }}>#2c2f33</Text>
+  </Theme>
+</Space>
+
+Neumorphism often has great visuals due to the subtle effects but also faces a problem with accessibility - i.e user find it hard to find the UI elements.
+
+In the example above, we try to solve this by adding a `bordered` boolean to make the button more visible to users.

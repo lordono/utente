@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "@lieinapril/utente-avatar": "^0.3.1",
+    "@lieinapril/utente-divider": "^0.3.1",
     "clsx": "^1.1.1",
     "react-virtualized-auto-sizer": "^1.0.5",
     "react-window": "^1.8.6"

@@ -1,13 +1,13 @@
 {
-  "name": "@lieinapril/utente-button",
+  "name": "@lieinapril/utente-theme",
   "version": "0.3.1",
-  "description": "[Neumorphism] To trigger an operation.",
+  "description": "Neumorphism - theme provider for other packages using css variables",
   "keywords": [],
   "author": "Seow Jun Liang <seowjunliang@gmail.com>",
   "license": "ISC",
-  "main": "dist/utente-button.cjs.js",
-  "module": "dist/utente-button.esm.js",
-  "src": "lib/utente-button.js",
+  "main": "dist/utente-theme.cjs.js",
+  "module": "dist/utente-theme.esm.js",
+  "src": "lib/utente-theme.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -19,14 +19,20 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lordono/utente.git"
+  },
   "scripts": {
     "build": "utente-builder",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
+  "bugs": {
+    "url": "https://github.com/lordono/utente/issues"
+  },
+  "homepage": "https://github.com/lordono/utente#readme",
   "devDependencies": {
     "@lieinapril/utente-builder": "^0.3.1",
-    "@lieinapril/utente-space": "^0.3.1",
-    "@lieinapril/utente-theme": "^0.3.1",
     "react": "^17.0.2"
   },
   "peerDependencies": {
