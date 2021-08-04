@@ -1,17 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
 import cx from "clsx";
-import styles from "./styles.css";
+import styles from "./styles.scss";
 
 /**
  * - It can be used to tag by dimension or property.
  * - When categorizing.
  */
 const Tag = React.forwardRef((props, ref) => {
-  const { children, className, size, theme, ...rest } = props;
+  const { children, className, size, hoverable, variant, ...rest } = props;
   const classes = cx(
     styles.tag,
-    theme === "dark" && styles.dark,
+    hoverable && styles.hoverable,
+    variant === "fill" && styles.filled,
+    variant === "shadow" && styles.shadowed,
+    variant === "border" && styles.bordered,
     size && styles[size],
     className
   );
@@ -25,25 +28,29 @@ const Tag = React.forwardRef((props, ref) => {
 const { oneOf } = PropTypes;
 
 Tag.defaultProps = {
-  theme: "light",
+  variant: "fill",
   size: "small"
 };
 
 Tag.propTypes = {
   /**
-   * color theme
+   * variant of element
    */
-  theme: oneOf(["light", "dark"]),
+  variant: oneOf(["fill", "shadow", "border"]),
   /**
-   * size of the tag
+   * size of the element
    */
   size: oneOf(["small", "medium", "large"]),
   /**
-   * additional styles for tag
+   * allow element to be hoverable
+   */
+  hoverable: PropTypes.bool,
+  /**
+   * additional styles for element
    */
   style: PropTypes.object,
   /**
-   * additional classes for tag
+   * additional classes for element
    */
   className: PropTypes.string
 };

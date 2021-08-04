@@ -12,7 +12,6 @@ const Text = React.forwardRef((props, ref) => {
 });
 
 Text.defaultProps = {
-  theme: "light",
   code: false,
   deleted: false,
   disabled: false,
@@ -25,10 +24,6 @@ Text.defaultProps = {
 };
 
 Text.propTypes = {
-  /**
-   * color theme
-   */
-  theme: PropTypes.oneOf(["light", "dark"]),
   /**
    * code style
    */

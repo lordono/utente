@@ -13,7 +13,6 @@ const Title = React.forwardRef((props, ref) => {
 });
 
 Title.defaultProps = {
-  theme: "light",
   code: false,
   delete: false,
   disabled: false,
@@ -27,10 +26,6 @@ Title.defaultProps = {
 };
 
 Title.propTypes = {
-  /**
-   * color theme
-   */
-  theme: PropTypes.oneOf(["light", "dark"]),
   /**
    * level style - h1/2/3/4/5
    */

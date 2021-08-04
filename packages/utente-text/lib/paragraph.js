@@ -12,7 +12,6 @@ const Paragraph = React.forwardRef((props, ref) => {
 });
 
 Paragraph.defaultProps = {
-  theme: "light",
   code: false,
   delete: false,
   disabled: false,
@@ -25,10 +24,6 @@ Paragraph.defaultProps = {
 };
 
 Paragraph.propTypes = {
-  /**
-   * color theme
-   */
-  theme: PropTypes.oneOf(["light", "dark"]),
   /**
    * code style
    */

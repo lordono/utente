@@ -1,0 +1,57 @@
+:root {
+  --distance: 5px;
+  --textColor: #001f3f;
+  --textColorOpposite: #f6f5f7;
+  --baseColor: #eeeeee;
+  --secondaryColor: #1890ff;
+  --secondaryTextColor: #f6f5f7;
+  --lightSecondary: #91d5ff;
+  --darkColor: #cfcfcf;
+  --firstGradientColor: #ffffff;
+  --lightColor: #ffffff;
+  --secondGradientColor: #d6d6d6;
+  --angle: 145deg;
+  --blur: calc(2 * var(--distance));
+  --positionX: var(--distance);
+  --positionXOpposite: calc(-1 * var(--distance));
+  --positionY: var(--distance);
+  --positionYOpposite: calc(-1 * var(--distance));
+}
+
+.utente_typography {
+  color: var(--textColor);
+  overflow-wrap: break-word;
+
+  & u {
+    text-decoration-skip-ink: auto;
+    text-decoration: underline;
+  }
+
+  & code {
+    margin: 0 0.2em;
+    padding: 0.2em 0.4em 0.1em;
+    font-size: 85%;
+    background: rgba(150, 150, 150, 0.1);
+    border: 1px solid rgba(100, 100, 100, 0.2);
+    border-radius: 3px;
+  }
+
+  & mark {
+    padding: 0;
+    background-color: #ffe58f;
+  }
+
+  & kbd {
+    margin: 0 0.2em;
+    padding: 0.15em 0.4em 0.1em;
+    font-size: 90%;
+    background: rgba(150, 150, 150, 0.06);
+    border: 1px solid rgba(100, 100, 100, 0.2);
+    border-bottom-width: 2px;
+    border-radius: 3px;
+  }
+
+  & strong {
+    font-weight: 600;
+  }
+}

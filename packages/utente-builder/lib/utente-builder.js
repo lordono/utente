@@ -25,7 +25,11 @@ const inputOptions = {
     "prop-types",
     "clsx",
     "react-is",
-    "react-table"
+    "react-table",
+    "react-virtualized-auto-sizer",
+    "react-window",
+    "sass",
+    "sass-loader"
   ],
   plugins: [
     postcss({

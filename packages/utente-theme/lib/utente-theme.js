@@ -17,14 +17,16 @@ const Theme = props => {
       return;
     }
     const checkLight = isLight(color);
+    const darkNumber = checkLight ? 1 : -1;
     const trueIntensity = checkLight ? intensity : intensity * 3.5;
+    const colorIntensity = trueIntensity * darkNumber;
     const darkColor = colorLuminance(color, trueIntensity * -1);
     const lightColor = colorLuminance(color, trueIntensity);
 
     const lightSecondary = colorLuminance(secondaryColor, intensity);
 
-    const firstGradientColor = colorLuminance(color, -0.67 * trueIntensity);
-    const secondGradientColor = colorLuminance(color, 0.5 * trueIntensity);
+    const firstGradientColor = colorLuminance(color, -0.67 * colorIntensity);
+    const secondGradientColor = colorLuminance(color, 0.5 * colorIntensity);
     ref.current.style.cssText = `
       --baseColor: ${color};
       --distance: ${distance}px;

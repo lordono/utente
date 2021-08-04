@@ -16,9 +16,12 @@ export default {
       options: ["small", "medium", "large"],
       control: { type: "select" }
     },
-    className: {
-      control: false
-    }
+    surface: {
+      options: ["normal", "convex", "concave"],
+      control: { type: "select" }
+    },
+    className: { control: false },
+    variant: { control: false }
   }
 };
 
@@ -66,5 +69,5 @@ export const Primary = args => (
 
 Primary.args = {
   size: "medium",
-  bordered: false
+  surface: "normal"
 };

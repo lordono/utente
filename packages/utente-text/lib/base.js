@@ -1,13 +1,12 @@
 import React from "react";
 import cx from "clsx";
-import styles from "./styles.css";
+import styles from "./styles.scss";
 
 /**
  * Base for Text/Title/Paragraph
  */
 const Base = props => {
   const {
-    theme,
     component,
     code,
     deleted,
@@ -53,11 +52,7 @@ const Base = props => {
 
   textNode = wrapperDecorations(props, textNode);
 
-  const classes = cx(
-    styles.utente_typography,
-    theme === "dark" && styles.dark,
-    className
-  );
+  const classes = cx(styles.utente_typography, className);
 
   return React.createElement(
     component,

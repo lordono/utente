@@ -12,6 +12,7 @@ const Button = React.forwardRef((props, ref) => {
     className,
     selected,
     shape,
+    surface,
     size,
     variant,
     ...rest
@@ -23,6 +24,8 @@ const Button = React.forwardRef((props, ref) => {
     variant === "fill" && styles.filled,
     variant === "shadow" && styles.shadowed,
     variant === "border" && styles.bordered,
+    surface === "convex" && styles.convex,
+    surface === "concave" && styles.concave,
     shape === "circle" && styles.circle,
     className
   );
@@ -36,7 +39,8 @@ const Button = React.forwardRef((props, ref) => {
 Button.defaultProps = {
   variant: "fill",
   size: "medium",
-  shape: "square"
+  shape: "square",
+  surface: "normal"
 };
 
 Button.propTypes = {
@@ -52,6 +56,10 @@ Button.propTypes = {
    * shape of the button
    */
   shape: PropTypes.oneOf(["square", "circle"]),
+  /**
+   * element surface
+   */
+  surface: PropTypes.oneOf(["normal", "convex", "concave"]),
   /**
    * additional styles for button
    */
