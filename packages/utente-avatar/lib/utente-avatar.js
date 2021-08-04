@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import cx from "clsx";
-import styles from "./styles.css";
+import styles from "./styles.scss";
 
 /**
  * - only can display either text, image or icon
@@ -15,15 +15,20 @@ const Avatar = React.forwardRef((props, ref) => {
     icon,
     shape,
     indented,
+    surface,
     size,
-    theme,
+    variant,
     ...rest
   } = props;
   const classes = cx(
     styles.avatar,
-    theme === "dark" && styles.dark,
     shape === "circle" && styles.circle,
     indented && styles.indented,
+    variant === "fill" && styles.filled,
+    variant === "shadow" && styles.shadowed,
+    variant === "border" && styles.bordered,
+    surface === "convex" && styles.convex,
+    surface === "concave" && styles.concave,
     size && styles[size],
     className
   );
@@ -43,21 +48,26 @@ const Avatar = React.forwardRef((props, ref) => {
 });
 
 Avatar.defaultProps = {
-  theme: "light",
+  variant: "fill",
   size: "medium",
   indented: false,
-  shape: "square"
+  shape: "square",
+  surface: "normal"
 };
 
 Avatar.propTypes = {
   /**
-   * color theme
+   * type of button - shadow/fill/border
    */
-  theme: PropTypes.oneOf(["light", "dark"]),
+  variant: PropTypes.oneOf(["shadow", "fill", "border"]),
   /**
    * size of the Avatar
    */
   size: PropTypes.oneOf(["small", "medium", "large"]),
+  /**
+   * element surface
+   */
+  surface: PropTypes.oneOf(["normal", "convex", "concave"]),
   /**
    * text inside avatar
    */

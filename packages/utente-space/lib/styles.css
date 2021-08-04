@@ -50,3 +50,8 @@
 .space.align-baseline {
   align-items: baseline;
 }
+
+.space.full {
+  width: 100%;
+  height: 100%;
+}

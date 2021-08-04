@@ -1,0 +1,132 @@
+:root {
+  --distance: 5px;
+  --textColor: #001f3f;
+  --textColorOpposite: #f6f5f7;
+  --baseColor: #eeeeee;
+  --secondaryColor: #1890ff;
+  --secondaryTextColor: #f6f5f7;
+  --lightSecondary: #91d5ff;
+  --darkColor: #cfcfcf;
+  --firstGradientColor: #ffffff;
+  --lightColor: #ffffff;
+  --secondGradientColor: #d6d6d6;
+  --angle: 145deg;
+  --blur: calc(2 * var(--distance));
+  --positionX: var(--distance);
+  --positionXOpposite: calc(-1 * var(--distance));
+  --positionY: var(--distance);
+  --positionYOpposite: calc(-1 * var(--distance));
+}
+
+.checkbox_container {
+  position: relative;
+  padding-left: 37.5px;
+  display: block;
+  height: fit-content;
+  width: fit-content;
+  margin: 10px 15px;
+  color: var(--textColor);
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+
+  /* Hide the browser's default checkbox */
+  & input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  /* Create a custom checkbox */
+  & .checkmark {
+    position: absolute;
+    top: calc(50% - 14.5px);
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border-radius: 2.5px;
+    border-style: solid;
+    border-width: 2.5px;
+    border-color: rgba(0, 0, 0, 0);
+    transition: box-shadow 0.6s cubic-bezier(0.79, 0.21, 0.06, 0.81),
+      background-color 0.3s, border-color 0.2s;
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+
+      left: 9px;
+      top: 5px;
+      width: 5px;
+      height: 10px;
+      border: solid var(--secondaryColor);
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+    }
+  }
+
+  /* Show the checkmark when checked */
+  & input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  &.filled {
+    & .checkmark {
+      border-color: var(--textColor);
+      background-color: var(--baseColor);
+
+      &:after {
+        border-color: var(--secondaryTextColor);
+      }
+    }
+  }
+
+  &.filled:hover input ~ .checkmark,
+  &.filled input:checked ~ .checkmark {
+    border-color: var(--secondaryColor);
+  }
+  &.filled input:checked ~ .checkmark {
+    background-color: var(--secondaryColor);
+  }
+
+  &.bordered {
+    & .checkmark {
+      border-color: var(--textColor);
+      background-color: var(--baseColor);
+
+      &:after {
+        border-color: var(--secondaryTextColor);
+      }
+    }
+  }
+
+  &.bordered:hover input ~ .checkmark,
+  &.bordered input:checked ~ .checkmark {
+    border-color: var(--secondaryColor);
+  }
+  &.bordered input:checked ~ .checkmark:after {
+    border-color: var(--secondaryColor);
+  }
+
+  &.shadowed .checkmark {
+    background: var(--baseColor);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0),
+      inset var(--positionX) var(--positionY) var(--blur) var(--darkColor),
+      inset var(--positionXOpposite) var(--positionYOpposite) var(--blur)
+        var(--lightColor);
+  }
+
+  &.shadowed:hover input ~ .checkmark,
+  &.shadowed input:checked ~ .checkmark {
+    box-shadow: var(--positionX) var(--positionY) var(--blur) var(--darkColor),
+      var(--positionXOpposite) var(--positionYOpposite) var(--blur)
+        var(--lightColor),
+      inset 0 0 0 rgba(0, 0, 0, 0), inset 0 0 0 rgba(0, 0, 0, 0);
+  }
+}

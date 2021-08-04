@@ -45,15 +45,15 @@ Button.defaultProps = {
 
 Button.propTypes = {
   /**
-   * type of button - shadow/fill/border
+   * type of element - shadow/fill/border
    */
   variant: PropTypes.oneOf(["shadow", "fill", "border"]),
   /**
-   * size of the button
+   * size of the element
    */
   size: PropTypes.oneOf(["small", "medium", "large"]),
   /**
-   * shape of the button
+   * shape of the element
    */
   shape: PropTypes.oneOf(["square", "circle"]),
   /**
@@ -61,15 +61,15 @@ Button.propTypes = {
    */
   surface: PropTypes.oneOf(["normal", "convex", "concave"]),
   /**
-   * additional styles for button
+   * additional styles for element
    */
   style: PropTypes.object,
   /**
-   * additional classes for button
+   * additional classes for element
    */
   className: PropTypes.string,
   /**
-   * onClick function for button
+   * onClick function for element
    */
   onClick: PropTypes.func
 };

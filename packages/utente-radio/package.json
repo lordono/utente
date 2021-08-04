@@ -33,6 +33,8 @@
   "homepage": "https://github.com/lordono/utente#readme",
   "devDependencies": {
     "@lieinapril/utente-builder": "^0.4.0",
+    "@lieinapril/utente-space": "^0.4.0",
+    "@lieinapril/utente-theme": "^0.4.0",
     "react": "^17.0.2"
   },
   "peerDependencies": {

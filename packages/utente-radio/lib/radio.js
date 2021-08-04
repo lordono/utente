@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import cx from "clsx";
-import styles from "./styles.css";
+import styles from "./styles.scss";
 
 /**
  * - Used to select a single state from multiple options.
@@ -15,7 +15,7 @@ const Radio = React.forwardRef((props, ref) => {
     name,
     value,
     size,
-    theme,
+    variant,
     onClick,
     onChange,
     ...rest
@@ -23,9 +23,9 @@ const Radio = React.forwardRef((props, ref) => {
 
   const classes = cx(
     styles.radio_container,
-    {
-      [styles.dark]: theme === "dark"
-    },
+    variant === "fill" && styles.filled,
+    variant === "shadow" && styles.shadowed,
+    variant === "border" && styles.bordered,
     size && styles[size],
     focus && styles.focus,
     className
@@ -53,37 +53,37 @@ const Radio = React.forwardRef((props, ref) => {
 const { oneOf } = PropTypes;
 
 Radio.defaultProps = {
-  theme: "light",
+  variant: "fill",
   size: "medium"
 };
 
 Radio.propTypes = {
   /**
-   * color theme
+   * type of element - shadow/fill/border
    */
-  theme: oneOf(["light", "dark"]),
+  variant: PropTypes.oneOf(["shadow", "fill", "border"]),
   /**
-   * size of the radio
+   * size of the element
    */
   size: oneOf(["small", "medium", "large"]),
   /**
-   * name of radio group
+   * name of element group
    */
   name: PropTypes.string,
   /**
-   * label of radio input
+   * label of element input
    */
   label: PropTypes.string,
   /**
-   * value of radio input
+   * value of element input
    */
   value: PropTypes.string,
   /**
-   * class of radio input
+   * class of element input
    */
   className: PropTypes.string,
   /**
-   * style of radio input
+   * style of element input
    */
   style: PropTypes.object,
   /**

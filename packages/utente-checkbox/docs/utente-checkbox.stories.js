@@ -3,6 +3,7 @@ import React from "react";
 import { Checkbox } from "../lib/utente-checkbox";
 import { Button } from "@lieinapril/utente-button";
 import { Space } from "@lieinapril/utente-space";
+import { Theme } from "@lieinapril/utente-theme";
 
 export default {
   title: "Form/Checkbox",
@@ -11,8 +12,8 @@ export default {
     componentSubtitle: "Checkbox component."
   },
   argTypes: {
-    theme: {
-      options: ["light", "dark"],
+    variant: {
+      options: ["fill", "shadow", "border"],
       control: { type: "select" }
     },
     label: { control: false },
@@ -27,10 +28,10 @@ export const Uncontrolled = args => (
       width: "calc(100% - 6rem)",
       height: "calc(100% - 6rem)",
       padding: "3rem",
-      backgroundColor: args.theme === "dark" ? "#2c2f33" : "#eeeeee"
+      backgroundColor: "#eeeeee"
     }}
   >
-    <Space size={20}>
+    <Space size={20} style={{ padding: 20 }}>
       <Checkbox
         {...args}
         size="small"
@@ -53,11 +54,36 @@ export const Uncontrolled = args => (
         onChange={e => console.log("pear", e.target.checked)}
       />
     </Space>
+    <Theme color="#2c2f33" intensity={0.2}>
+      <Space size={20} style={{ padding: 20 }} colored>
+        <Checkbox
+          {...args}
+          size="small"
+          label="Apple"
+          value="apple"
+          onChange={e => console.log("apple", e.target.checked)}
+        />
+        <Checkbox
+          {...args}
+          size="small"
+          label="Orange"
+          value="orange"
+          onChange={e => console.log("orange", e.target.checked)}
+        />
+        <Checkbox
+          {...args}
+          size="small"
+          label="Pear"
+          value="pear"
+          onChange={e => console.log("pear", e.target.checked)}
+        />
+      </Space>
+    </Theme>
   </div>
 );
 
 Uncontrolled.args = {
-  theme: "light"
+  variant: "shadow"
 };
 
 export const Controlled = args => {
@@ -77,11 +103,11 @@ export const Controlled = args => {
         width: "calc(100% - 6rem)",
         height: "calc(100% - 6rem)",
         padding: "3rem",
-        backgroundColor: args.theme === "dark" ? "#2c2f33" : "#eeeeee"
+        backgroundColor: "#eeeeee"
       }}
     >
       <Space direction="vertical" justify="start" align="start" size={20}>
-        <Button size="small" onClick={onToggle}>
+        <Button size="small" onClick={onToggle} variant="shadow">
           Toggle
         </Button>
         <Space justify="start" align="start">
@@ -119,5 +145,5 @@ export const Controlled = args => {
 };
 
 Controlled.args = {
-  theme: "light"
+  variant: "shadow"
 };

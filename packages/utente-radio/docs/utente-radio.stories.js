@@ -1,6 +1,8 @@
 import React from "react";
 // We want to always get from source
 import { Radio } from "../lib/utente-radio";
+import { Space } from "@lieinapril/utente-space";
+import { Theme } from "@lieinapril/utente-theme";
 
 export default {
   title: "Form/Radio",
@@ -12,8 +14,9 @@ export default {
     size: {
       control: { type: "select", options: ["small", "medium", "large"] }
     },
-    theme: {
-      control: { type: "select", options: ["light", "dark"] }
+    variant: {
+      options: ["fill", "shadow", "border"],
+      control: { type: "select" }
     },
     name: {
       control: false
@@ -33,7 +36,7 @@ export const Primary = args => (
       backgroundColor: args.theme === "dark" ? "#2c2f33" : "#eeeeee"
     }}
   >
-    <div style={{ display: "flex", gap: 20 }}>
+    <Space size={20} style={{ padding: 20 }}>
       <Radio {...args} size="small" label="One" name="example1" value="one" />
       <Radio {...args} size="small" label="Two" name="example1" value="two" />
       <Radio
@@ -43,10 +46,24 @@ export const Primary = args => (
         name="example1"
         value="three"
       />
-    </div>
+    </Space>
+
+    <Theme color="#2c2f33" intensity={0.25}>
+      <Space colored size={20} style={{ padding: 20 }}>
+        <Radio {...args} size="small" label="One" name="example2" value="one" />
+        <Radio {...args} size="small" label="Two" name="example2" value="two" />
+        <Radio
+          {...args}
+          size="small"
+          label="Three"
+          name="example2"
+          value="three"
+        />
+      </Space>
+    </Theme>
   </div>
 );
 
 Primary.args = {
-  theme: "light"
+  variant: "shadow"
 };

@@ -18,50 +18,30 @@
   --positionYOpposite: calc(-1 * var(--distance));
 }
 
-.button {
+.avatar {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  cursor: pointer;
-  text-align: center;
-  border-radius: 10px;
-  border-style: solid;
-  border-color: rgba(0, 0, 0, 0);
-  border-width: 4px;
+  background-color: #eeeeee;
+  padding: auto;
   color: var(--textColor);
-  transition: box-shadow 0.6s cubic-bezier(0.79, 0.21, 0.06, 0.81),
-    background-color 0.4s, color 0.4s, border 0.4s, transform 0.3s ease-in;
-
-  &.circle {
-    border-radius: 50%;
-  }
+  border-radius: 10px;
+  border-color: rgba(0, 0, 0, 0);
+  border-style: solid;
+  border-width: 4px;
+  transition: box-shadow 0.6s cubic-bezier(0.79, 0.21, 0.06, 0.81);
 
   &.filled {
     color: var(--secondaryTextColor);
     background-color: var(--secondaryColor);
-
-    &:hover {
-      transform: scale(1.05);
-      background-color: var(--lightSecondary);
-    }
-
-    &.selected {
-      background-color: var(--lightSecondary);
-    }
   }
 
   &.bordered {
     border-color: var(--secondaryColor);
     background-color: var(--baseColor);
-
-    &:hover,
-    &.selected {
-      background-color: var(--secondaryColor);
-      color: var(--secondaryTextColor);
-    }
   }
 
   &.shadowed {
@@ -88,9 +68,7 @@
       );
     }
 
-    &:hover,
-    &.selected {
-      color: var(--secondaryColor);
+    &.indented {
       box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0),
         inset var(--positionX) var(--positionY) var(--blur) var(--darkColor),
         inset var(--positionXOpposite) var(--positionYOpposite) var(--blur)
@@ -98,22 +76,44 @@
     }
   }
 
-  &.medium {
-    height: 60px;
-    padding: 1.25rem;
-    font-size: 14px;
+  &.circle {
+    border-radius: 50%;
+    & > img {
+      border-radius: 50%;
+    }
   }
 
-  &.large {
-    height: 72px;
-    padding: 1.5rem;
-    font-size: 18px;
+  & > img {
+    width: 90%;
+    border-radius: 10px;
+  }
+
+  & > span {
+    width: 85%;
+    padding: 0 7.5%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &.medium {
+    height: 58px;
+    width: 58px;
+    font-size: 24px;
   }
 
   &.small {
+    height: 38px;
+    width: 38px;
+    font-size: 20px;
     border-width: 3px;
-    height: 49px;
-    padding: 1rem;
-    font-size: 12px;
+  }
+
+  &.large {
+    height: 78px;
+    width: 78px;
+    font-size: 28px;
+    font-weight: 600;
   }
 }

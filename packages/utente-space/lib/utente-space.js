@@ -12,6 +12,7 @@ const Space = ({
   children,
   direction,
   size,
+  full,
   align,
   justify,
   wrap,
@@ -22,6 +23,7 @@ const Space = ({
   const classes = cx(
     styles.space,
     colored && styles.colored,
+    full && styles.full,
     direction === "vertical" && styles.vertical,
     wrap && styles.wrap,
     justify && styles[`justify-${justify}`],
@@ -52,7 +54,8 @@ Space.defaultProps = {
   size: 8,
   align: "center",
   justify: "start",
-  wrap: false
+  wrap: false,
+  full: false
 };
 
 Space.propTypes = {
@@ -60,6 +63,10 @@ Space.propTypes = {
    * direction of the children
    */
   direction: PropTypes.oneOf(["horizontal", "vertical"]),
+  /**
+   * full width and height - good for creating flex containers
+   */
+  full: PropTypes.bool,
   /**
    * gap size between children
    */

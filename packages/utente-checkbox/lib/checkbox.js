@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import cx from "clsx";
-import styles from "./styles.css";
+import styles from "./styles.scss";
 
 /**
  * - Used for selecting multiple values from several options.
@@ -13,7 +13,7 @@ const Checkbox = React.forwardRef((props, ref) => {
     checked,
     label,
     value,
-    theme,
+    variant,
     onChange,
     onClick,
     ...rest
@@ -33,9 +33,9 @@ const Checkbox = React.forwardRef((props, ref) => {
   // styling
   const classes = cx(
     styles.checkbox_container,
-    {
-      [styles.dark]: theme === "dark"
-    },
+    variant === "fill" && styles.filled,
+    variant === "shadow" && styles.shadowed,
+    variant === "border" && styles.bordered,
     focus && styles.focus,
     className
   );
@@ -61,15 +61,15 @@ const Checkbox = React.forwardRef((props, ref) => {
 });
 
 Checkbox.defaultProps = {
-  theme: "light",
+  variant: "fill",
   checked: null
 };
 
 Checkbox.propTypes = {
   /**
-   * color theme
+   * type of element - shadow/fill/border
    */
-  theme: PropTypes.oneOf(["light", "dark"]),
+  variant: PropTypes.oneOf(["shadow", "fill", "border"]),
   /**
    * label of checkbox
    */
