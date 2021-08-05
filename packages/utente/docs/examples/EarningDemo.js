@@ -66,11 +66,8 @@ export const EarningDemo = args => {
     <Space
       justify="center"
       align="center"
-      style={{
-        height: "100%",
-        width: "100%",
-        backgroundColor: "white"
-      }}
+      full
+      style={{ backgroundColor: "white" }}
     >
       <div
         style={{

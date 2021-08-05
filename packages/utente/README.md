@@ -28,7 +28,10 @@ npm install @lieinapril/utente
 - Switch
 - Tag
 - Text
+- Table
 - Checkbox
+- List/ListItem
+- Theme
 
 ## Usage
 

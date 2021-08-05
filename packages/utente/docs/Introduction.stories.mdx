@@ -1,6 +1,16 @@
 <!--- Introduction.stories.mdx -->
 
-import { Button, Space, Text, Theme } from "../lib/utente";
+import {
+  Button,
+  Space,
+  Text,
+  Theme,
+  Checkbox,
+  Switch,
+  Radio,
+  Tag,
+  Card
+} from "../lib/utente";
 import { Meta } from "@storybook/addon-docs";
 
 <Meta title="Introduction" />
@@ -9,33 +19,97 @@ import { Meta } from "@storybook/addon-docs";
 
 `Neumorphism` is a new type of `Skeuomorphism`. It combines the realism with a modern look and feel to achieve a subtle soft pop-out effect on the html elements.
 
-## How to use
+## Core Concept
 
-In this UI Library package, there are two main themes, namely `light` and `dark`. Most of the elements has this argument in them. Below is an example of a Button
+Neumorphism is a powerful tool to use. It must however be used correctly. One of the core concept is to utilize similar colors for the component and the background.
 
-<Space size={20}>
+To illustrate this, we will show a positive and negative example side by side.
+
+<Space colored size={20} style={{ padding: 20 }}>
   <Button variant="shadow">Light</Button>
   <Theme color="#2c2f33">
     <Button variant="shadow">Dark</Button>
   </Theme>
 </Space>
 
-As you can see, using them without the right background produces unpleasant results. It is advised to use the right background color like below.
+## Accessibility
 
-<Space size={20} style={{ background: "#eee", padding: 20 }}>
+One of the issues with `neumorphism` is that it can be difficult to see the element for people with low vision.
+
+To illustrate this, we will compare it with a `flat` design side by side.
+
+<Space colored style={{ padding: 20 }}>
   <Button variant="shadow">Neumorphism</Button>
   <Button variant="fill">Flat</Button>
-  <Text>#eee</Text>
 </Space>
 
-<Space size={20} style={{ background: "#2c2f33", padding: 20 }}>
-  <Theme color="#2c2f33">
+As you can see, it's easier to look at `flat` design since it is colorful but `neumorphism` has to keep to the similar color as the background, rendering it difficult to find.
+
+## Mix and Match
+
+In this UI Library package, most of the components have different `variant` to allow for flexibility in building your work. This will let you be able to mix and match as you deem fit.
+
+Below are just some examples...
+
+<Space
+  colored
+  direction="vertical"
+  align="start"
+  size={20}
+  style={{ padding: 20 }}
+>
+  <Space size={20} style={{ padding: 20 }}>
     <Button variant="shadow">Neumorphism</Button>
-    <Button variant="fill">Flat</Button>
-    <Text style={{ color: "#eee" }}>#2c2f33</Text>
-  </Theme>
+    <Button variant="fill">Fill</Button>
+    <Button variant="border">Border</Button>
+  </Space>
+  <Space size={20} style={{ padding: 20 }}>
+    <Checkbox variant="shadow" label="Neumorphism" value="neumorphism" />
+    <Checkbox variant="fill" label="Fill" value="fill" />
+    <Checkbox variant="border" label="Border" value="border" />
+  </Space>
+  <Space size={20} style={{ padding: 20 }}>
+    <Radio
+      variant="shadow"
+      label="Neumorphism"
+      value="neumorphism"
+      name="example1"
+    />
+    <Radio variant="fill" label="Fill" value="fill" name="example1" />
+    <Radio variant="border" label="Border" value="border" name="example1" />
+  </Space>
+  <Space size={20} style={{ padding: 20 }}>
+    <Tag variant="shadow">Electronics</Tag>
+    <Tag variant="border">Border</Tag>
+  </Space>
 </Space>
 
-Neumorphism often has great visuals due to the subtle effects but also faces a problem with accessibility - i.e user find it hard to find the UI elements.
+## Theming
 
-In the example above, we try to solve this by adding a `bordered` boolean to make the button more visible to users.
+It is important to understand how `theming` works too. You can import `Theme` component from the package to make more colorful UIs.
+
+There are a few variables that you can theme with.
+
+- color (base-color)
+- secondaryColor (secondary-color)
+- distance (how stretched are the shadows in neumorphism)
+- intensity (how much gradients produced based on the base-color)
+
+<Theme color="#2c2f33" secondaryColor="#faad14">
+  <Space colored style={{ padding: 20 }}>
+    <Button variant="shadow">#2c2f33</Button>
+    <Button variant="fill">#faad14</Button>
+  </Space>
+</Theme>
+<Theme color="#0050b3" secondaryColor="#bae7ff">
+  <Space colored style={{ padding: 20 }}>
+    <Button variant="shadow">#0050b3</Button>
+    <Button variant="fill">#bae7ff</Button>
+  </Space>
+</Theme>
+<Theme color="#237804" secondaryColor="#d9f7be">
+  <Space colored style={{ padding: 20 }}>
+    <Button variant="shadow">#237804</Button>
+    <Button variant="fill">#d9f7be</Button>
+  </Space>
+</Theme>
