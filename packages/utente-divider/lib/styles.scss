@@ -1,0 +1,45 @@
+:root {
+  --distance: 5px;
+  --textColor: #001f3f;
+  --textColorOpposite: #f6f5f7;
+  --baseColor: #eeeeee;
+  --muteColor: #cfcfcf;
+  --secondaryColor: #1890ff;
+  --secondaryTextColor: #f6f5f7;
+  --lightSecondary: #91d5ff;
+  --darkColor: #cfcfcf;
+  --firstGradientColor: #ffffff;
+  --lightColor: #ffffff;
+  --secondGradientColor: #d6d6d6;
+  --angle: 145deg;
+  --blur: calc(2 * var(--distance));
+  --positionX: var(--distance);
+  --positionXOpposite: calc(-1 * var(--distance));
+  --positionY: var(--distance);
+  --positionYOpposite: calc(-1 * var(--distance));
+}
+
+.divider_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  & .divider {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+    background-color: var(--muteColor);
+    height: 5px;
+    align-self: center;
+    justify-self: center;
+    border-radius: 2.5px;
+    transition: box-shadow 0.6s cubic-bezier(0.79, 0.21, 0.06, 0.81);
+
+    &.shadowed {
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0),
+        inset calc(var(--positionX) / 2) calc(var(--positionY) / 2)
+          calc(var(--blur) / 2) var(--darkColor),
+        inset var(--positionXOpposite) var(--positionYOpposite) var(--blur)
+          var(--lightColor);
+    }
+  }
+}

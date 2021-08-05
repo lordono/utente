@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import cx from "clsx";
-import styles from "./styles.css";
+import styles from "./styles.scss";
 
 /**
  * - A card can be used to display content related to a single subject. The content can consist of multiple elements of varying types and sizes.
@@ -14,13 +14,15 @@ const Card = ({
   className,
   cover,
   hoverable,
-  theme,
+  variant,
   padded,
   ...rest
 }) => {
   const classes = cx(
     styles.card,
-    { [styles.dark]: theme === "dark" },
+    variant === "fill" && styles.filled,
+    variant === "shadow" && styles.shadowed,
+    variant === "border" && styles.bordered,
     hoverable && styles.hoverable,
     className
   );
@@ -37,7 +39,7 @@ const Card = ({
 };
 
 Card.defaultProps = {
-  theme: "light",
+  variant: "fill",
   hoverable: false,
   padded: true,
   cover: null,
@@ -46,9 +48,9 @@ Card.defaultProps = {
 
 Card.propTypes = {
   /**
-   * color theme
+   * type of element - shadow/fill/border
    */
-  theme: PropTypes.oneOf(["light", "dark"]),
+  variant: PropTypes.oneOf(["shadow", "fill", "border"]),
   /**
    * if card can be hovered
    */

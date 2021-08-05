@@ -1,6 +1,8 @@
 import React from "react";
-// We want to always get from source
+
 import { Card } from "../lib/utente-card";
+import { Theme } from "@lieinapril/utente-theme";
+import { Space } from "@lieinapril/utente-space";
 
 const headphoneImg =
   "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60";
@@ -14,9 +16,6 @@ export default {
     componentSubtitle: "Simple rectangular container."
   },
   argTypes: {
-    theme: {
-      control: { type: "select", options: ["light", "dark"] }
-    },
     cover: {
       options: ["Headphone Image", "Watch Image"],
       mapping: {
@@ -47,47 +46,62 @@ const CardWrapper = ({ theme, style, children }) => (
 );
 
 export const Simple = args => (
-  <CardWrapper theme={args.theme}>
-    <Card {...args} style={{ width: 300, height: 300 }}>
-      Standard Card
-    </Card>
+  <CardWrapper>
+    <Theme color={args.color}>
+      <Space full colored justify="center">
+        <Card {...args} style={{ width: 300, height: 300 }}>
+          Standard Card
+        </Card>
+      </Space>
+    </Theme>
   </CardWrapper>
 );
 
 Simple.args = {
-  theme: "light",
+  variant: "fill",
+  color: "#eeeeee",
   hoverable: false,
   padded: true
 };
 
 export const Cover = args => (
-  <CardWrapper theme={args.theme}>
-    <Card {...args} style={{ width: 300, height: 350 }}>
-      Standard Card
-    </Card>
+  <CardWrapper>
+    <Theme color={args.color}>
+      <Space full colored justify="center">
+        <Card {...args} style={{ width: 300, height: 350 }}>
+          Standard Card
+        </Card>
+      </Space>
+    </Theme>
   </CardWrapper>
 );
 
 Cover.args = {
-  theme: "light",
+  variant: "fill",
+  color: "#eeeeee",
   hoverable: false,
   padded: true,
   cover: "Headphone Image"
 };
 
 export const Multiple = args => (
-  <CardWrapper theme={args.theme}>
-    <Card {...args} style={{ width: 300, height: 350 }}>
-      Card One
-    </Card>
-    <Card {...args} style={{ width: 300, height: 350 }}>
-      Card Two
-    </Card>
+  <CardWrapper>
+    <Theme color={args.color}>
+      <Space full colored justify="center" size={25}>
+        <Card {...args} style={{ width: 300, height: 350 }}>
+          Card One
+        </Card>
+        <Card {...args} style={{ width: 300, height: 350 }}>
+          Card Two
+        </Card>
+      </Space>
+    </Theme>
   </CardWrapper>
 );
 
 Multiple.args = {
-  theme: "light",
+  variant: "fill",
+  color: "#eeeeee",
   hoverable: false,
   padded: true,
   cover: "Headphone Image"

@@ -13,9 +13,6 @@ export default {
   },
   argTypes: {
     size: { control: false },
-    theme: {
-      control: { type: "select", options: ["light", "dark"] }
-    },
     prefix: { control: false },
     suffix: { control: false },
     className: { control: false }
@@ -28,7 +25,7 @@ export const Primary = args => (
       width: "calc(100% - 6rem)",
       height: "calc(100% - 6rem)",
       padding: "3rem",
-      backgroundColor: args.theme === "dark" ? "#2c2f33" : "#eeeeee"
+      backgroundColor: "#eeeeee"
     }}
   >
     <Space size={20}>
@@ -57,7 +54,7 @@ export const Primary = args => (
 );
 
 Primary.args = {
-  theme: "light"
+  variant: "fill"
 };
 
 export const Controlled = args => {
@@ -69,7 +66,7 @@ export const Controlled = args => {
         width: "calc(100% - 6rem)",
         height: "calc(100% - 6rem)",
         padding: "3rem",
-        backgroundColor: args.theme === "dark" ? "#2c2f33" : "#eeeeee"
+        backgroundColor: "#eeeeee"
       }}
     >
       <Space direction="vertical" size={20} align="start">
@@ -91,5 +88,5 @@ export const Controlled = args => {
 };
 
 Controlled.args = {
-  theme: "light"
+  variant: "fill"
 };

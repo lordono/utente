@@ -31,6 +31,7 @@ const Theme = props => {
       --baseColor: ${color};
       --distance: ${distance}px;
       --textColor: ${getContrast(color)};
+      --muteColor: ${checkLight ? darkColor : lightColor};
       --secondaryTextColor: ${getContrast(secondaryColor)};
       --textColorOpposite: ${color};
       --secondaryColor: ${secondaryColor};

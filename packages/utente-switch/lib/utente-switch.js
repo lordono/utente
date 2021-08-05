@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import cx from "clsx";
-import styles from "./styles.css";
+import styles from "./styles.scss";
 
 /**
  * - If you need to represent the switching between two states or on-off state.
@@ -16,7 +16,7 @@ const Switch = React.forwardRef((props, ref) => {
     label,
     value,
     size,
-    theme,
+    variant,
     ...rest
   } = props;
 
@@ -33,9 +33,8 @@ const Switch = React.forwardRef((props, ref) => {
 
   const classes = cx(
     styles.switch_container,
-    {
-      [styles.dark]: theme === "dark"
-    },
+    variant === "fill" && styles.filled,
+    variant === "shadow" && styles.shadowed,
     size && styles[size],
     focus && styles.focus,
     className
@@ -60,19 +59,17 @@ const Switch = React.forwardRef((props, ref) => {
   );
 });
 
-const { oneOf } = PropTypes;
-
 Switch.defaultProps = {
-  theme: "light",
+  variant: "fill",
   size: "medium",
   onChange: () => null
 };
 
 Switch.propTypes = {
   /**
-   * color theme
+   * type of element - shadow/fill
    */
-  theme: oneOf(["light", "dark"]),
+  variant: PropTypes.oneOf(["shadow", "fill"]),
   /**
    * label of switch input
    */

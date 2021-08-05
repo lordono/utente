@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import cx from "clsx";
-import styles from "./styles.css";
+import styles from "./styles.scss";
 
 /**
  * - A user input in a form field is needed.
@@ -16,7 +16,7 @@ const Input = React.forwardRef((props, ref) => {
     suffix,
     size,
     value,
-    theme,
+    variant,
     style,
     onChange,
     onFocus,
@@ -32,9 +32,9 @@ const Input = React.forwardRef((props, ref) => {
     styles.input_container,
     prefix && styles.prefix,
     suffix && styles.suffix,
-    {
-      [styles.dark]: theme === "dark"
-    },
+    variant === "fill" && styles.filled,
+    variant === "shadow" && styles.shadowed,
+    variant === "border" && styles.bordered,
     size && styles[size],
     focus && styles.focus,
     className
@@ -64,15 +64,15 @@ const Input = React.forwardRef((props, ref) => {
 });
 
 Input.defaultProps = {
-  theme: "light",
+  variant: "fill",
   size: "medium"
 };
 
 Input.propTypes = {
   /**
-   * color theme
+   * type of element - shadow/fill/border
    */
-  theme: PropTypes.oneOf(["light", "dark"]),
+  variant: PropTypes.oneOf(["shadow", "fill", "border"]),
   /**
    * size of the input
    */

@@ -1,3 +1,24 @@
+:root {
+  --distance: 5px;
+  --textColor: #001f3f;
+  --textColorOpposite: #f6f5f7;
+  --baseColor: #eeeeee;
+  --muteColor: #cfcfcf;
+  --secondaryColor: #1890ff;
+  --secondaryTextColor: #f6f5f7;
+  --lightSecondary: #91d5ff;
+  --darkColor: #cfcfcf;
+  --firstGradientColor: #ffffff;
+  --lightColor: #ffffff;
+  --secondGradientColor: #d6d6d6;
+  --angle: 145deg;
+  --blur: calc(2 * var(--distance));
+  --positionX: var(--distance);
+  --positionXOpposite: calc(-1 * var(--distance));
+  --positionY: var(--distance);
+  --positionYOpposite: calc(-1 * var(--distance));
+}
+
 .space {
   display: flex;
 }
@@ -21,6 +42,7 @@
 
 .space.colored {
   background-color: var(--baseColor);
+  color: var(--textColor);
 }
 
 .space.justify-end {

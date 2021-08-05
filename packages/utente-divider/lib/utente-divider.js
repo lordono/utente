@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import cx from "clsx";
-import styles from "./styles.css";
+import styles from "./styles.scss";
 
 /**
  * ## When to use
@@ -16,14 +16,12 @@ const Divider = React.forwardRef((props, ref) => {
     size,
     margin,
     width,
-    theme,
+    variant,
     ...rest
   } = props;
   const classes = cx(
     styles.divider,
-    {
-      [styles.dark]: theme === "dark"
-    },
+    variant === "shadow" && styles.shadowed,
     className
   );
 
@@ -43,11 +41,9 @@ const Divider = React.forwardRef((props, ref) => {
   );
 });
 
-const { oneOf } = PropTypes;
-
 Divider.defaultProps = {
-  theme: "light",
-  size: 4,
+  variant: "fill",
+  size: 6,
   margin: 10,
   width: "100%",
   type: "horizontal"
@@ -55,9 +51,9 @@ Divider.defaultProps = {
 
 Divider.propTypes = {
   /**
-   * color theme
+   * type of element - shadow/fill
    */
-  theme: oneOf(["light", "dark"]),
+  variant: PropTypes.oneOf(["shadow", "fill"]),
   /**
    * additional styles for button
    */
