@@ -41,7 +41,7 @@ const Input = React.forwardRef((props, ref) => {
   );
 
   return (
-    <div className={classes} style={style}>
+    <label className={classes} style={style}>
       {prefix}
       <input
         {...rest}
@@ -59,7 +59,7 @@ const Input = React.forwardRef((props, ref) => {
         }}
       />
       {suffix}
-    </div>
+    </label>
   );
 });
 
