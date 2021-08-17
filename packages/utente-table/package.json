@@ -1,6 +1,6 @@
 {
   "name": "@lieinapril/utente-table",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "[Neumorphism] A table displays rows of data.",
   "keywords": [],
   "author": "Seow Jun Liang <seowjunliang@gmail.com>",
@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/lordono/utente#readme",
   "devDependencies": {
-    "@lieinapril/utente-builder": "^0.5.0",
+    "@lieinapril/utente-builder": "^0.6.0",
     "react": "^17.0.2"
   },
   "peerDependencies": {
