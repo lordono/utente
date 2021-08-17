@@ -13,17 +13,22 @@ const Paragraph = React.forwardRef((props, ref) => {
 
 Paragraph.defaultProps = {
   code: false,
-  delete: false,
+  deleted: false,
   disabled: false,
   ellipsis: false,
   keyboard: false,
   mark: false,
   strong: false,
   italic: false,
-  underline: false
+  underline: false,
+  variant: "default"
 };
 
 Paragraph.propTypes = {
+  /**
+   * variant of text - danger/warning/success/default
+   */
+  variant: PropTypes.oneOf(["danger", "warning", "success", "default"]),
   /**
    * code style
    */

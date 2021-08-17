@@ -108,8 +108,8 @@
   transition: transform 0.3s;
 }
 
-.panel.dark > .collapse_icon:before,
-.panel.dark > .collapse_icon:after {
+.panel.dark .collapse_icon:before,
+.panel.dark .collapse_icon:after {
   background-color: #eee;
 }
 
@@ -120,11 +120,11 @@
   transform: rotate(-45deg) translateX(5.5px);
 }
 
-.panel.active > .collapse_icon:before {
+.panel.active .collapse_icon:before {
   transform: rotate(135deg) translate(0px, 5px);
 }
 
-.panel.active > .collapse_icon:after {
+.panel.active .collapse_icon:after {
   transform: rotate(-135deg) translate(0px, 5px);
 }
 

@@ -14,7 +14,7 @@ const Title = React.forwardRef((props, ref) => {
 
 Title.defaultProps = {
   code: false,
-  delete: false,
+  deleted: false,
   disabled: false,
   ellipsis: false,
   keyboard: false,
@@ -22,10 +22,15 @@ Title.defaultProps = {
   mark: false,
   strong: false,
   italic: false,
-  underline: false
+  underline: false,
+  variant: "default"
 };
 
 Title.propTypes = {
+  /**
+   * variant of text - danger/warning/success/default
+   */
+  variant: PropTypes.oneOf(["danger", "warning", "success", "default"]),
   /**
    * level style - h1/2/3/4/5
    */

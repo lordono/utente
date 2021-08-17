@@ -1,4 +1,5 @@
 import React from "react";
+import MobileLayout from "./MobileLayout";
 import { Button, Space, Text, List, Divider } from "../../lib/utente";
 
 const earningData = [
@@ -41,7 +42,11 @@ const EarningListItem = ({ data, index, style }) => {
         style={{ opacity: index === 0 ? 0 : 1 }}
       />
       <Space justify="space-around" align="start">
-        <Button style={{ width: 40, height: 40, fontSize: 18 }} flat selected>
+        <Button
+          style={{ width: 40, height: 40, fontSize: 18 }}
+          variant="fill"
+          selected
+        >
           <i className={item.icon} />
         </Button>
         <Space direction="vertical" align="start" size={5}>
@@ -52,7 +57,7 @@ const EarningListItem = ({ data, index, style }) => {
             {item.desc}
           </Text>
         </Space>
-        <Button shape="circle" style={{ width: 40, height: 40 }} flat>
+        <Button shape="circle" style={{ width: 40, height: 40 }} variant="fill">
           <i className="fas fa-arrow-right" />
         </Button>
       </Space>
@@ -69,13 +74,12 @@ export const EarningDemo = args => {
       full
       style={{ backgroundColor: "white" }}
     >
-      <div
+      <MobileLayout
         style={{
           backgroundColor: "#eee",
-          width: 300,
-          height: 550,
           padding: 20,
-          borderRadius: 15
+          width: 300,
+          height: 540
         }}
       >
         <Space justify="space-between" style={{ marginBottom: 60 }}>
@@ -103,7 +107,7 @@ export const EarningDemo = args => {
           component={EarningListItem}
           card
         />
-      </div>
+      </MobileLayout>
     </Space>
   );
 };

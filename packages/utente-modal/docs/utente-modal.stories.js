@@ -11,10 +11,8 @@ export default {
   },
   argTypes: {
     size: {
-      control: { type: "select", options: ["small", "medium", "large"] }
-    },
-    theme: {
-      control: { type: "select", options: ["light", "dark"] }
+      options: ["small", "medium", "large"],
+      control: { type: "select" }
     },
     className: {
       control: false
@@ -34,7 +32,7 @@ export const Primary = args => {
         width: "calc(100% - 6rem)",
         height: "calc(100% - 6rem)",
         padding: "3rem",
-        backgroundColor: args.theme === "dark" ? "#2c2f33" : "#eeeeee"
+        backgroundColor: "#eeeeee"
       }}
     >
       <div style={{ display: "flex", gap: 20 }}>
@@ -52,6 +50,5 @@ export const Primary = args => {
 };
 
 Primary.args = {
-  theme: "light",
   size: "medium"
 };

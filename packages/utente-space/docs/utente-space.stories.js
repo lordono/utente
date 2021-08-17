@@ -10,21 +10,23 @@ export default {
   },
   argTypes: {
     size: {
-      control: { type: "select", options: [8, 16, 24, 32, 40] }
+      options: [8, 16, 24, 32, 40],
+      control: { type: "select" }
     },
     direction: {
-      control: { type: "select", options: ["horizontal", "vertical"] }
+      options: ["horizontal", "vertical"],
+      control: { type: "select" }
     },
     align: {
+      options: ["start", "center", "end", "baseline"],
       control: {
-        type: "select",
-        options: ["start", "center", "end", "baseline"]
+        type: "select"
       }
     },
     justify: {
+      options: ["start", "center", "end", "space-between", "space-around"],
       control: {
-        type: "select",
-        options: ["start", "center", "end", "space-between", "space-around"]
+        type: "select"
       }
     },
     className: { control: false }

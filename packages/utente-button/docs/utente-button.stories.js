@@ -45,7 +45,7 @@ export const Primary = args => (
         Border
       </Button>
       <Button {...args} variant="border" shape="circle">
-        <i class="fas fa-calendar"></i>
+        <i className="fas fa-calendar"></i>
       </Button>
     </Space>
     <Theme color="#2c2f33" secondaryColor="#faad14">
@@ -60,7 +60,7 @@ export const Primary = args => (
           Border
         </Button>
         <Button {...args} variant="border" shape="circle">
-          <i class="fas fa-calendar"></i>
+          <i className="fas fa-calendar"></i>
         </Button>
       </Space>
     </Theme>

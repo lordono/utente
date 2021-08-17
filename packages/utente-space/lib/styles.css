@@ -46,7 +46,7 @@
 }
 
 .space.justify-end {
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .space.justify-space-between {

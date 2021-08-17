@@ -35,48 +35,54 @@ export const Uncontrolled = args => (
       <Checkbox
         {...args}
         size="small"
-        label="Apple"
         value="apple"
         onChange={e => console.log("apple", e.target.checked)}
-      />
+      >
+        Apple
+      </Checkbox>
       <Checkbox
         {...args}
         size="small"
-        label="Orange"
         value="orange"
         onChange={e => console.log("orange", e.target.checked)}
-      />
+      >
+        Orange
+      </Checkbox>
       <Checkbox
         {...args}
         size="small"
-        label="Pear"
         value="pear"
         onChange={e => console.log("pear", e.target.checked)}
-      />
+      >
+        Pear
+      </Checkbox>
     </Space>
     <Theme color="#2c2f33" intensity={0.2}>
       <Space size={20} style={{ padding: 20 }} colored>
         <Checkbox
           {...args}
           size="small"
-          label="Apple"
           value="apple"
           onChange={e => console.log("apple", e.target.checked)}
-        />
+        >
+          Apple
+        </Checkbox>
         <Checkbox
           {...args}
           size="small"
-          label="Orange"
           value="orange"
           onChange={e => console.log("orange", e.target.checked)}
-        />
+        >
+          Orange
+        </Checkbox>
         <Checkbox
           {...args}
           size="small"
-          label="Pear"
           value="pear"
           onChange={e => console.log("pear", e.target.checked)}
-        />
+        >
+          Pear
+        </Checkbox>
       </Space>
     </Theme>
   </div>
@@ -114,30 +120,33 @@ export const Controlled = args => {
           <Checkbox
             {...args}
             size="small"
-            label="Apple"
             value="apple"
             checked={check1}
             onClick={() => setCheck1(e => !e)}
             onChange={e => console.log(e.target.checked)}
-          />
+          >
+            Apple
+          </Checkbox>
           <Checkbox
             {...args}
             size="small"
-            label="Orange"
             value="orange"
             checked={check2}
             onClick={() => setCheck2(e => !e)}
             onChange={e => console.log(e.target.checked)}
-          />
+          >
+            Orange
+          </Checkbox>
           <Checkbox
             {...args}
             size="small"
-            label="Pear"
             value="pear"
             checked={check3}
             onClick={() => setCheck3(e => !e)}
             onChange={e => console.log(e.target.checked)}
-          />
+          >
+            Pear
+          </Checkbox>
         </Space>
       </Space>
     </div>

@@ -10,8 +10,9 @@ export default {
     componentSubtitle: "A table displays rows of data."
   },
   argTypes: {
-    theme: {
-      control: { type: "select", options: ["light", "dark"] }
+    variant: {
+      options: ["fill", "border", "shadow"],
+      control: { type: "select" }
     },
     className: { control: false },
     columns: { control: false },
@@ -19,7 +20,7 @@ export default {
   }
 };
 
-const CardWrapper = ({ theme, style, children }) => (
+const CardWrapper = ({ style, children }) => (
   <div
     style={{
       height: "calc(100% - 30px)",
@@ -28,7 +29,7 @@ const CardWrapper = ({ theme, style, children }) => (
       justifyContent: "center",
       alignItems: "center",
       gap: 30,
-      backgroundColor: theme === "dark" ? "#2c2f33" : "#eeeeee",
+      backgroundColor: "#eeeeee",
       ...style
     }}
   >
@@ -40,7 +41,7 @@ export const Simple = args => {
   const data = React.useMemo(() => simple_data, [simple_data]);
   const columns = React.useMemo(() => simple_col, [simple_col]);
   return (
-    <CardWrapper theme={args.theme}>
+    <CardWrapper>
       <Table
         {...args}
         data={data}
@@ -51,5 +52,5 @@ export const Simple = args => {
   );
 };
 Simple.args = {
-  theme: "light"
+  variant: "shadow"
 };

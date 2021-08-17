@@ -10,8 +10,8 @@ import styles from "./styles.scss";
 const Checkbox = React.forwardRef((props, ref) => {
   const {
     className,
+    children,
     checked,
-    label,
     value,
     variant,
     onChange,
@@ -42,12 +42,12 @@ const Checkbox = React.forwardRef((props, ref) => {
 
   return (
     <label className={classes} {...rest}>
-      {label}
+      {children}
       <input
         ref={ref}
         type="checkbox"
         value={value}
-        label={label}
+        label={value}
         onClick={clickInput}
         className={styles.input}
         checked={finalChecked}
@@ -61,7 +61,6 @@ const Checkbox = React.forwardRef((props, ref) => {
 });
 
 Checkbox.defaultProps = {
-  variant: "fill",
   checked: null
 };
 
@@ -70,10 +69,6 @@ Checkbox.propTypes = {
    * type of element - shadow/fill/border
    */
   variant: PropTypes.oneOf(["shadow", "fill", "border"]),
-  /**
-   * label of checkbox
-   */
-  label: PropTypes.string,
   /**
    * value of checkbox
    */

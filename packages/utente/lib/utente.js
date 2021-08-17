@@ -1,7 +1,7 @@
 "use strict";
 import { Button } from "@lieinapril/utente-button";
 import { Card } from "@lieinapril/utente-card";
-import { Text } from "@lieinapril/utente-text";
+import { Text, Paragraph, Title } from "@lieinapril/utente-text";
 import { Input } from "@lieinapril/utente-input";
 import { Checkbox } from "@lieinapril/utente-checkbox";
 import { Radio } from "@lieinapril/utente-radio";
@@ -15,11 +15,14 @@ import { Space } from "@lieinapril/utente-space";
 import { Divider } from "@lieinapril/utente-divider";
 import { Table } from "@lieinapril/utente-table";
 import { List, ListItem } from "@lieinapril/utente-list";
+import { Menu, MenuItem } from "@lieinapril/utente-menu";
 import { Theme } from "@lieinapril/utente-theme";
 
 export {
   Button,
   Text,
+  Paragraph,
+  Title,
   Card,
   Input,
   Checkbox,
@@ -37,5 +40,7 @@ export {
   Table,
   List,
   ListItem,
+  Menu,
+  MenuItem,
   Theme
 };

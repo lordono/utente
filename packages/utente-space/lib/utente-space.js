@@ -17,13 +17,16 @@ const Space = ({
   justify,
   wrap,
   className,
+  px,
+  py,
+  w100,
+  h100,
   style,
   ...rest
 }) => {
   const classes = cx(
     styles.space,
     colored && styles.colored,
-    full && styles.full,
     direction === "vertical" && styles.vertical,
     wrap && styles.wrap,
     justify && styles[`justify-${justify}`],
@@ -31,14 +34,16 @@ const Space = ({
     className
   );
 
-  const sizeStyle = size
-    ? {
-        gap: size
-      }
-    : {};
+  const sizeStyle = size ? { gap: size } : {};
+  const padStyle = { padding: `${py}px ${px}px` };
+  const fullStyle = {};
+  if (full || w100) fullStyle.width = `calc(100% - ${px * 2}px)`;
+  if (full || h100) fullStyle.height = `calc(100% - ${py * 2}px)`;
 
   const spaceStyle = {
     ...sizeStyle,
+    ...padStyle,
+    ...fullStyle,
     ...style
   };
 
@@ -55,7 +60,11 @@ Space.defaultProps = {
   align: "center",
   justify: "start",
   wrap: false,
-  full: false
+  full: false,
+  px: 0,
+  py: 0,
+  w100: false,
+  h100: false
 };
 
 Space.propTypes = {

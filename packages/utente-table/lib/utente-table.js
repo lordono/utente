@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useTable } from "react-table";
 import cx from "clsx";
-import styles from "./styles.css";
+import styles from "./styles.scss";
 
 /**
  * ## When to use
@@ -15,7 +15,7 @@ import styles from "./styles.css";
  * - `columns` should be an array with `accessor` key being the column
  * - Refer to [react-table](https://react-table.tanstack.com/) for more information.
  */
-const Table = ({ theme, columns, data, className, children, ...rest }) => {
+const Table = ({ variant, columns, data, className, children, ...rest }) => {
   const {
     getTableProps,
     getTableBodyProps,
@@ -26,7 +26,9 @@ const Table = ({ theme, columns, data, className, children, ...rest }) => {
 
   const tableClasses = cx(
     styles.table,
-    theme === "dark" && styles.dark,
+    variant === "fill" && styles.filled,
+    variant === "shadow" && styles.shadowed,
+    variant === "border" && styles.bordered,
     className
   );
 
@@ -74,16 +76,16 @@ const Table = ({ theme, columns, data, className, children, ...rest }) => {
 };
 
 Table.defaultProps = {
-  theme: "light",
+  variant: "border",
   columns: [],
   data: []
 };
 
 Table.propTypes = {
   /**
-   * color theme
+   * type of element - shadow/fill/border
    */
-  theme: PropTypes.oneOf(["light", "dark"]),
+  variant: PropTypes.oneOf(["shadow", "fill", "border"]),
   /**
    * column data
    */

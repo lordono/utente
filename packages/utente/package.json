@@ -32,6 +32,7 @@
     "@lieinapril/utente-divider": "^0.5.0",
     "@lieinapril/utente-input": "^0.5.0",
     "@lieinapril/utente-list": "^0.5.0",
+    "@lieinapril/utente-menu": "^0.5.0",
     "@lieinapril/utente-modal": "^0.5.0",
     "@lieinapril/utente-radio": "^0.5.0",
     "@lieinapril/utente-space": "^0.5.0",
@@ -45,6 +46,7 @@
     "react-is": "^17.0.2"
   },
   "devDependencies": {
-    "@lieinapril/utente-builder": "^0.5.0"
+    "@lieinapril/utente-builder": "^0.5.0",
+    "date-fns": "^2.23.0"
   }
 }

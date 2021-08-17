@@ -21,7 +21,8 @@ export default {
     mark: { control: false },
     strong: { control: false },
     italic: { control: false },
-    underline: { control: false }
+    underline: { control: false },
+    variant: { control: false }
   }
 };
 
@@ -69,6 +70,15 @@ export const Primary = args => (
         <Text {...args} deleted>
           Deleted Text
         </Text>
+        <Text {...args} variant="danger">
+          Danger
+        </Text>
+        <Text {...args} variant="warning">
+          Warning
+        </Text>
+        <Text {...args} variant="success">
+          Success
+        </Text>
       </Space>
       <Theme color="#2c2f33">
         <Space
@@ -103,6 +113,15 @@ export const Primary = args => (
           </Text>
           <Text {...args} deleted>
             Deleted Text
+          </Text>
+          <Text {...args} variant="danger">
+            Danger
+          </Text>
+          <Text {...args} variant="warning">
+            Warning
+          </Text>
+          <Text {...args} variant="success">
+            Success
           </Text>
         </Space>
       </Theme>

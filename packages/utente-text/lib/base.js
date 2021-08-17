@@ -7,6 +7,7 @@ import styles from "./styles.scss";
  */
 const Base = props => {
   const {
+    variant,
     component,
     code,
     deleted,
@@ -18,6 +19,7 @@ const Base = props => {
     italic,
     underline,
     className,
+    muted,
     style,
     ref,
     children,
@@ -52,7 +54,14 @@ const Base = props => {
 
   textNode = wrapperDecorations(props, textNode);
 
-  const classes = cx(styles.utente_typography, className);
+  const classes = cx(
+    styles.utente_typography,
+    variant === "danger" && styles.danger,
+    variant === "warning" && styles.warning,
+    variant === "success" && styles.success,
+    muted && styles.muted,
+    className
+  );
 
   return React.createElement(
     component,

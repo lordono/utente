@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import cx from "clsx";
-import styles from "./styles.css";
+import styles from "./styles.scss";
 
 /**
  * When requiring users to interact with the application, but without jumping to a new page
@@ -9,21 +9,9 @@ import styles from "./styles.css";
  * over the current page to get user feedback or display information.
  */
 const Modal = React.forwardRef((props, ref) => {
-  const {
-    children,
-    className,
-    onCancel,
-    onOk,
-    visible,
-    size,
-    theme,
-    ...rest
-  } = props;
+  const { children, className, onCancel, onOk, visible, size, ...rest } = props;
 
-  const commonClasses = [
-    visible && styles.visible,
-    theme === "dark" && styles.dark
-  ];
+  const commonClasses = [visible && styles.visible];
   const maskClasses = cx(styles.modal_mask, commonClasses);
   const wrapClasses = cx(styles.modal_wrap, commonClasses);
   const classes = cx(
@@ -45,22 +33,15 @@ const Modal = React.forwardRef((props, ref) => {
   );
 });
 
-const { oneOf } = PropTypes;
-
 Modal.defaultProps = {
-  theme: "light",
   size: "medium"
 };
 
 Modal.propTypes = {
   /**
-   * color theme
-   */
-  theme: oneOf(["light", "dark"]),
-  /**
    * size of the modal
    */
-  size: oneOf(["small", "medium", "large"]),
+  size: PropTypes.oneOf(["small", "medium", "large"]),
   /**
    * state of modal's visibility
    */

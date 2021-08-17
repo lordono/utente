@@ -39,6 +39,7 @@
     "react": "17.x"
   },
   "dependencies": {
+    "@ctrl/tinycolor": "^3.4.0",
     "clsx": "^1.1.1"
   }
 }

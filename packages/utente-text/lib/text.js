@@ -20,10 +20,15 @@ Text.defaultProps = {
   mark: false,
   strong: false,
   italic: false,
-  underline: false
+  underline: false,
+  variant: "default"
 };
 
 Text.propTypes = {
+  /**
+   * variant of text - danger/warning/success/default
+   */
+  variant: PropTypes.oneOf(["danger", "warning", "success", "default"]),
   /**
    * code style
    */

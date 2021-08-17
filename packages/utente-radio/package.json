@@ -41,6 +41,7 @@
     "react": "17.x"
   },
   "dependencies": {
-    "clsx": "^1.1.1"
+    "clsx": "^1.1.1",
+    "nanoid": "^3.1.23"
   }
 }

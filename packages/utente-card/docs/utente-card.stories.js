@@ -59,7 +59,6 @@ export const Simple = args => (
 
 Simple.args = {
   variant: "fill",
-  color: "#eeeeee",
   hoverable: false,
   padded: true
 };
@@ -101,7 +100,6 @@ export const Multiple = args => (
 
 Multiple.args = {
   variant: "fill",
-  color: "#eeeeee",
   hoverable: false,
   padded: true,
   cover: "Headphone Image"

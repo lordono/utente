@@ -7,14 +7,13 @@ import styles from "./styles.scss";
  * - Used to select a single state from multiple options.
  * - The difference from `Select` is that `Radio` is visible to the user and can facilitate the comparison of choice, which means there shouldn't be too many of them.
  */
-const Radio = React.forwardRef((props, ref) => {
+const Radio = props => {
   const {
+    children,
     className,
     checked,
-    label,
     name,
     value,
-    size,
     variant,
     onClick,
     onChange,
@@ -26,16 +25,14 @@ const Radio = React.forwardRef((props, ref) => {
     variant === "fill" && styles.filled,
     variant === "shadow" && styles.shadowed,
     variant === "border" && styles.bordered,
-    size && styles[size],
     focus && styles.focus,
     className
   );
 
   return (
     <label className={classes} {...rest}>
-      {label}
+      {children}
       <input
-        ref={ref}
         type="radio"
         checked={checked}
         name={name}
@@ -48,9 +45,7 @@ const Radio = React.forwardRef((props, ref) => {
       </span>
     </label>
   );
-});
-
-const { oneOf } = PropTypes;
+};
 
 Radio.defaultProps = {
   variant: "fill",
@@ -63,17 +58,9 @@ Radio.propTypes = {
    */
   variant: PropTypes.oneOf(["shadow", "fill", "border"]),
   /**
-   * size of the element
-   */
-  size: oneOf(["small", "medium", "large"]),
-  /**
    * name of element group
    */
   name: PropTypes.string,
-  /**
-   * label of element input
-   */
-  label: PropTypes.string,
   /**
    * value of element input
    */

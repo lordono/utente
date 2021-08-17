@@ -22,6 +22,7 @@ const Panel = React.forwardRef((props, ref) => {
     theme === "dark" && styles.dark,
     className
   );
+
   return (
     <div {...rest} ref={ref} className={classes}>
       {idx !== 0 && <Divider margin={0} size={separator_size} theme={theme} />}

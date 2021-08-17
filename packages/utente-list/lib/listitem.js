@@ -43,7 +43,12 @@ const ListItem = ({ data, index, style }) => {
         )}
         <div className={styles.listitem_content}>
           {avatarSrc && (
-            <Avatar theme={theme} shape="circle" src={item.avatar} />
+            <Avatar
+              theme={theme}
+              variant="shadow"
+              shape="circle"
+              src={item.avatar}
+            />
           )}
           <div className={styles.listitem_words}>
             <div className={styles.listitem_title}>{item.title}</div>

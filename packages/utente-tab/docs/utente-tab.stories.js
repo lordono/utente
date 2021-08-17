@@ -11,7 +11,8 @@ export default {
   },
   argTypes: {
     theme: {
-      control: { type: "select", options: ["light", "dark"] }
+      options: ["light", "dark"],
+      control: { type: "select" }
     },
     className: {
       control: false

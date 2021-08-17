@@ -35,10 +35,10 @@ export const SelectionDemo = args => {
               style={{ width: "100%" }}
             >
               <Button {...iconProps}>
-                <i class="fas fa-cog"></i>
+                <i className="fas fa-cog"></i>
               </Button>
               <Button {...iconProps}>
-                <i class="fas fa-ellipsis-v"></i>
+                <i className="fas fa-ellipsis-v"></i>
               </Button>
             </Space>
             <Text strong>Tracktime</Text>
@@ -47,7 +47,7 @@ export const SelectionDemo = args => {
         </Theme>
         <Space justify="center" style={{ width: "100%", height: 250 }}>
           <Avatar
-            icon={<i class="fas fa-pause"></i>}
+            icon={<i className="fas fa-pause"></i>}
             variant="shadow"
             style={{ width: 100, height: 100 }}
             shape="circle"
