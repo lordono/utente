@@ -1,0 +1,168 @@
+:root {
+  --distance: 5px;
+  --textColor: #001f3f;
+  --textColorOpposite: #f6f5f7;
+  --colorDanger: #f5222d;
+  --colorWarning: #fa8c16;
+  --colorSuccess: #52c41a;
+  --baseColor: #eeeeee;
+  --transBaseColor: #eeeeee95;
+  --muteColor: #cfcfcf;
+  --secondaryColor1: #e6f7ff;
+  --secondaryColor2: #bae7ff;
+  --secondaryColor3: #91d5ff;
+  --secondaryColor4: #69c0ff;
+  --secondaryColor5: #40a9ff;
+  --secondaryColor: #1890ff;
+  --secondaryColor7: #096dd9;
+  --secondaryColor8: #0050b3;
+  --secondaryColor9: #003a8c;
+  --secondaryColor10: #002766;
+  --secondaryTextColor: #f6f5f7;
+  --darkColor: #cfcfcf;
+  --firstGradientColor: #ffffff;
+  --lightColor: #ffffff;
+  --secondGradientColor: #d6d6d6;
+  --angle: 145deg;
+  --blur: calc(2 * var(--distance));
+  --positionX: var(--distance);
+  --positionXOpposite: calc(-1 * var(--distance));
+  --positionY: var(--distance);
+  --positionYOpposite: calc(-1 * var(--distance));
+}
+
+.stepitem {
+  flex: 1;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s, background-color 0.3s, box-shadow 0.4s;
+
+  &:last-child {
+    flex: none;
+  }
+
+  & .stepitem_icon {
+    margin-right: 10px;
+  }
+
+  & .stepitem_object,
+  & .stepitem_icon {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  &.filled {
+    background-color: var(--baseColor);
+
+    &.active {
+      background-color: var(--secondaryColor1);
+      color: var(--secondaryColor);
+    }
+  }
+
+  &.shadowed {
+    margin: 10px;
+    border-radius: 10px;
+    &.active {
+      color: var(--secondaryColor);
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0),
+        inset var(--positionX) var(--positionY) var(--blur) var(--darkColor),
+        inset var(--positionXOpposite) var(--positionYOpposite) var(--blur)
+          var(--lightColor);
+    }
+  }
+
+  & .stepitem_content {
+    display: inline-block;
+  }
+
+  &.horizontal {
+    padding-left: var(--halfStepSize);
+
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+
+  &.vertical {
+    min-height: calc(2 * var(--stepSize));
+    padding: 0;
+
+    &:last-child {
+      & .stepitem_tail {
+        display: none;
+      }
+    }
+
+    & .stepitem_tail {
+      position: absolute;
+      top: calc(var(--stepSize) + 6px);
+      left: calc(var(--halfStepSize) + 1px);
+      width: 2px;
+      height: calc(100% - var(--stepSize) - 8px);
+      background-color: var(--muteColor);
+    }
+
+    &.finish {
+      & .stepitem_tail {
+        background-color: var(--secondaryColor);
+      }
+    }
+  }
+
+  &.horizontal {
+    & .stepitem_tail {
+      display: none;
+    }
+    &:last-child {
+      & .stepitem_title:after {
+        display: none;
+      }
+    }
+
+    &.finish {
+      & .stepitem_title:after {
+        background-color: var(--secondaryColor);
+      }
+    }
+
+    & .stepitem_title:after {
+      position: absolute;
+      top: var(--halfStepSize);
+      left: 100%;
+      display: block;
+      width: 9999px;
+      height: 1px;
+      background-color: var(--muteColor);
+      content: "";
+    }
+  }
+
+  & .stepitem_title {
+    position: relative;
+    display: inline-block;
+    line-height: var(--stepSize);
+    font-size: var(--stepFontSize);
+    padding-right: var(--stepFontSize);
+  }
+}
+
+.stepwrapper {
+  width: 100%;
+  min-width: 250px;
+  display: flex;
+
+  &.horizontal {
+    justify-content: space-between;
+  }
+
+  &.vertical {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &.filled {
+    background-color: var(--baseColor);
+  }
+}

@@ -13,7 +13,6 @@ const MenuItem = props => {
     className,
     active,
     icon,
-    theme,
     changeKey,
     ...rest
   } = props;
@@ -42,15 +41,9 @@ const MenuItem = props => {
   );
 };
 
-MenuItem.defaultProps = {
-  theme: "light"
-};
+MenuItem.defaultProps = {};
 
 MenuItem.propTypes = {
-  /**
-   * color theme
-   */
-  theme: PropTypes.oneOf(["light", "dark"]),
   /**
    * additional styles for tab
    */

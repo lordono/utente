@@ -3,6 +3,7 @@
 import { Button, Space, Text } from "../lib/utente";
 import { Story, Canvas, Meta } from "@storybook/addon-docs";
 import { RedditDemo } from "./examples/RedditDemo/RedditDemo.js";
+import { RedditPageDemo } from "./examples/RedditPageDemo/RedditPageDemo.js";
 
 <Meta title="Web" />
 
@@ -17,6 +18,28 @@ Some of the basic components such as `Space`, `List`, `Button`, `Text` allow us 
 <Canvas>
   <Story
     story={RedditDemo}
+    decorators={[
+      storyFn => (
+        <div
+          style={{
+            transform: "scale(1)",
+            height: "100vh"
+          }}
+        >
+          {storyFn()}
+        </div>
+      )
+    ]}
+  />
+</Canvas>
+
+## 2. RedditPage
+
+Some of the basic components such as `Space`, `List`, `Button`, `Text` allow us to customize further using `style`.
+
+<Canvas>
+  <Story
+    story={RedditPageDemo}
     decorators={[
       storyFn => (
         <div

@@ -16,6 +16,7 @@ import { Divider } from "@lieinapril/utente-divider";
 import { Table } from "@lieinapril/utente-table";
 import { List, ListItem } from "@lieinapril/utente-list";
 import { Menu, MenuItem } from "@lieinapril/utente-menu";
+import { Steps, Step } from "@lieinapril/utente-steps";
 import { Theme } from "@lieinapril/utente-theme";
 
 export {
@@ -42,5 +43,7 @@ export {
   ListItem,
   Menu,
   MenuItem,
+  Steps,
+  Step,
   Theme
 };

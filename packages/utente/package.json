@@ -36,6 +36,7 @@
     "@lieinapril/utente-modal": "^0.6.0",
     "@lieinapril/utente-radio": "^0.6.0",
     "@lieinapril/utente-space": "^0.6.0",
+    "@lieinapril/utente-steps": "^0.6.0",
     "@lieinapril/utente-switch": "^0.6.0",
     "@lieinapril/utente-tab": "^0.6.0",
     "@lieinapril/utente-table": "^0.6.0",

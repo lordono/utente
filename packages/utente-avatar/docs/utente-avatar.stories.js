@@ -15,9 +15,6 @@ export default {
   },
   argTypes: {
     variant: { control: false },
-    size: {
-      control: { type: "select", options: ["small", "medium", "large"] }
-    },
     shape: {
       control: { type: "select", options: ["square", "circle"] }
     },
@@ -85,7 +82,7 @@ export const Primary = args => (
 Primary.args = {
   variant: "shadow",
   surface: "normal",
-  size: "medium",
+  width: 58,
   shape: "square",
   indented: false
 };

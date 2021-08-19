@@ -14,9 +14,11 @@ const Avatar = React.forwardRef((props, ref) => {
     src,
     icon,
     shape,
+    muted,
+    width,
     indented,
     surface,
-    size,
+    style,
     variant,
     ...rest
   } = props;
@@ -24,12 +26,12 @@ const Avatar = React.forwardRef((props, ref) => {
     styles.avatar,
     shape === "circle" && styles.circle,
     indented && styles.indented,
+    muted && styles.muted,
     variant === "fill" && styles.filled,
     variant === "shadow" && styles.shadowed,
     variant === "border" && styles.bordered,
     surface === "convex" && styles.convex,
     surface === "concave" && styles.concave,
-    size && styles[size],
     className
   );
   let rendered = null;
@@ -40,8 +42,17 @@ const Avatar = React.forwardRef((props, ref) => {
   } else if (icon) {
     rendered = icon;
   }
+
+  const avatarStyles = {
+    width: width,
+    height: width,
+    borderWidth: width / 14.5,
+    fontSize: width / 2.42,
+    ...style
+  };
+
   return (
-    <div {...rest} ref={ref} className={classes}>
+    <div {...rest} ref={ref} className={classes} style={avatarStyles}>
       {rendered}
     </div>
   );
@@ -49,10 +60,12 @@ const Avatar = React.forwardRef((props, ref) => {
 
 Avatar.defaultProps = {
   variant: "fill",
-  size: "medium",
+  width: 58,
   indented: false,
   shape: "square",
-  surface: "normal"
+  surface: "normal",
+  muted: false,
+  style: {}
 };
 
 Avatar.propTypes = {
@@ -61,9 +74,13 @@ Avatar.propTypes = {
    */
   variant: PropTypes.oneOf(["shadow", "fill", "border"]),
   /**
-   * size of the Avatar
+   * width of the Avatar
    */
-  size: PropTypes.oneOf(["small", "medium", "large"]),
+  width: PropTypes.number,
+  /**
+   * mute boolean
+   */
+  muted: PropTypes.bool,
   /**
    * element surface
    */

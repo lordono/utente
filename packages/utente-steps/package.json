@@ -1,0 +1,47 @@
+{
+  "name": "@lieinapril/utente-steps",
+  "version": "0.6.0",
+  "description": "Steps is a navigation bar that guides users through the steps of a task.",
+  "keywords": [],
+  "author": "Seow Jun Liang <seowjunliang@gmail.com>",
+  "license": "ISC",
+  "main": "dist/utente-steps.cjs.js",
+  "module": "dist/utente-steps.esm.js",
+  "src": "lib/utente-steps.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lordono/utente.git"
+  },
+  "scripts": {
+    "build": "utente-builder",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/lordono/utente/issues"
+  },
+  "homepage": "https://github.com/lordono/utente#readme",
+  "devDependencies": {
+    "@lieinapril/utente-builder": "^0.6.0",
+    "@lieinapril/utente-theme": "^0.6.0",
+    "react": "^17.0.2"
+  },
+  "peerDependencies": {
+    "react": "17.x"
+  },
+  "dependencies": {
+    "@lieinapril/utente-avatar": "^0.6.0",
+    "@lieinapril/utente-space": "^0.6.0",
+    "clsx": "^1.1.1"
+  }
+}

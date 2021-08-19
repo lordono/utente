@@ -1,5 +1,6 @@
 import React from "react";
-import { Card, Menu, MenuItem, Text } from "../../../lib/utente";
+import { Card } from "@lieinapril/utente-card";
+import { Menu, MenuItem } from "@lieinapril/utente-menu";
 
 export const RedditGroup = () => {
   return (

@@ -74,6 +74,8 @@ export const redditData = [
   {
     index: 1,
     avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+    img:
+      "https://images.unsplash.com/photo-1551739440-5dd934d3a94a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
     name: "u/lordono",
     title: "Project Title 1",
     subreddit: "r/machinelearning",
@@ -96,6 +98,8 @@ export const redditData = [
   {
     index: 2,
     avatar: "https://randomuser.me/api/portraits/women/63.jpg",
+    img:
+      "https://images.unsplash.com/photo-1551739440-5dd934d3a94a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
     name: "u/lordono",
     title: "Project Title 2",
     subreddit: "r/machinelearning",
@@ -118,6 +122,8 @@ export const redditData = [
   {
     index: 3,
     avatar: "https://randomuser.me/api/portraits/men/97.jpg",
+    img:
+      "https://images.unsplash.com/photo-1551739440-5dd934d3a94a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
     name: "u/lordono",
     title: "Project Title 3",
     subreddit: "r/machinelearning",
@@ -140,6 +146,8 @@ export const redditData = [
   {
     index: 4,
     avatar: "https://randomuser.me/api/portraits/women/40.jpg",
+    img:
+      "https://images.unsplash.com/photo-1551739440-5dd934d3a94a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
     name: "u/lordono",
     title: "Project Title 4",
     subreddit: "r/machinelearning",
@@ -162,6 +170,8 @@ export const redditData = [
   {
     index: 5,
     avatar: "https://randomuser.me/api/portraits/women/10.jpg",
+    img:
+      "https://images.unsplash.com/photo-1551739440-5dd934d3a94a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
     name: "u/lordono",
     title: "Project Title 5",
     subreddit: "r/machinelearning",

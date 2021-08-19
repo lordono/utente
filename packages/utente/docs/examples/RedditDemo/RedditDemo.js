@@ -1,25 +1,14 @@
 import React from "react";
-import { Button, Space, Theme, Input } from "../../../lib/utente";
+import { Button } from "@lieinapril/utente-button";
+import { Space } from "@lieinapril/utente-space";
+import { Theme } from "@lieinapril/utente-theme";
+
 import { RedditCard } from "./RedditCard";
-import { redditData } from "./data";
-import styles from "./styles.css";
 import { RedditGroup } from "./RedditGroup";
 import { RedditModal } from "./RedditModal";
-
-const Logo = () => (
-  <Space
-    justify="center"
-    align="center"
-    style={{
-      height: 40,
-      width: 80,
-      backgroundColor: "#595959",
-      color: "white"
-    }}
-  >
-    Logo
-  </Space>
-);
+import { redditData } from "../Reddit/data";
+import styles from "./styles.css";
+import { RedditNav } from "../Reddit/RedditNav";
 
 export const RedditDemo = () => {
   const [selectedItem, setSelectedItem] = React.useState(redditData[0]);
@@ -40,31 +29,7 @@ export const RedditDemo = () => {
           colored
           className={styles.redditlayout}
         >
-          {/* header */}
-          <Space
-            justify="space-between"
-            align="center"
-            colored
-            w100
-            px={20}
-            py={5}
-            className={styles.redditheader}
-          >
-            <Logo />
-            <Input
-              placeholder="Search Bold Bets"
-              style={{ width: 300 }}
-              size="small"
-              prefix={<i className="fas fa-search"></i>}
-              onChange={() => null}
-            />
-            <Space>
-              <Button size="small" variant="border">
-                Login
-              </Button>
-            </Space>
-          </Space>
-
+          <RedditNav />
           {/* content */}
           <Space align="start">
             <Space

@@ -1,0 +1,22 @@
+.statcard .title {
+  font-size: 0.75rem;
+}
+
+.statcard .stat {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.statcard .icon {
+  font-size: 0.7rem;
+}
+
+.statcard .more {
+  font-size: 0.65rem;
+  font-weight: 600;
+}
+
+.profiletitle {
+  font-size: 1.25rem;
+  font-weight: 800;
+}

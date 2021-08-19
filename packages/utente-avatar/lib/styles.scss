@@ -50,11 +50,20 @@
   &.filled {
     color: var(--secondaryTextColor);
     background-color: var(--secondaryColor);
+
+    &.muted {
+      color: var(--textColor);
+      background-color: var(--muteColor);
+    }
   }
 
   &.bordered {
     border-color: var(--secondaryColor);
     background-color: var(--baseColor);
+
+    &.muted {
+      border-color: var(--muteColor);
+    }
   }
 
   &.shadowed {
@@ -64,6 +73,10 @@
       var(--positionXOpposite) var(--positionYOpposite) var(--blur)
         var(--lightColor),
       inset 0 0 0 rgba(0, 0, 0, 0), inset 0 0 0 rgba(0, 0, 0, 0);
+
+    &.muted {
+      color: var(--muteColor);
+    }
 
     &.concave {
       background: linear-gradient(
@@ -81,7 +94,8 @@
       );
     }
 
-    &.indented {
+    &.indented,
+    &.muted {
       box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0),
         inset var(--positionX) var(--positionY) var(--blur) var(--darkColor),
         inset var(--positionXOpposite) var(--positionYOpposite) var(--blur)
@@ -108,25 +122,5 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-
-  &.medium {
-    height: 58px;
-    width: 58px;
-    font-size: 24px;
-  }
-
-  &.small {
-    height: 38px;
-    width: 38px;
-    font-size: 20px;
-    border-width: 3px;
-  }
-
-  &.large {
-    height: 78px;
-    width: 78px;
-    font-size: 28px;
-    font-weight: 600;
   }
 }
