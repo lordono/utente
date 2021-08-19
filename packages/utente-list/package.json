@@ -1,6 +1,6 @@
 {
   "name": "@lieinapril/utente-list",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Neumorphism - Simple List.",
   "keywords": [],
   "author": "Seow Jun Liang <seowjunliang@gmail.com>",
@@ -39,7 +39,7 @@
     "react": "17.x"
   },
   "dependencies": {
-    "@lieinapril/utente-avatar": "^0.6.0",
+    "@lieinapril/utente-avatar": "^0.6.1",
     "@lieinapril/utente-divider": "^0.6.0",
     "clsx": "^1.1.1",
     "react-virtualized-auto-sizer": "^1.0.5",
