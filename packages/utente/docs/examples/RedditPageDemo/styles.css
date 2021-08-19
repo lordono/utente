@@ -63,3 +63,14 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.redditimage {
+  width: 500px;
+  height: 300px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.reddit_comments {
+  padding: 20px 0;
+}

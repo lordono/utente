@@ -8,8 +8,11 @@ const ArrowIcon = props => (
   </div>
 );
 
-export const RedditVote = () => (
-  <Space direction="vertical" justify="center">
+export const RedditVote = props => (
+  <Space
+    direction={props.direction === "horizontal" ? "horizontal" : "vertical"}
+    justify="center"
+  >
     <ArrowIcon icon="up" />
     <Text style={{ fontSize: 12 }}>10k</Text>
     <ArrowIcon icon="down" />

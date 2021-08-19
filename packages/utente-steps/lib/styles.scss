@@ -80,6 +80,10 @@
   &.horizontal {
     padding-left: var(--halfStepSize);
 
+    &.shadowed {
+      padding-bottom: calc(var(--distance) * 2);
+    }
+
     &:first-child {
       padding-left: 0;
     }

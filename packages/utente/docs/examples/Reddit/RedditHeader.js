@@ -18,9 +18,11 @@ export const RedditHeader = props => (
       src={props.item.avatar}
       style={{ width: 20, height: 20 }}
     />
-    <Text style={titleStyle} strong>
-      {props.item.title}
-    </Text>
+    {!props.omit && (
+      <Text style={titleStyle} strong>
+        {props.item.title}
+      </Text>
+    )}
     <Text style={dateStyle}>
       Posted by {props.item.name} {formatDistance(props.item.date, currentDate)}{" "}
       ago
