@@ -21,6 +21,7 @@
 
 .space {
   display: flex;
+  box-sizing: border-box;
 }
 
 .space.wrap {

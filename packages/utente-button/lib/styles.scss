@@ -34,6 +34,7 @@
 .button {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,11 +60,11 @@
 
     &:hover {
       transform: scale(1.05);
-      background-color: var(--lightSecondary);
+      background-color: var(--secondaryColor4);
     }
 
     &.selected {
-      background-color: var(--lightSecondary);
+      background-color: var(--secondaryColor4);
     }
   }
 

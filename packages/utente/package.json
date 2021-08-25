@@ -31,6 +31,7 @@
     "@lieinapril/utente-collapse": "^0.6.0",
     "@lieinapril/utente-divider": "^0.6.0",
     "@lieinapril/utente-input": "^0.6.0",
+    "@lieinapril/utente-layout": "^0.6.1",
     "@lieinapril/utente-list": "^0.6.1",
     "@lieinapril/utente-menu": "^0.6.1",
     "@lieinapril/utente-modal": "^0.6.0",

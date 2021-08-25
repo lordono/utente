@@ -32,11 +32,16 @@
 }
 
 .stepitem {
+  box-sizing: border-box;
   flex: 1;
   display: inline-block;
   position: relative;
   overflow: hidden;
   transition: color 0.3s, background-color 0.3s, box-shadow 0.4s;
+
+  & * {
+    box-sizing: border-box;
+  }
 
   &:last-child {
     flex: none;
@@ -155,6 +160,7 @@
 .stepwrapper {
   width: 100%;
   min-width: 250px;
+  box-sizing: border-box;
   display: flex;
 
   &.horizontal {

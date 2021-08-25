@@ -32,6 +32,7 @@
 }
 
 .switch_container {
+  box-sizing: border-box;
   position: relative;
   padding-left: 48px;
   display: block;
@@ -41,6 +42,10 @@
   color: var(--textColor);
   cursor: pointer;
   user-select: none;
+
+  & * {
+    box-sizing: border-box;
+  }
 
   /* Hide the browser's default checkbox */
   & input {
@@ -101,8 +106,6 @@
     border-color: var(--textColor);
 
     & .circlemark {
-      height: 21px;
-      width: 21px;
       border: 2px solid var(--textColor);
       background-color: var(--baseColor);
     }

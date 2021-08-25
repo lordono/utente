@@ -34,6 +34,7 @@
 .tag {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -108,19 +109,19 @@
   &.medium {
     font-size: 14px;
     padding: 5px 10px;
-    height: 15px;
+    height: 25px;
   }
 
   &.small {
     font-size: 12px;
     padding: 2.5px 5px;
-    height: 15px;
+    height: 20px;
   }
 
   &.large {
     font-size: 16px;
     padding: 7.5px 12.5px;
-    height: 15px;
+    height: 30px;
   }
 }
 

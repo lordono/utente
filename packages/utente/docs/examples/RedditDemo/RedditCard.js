@@ -10,10 +10,10 @@ import { RedditFooter } from "../Reddit/RedditFooter";
 import styles from "./styles.css";
 
 export const RedditCard = props => {
-  const { item, onBtnModal } = props;
+  const { item } = props;
 
   const cardStyle = {
-    width: "calc(100% - 40px)",
+    width: "100%",
     height: 190,
     padding: "0 20px"
   };
@@ -24,7 +24,7 @@ export const RedditCard = props => {
   };
 
   return (
-    <Space w100 style={{ maxWidth: 800, margin: 20 }}>
+    <Space w100 style={{ maxWidth: 800, margin: "5px 20px" }}>
       <Card
         style={cardStyle}
         variant="shadow"
@@ -50,7 +50,9 @@ export const RedditCard = props => {
               <RedditFooter
                 item={item}
                 comments="10k"
-                onBtnModal={onBtnModal}
+                onBtnClick={i =>
+                  window.open("?path=/story/web--reddit-comment-demo")
+                }
               />
             </Space>
           </Space>

@@ -32,6 +32,7 @@
 }
 
 .radio_container {
+  box-sizing: border-box;
   position: relative;
   padding-left: 35px;
   display: block;
@@ -44,6 +45,10 @@
   -ms-user-select: none;
   user-select: none;
   cursor: pointer;
+
+  & * {
+    box-sizing: border-box;
+  }
 
   /* Hide the browser's default checkbox */
   & input {
@@ -70,8 +75,8 @@
 
     & .centermark {
       position: absolute;
-      top: 25%;
-      left: 25%;
+      top: calc(25% - 0.5px);
+      left: calc(25% - 0.5px);
       height: 12.5px;
       width: 12.5px;
       border-radius: 50%;

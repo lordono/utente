@@ -33,6 +33,7 @@
 
 .checkbox_container {
   position: relative;
+  box-sizing: border-box;
   padding-left: 37.5px;
   display: block;
   height: fit-content;
@@ -56,6 +57,7 @@
 
   /* Create a custom checkbox */
   & .checkmark {
+    box-sizing: border-box;
     position: absolute;
     top: calc(50% - 14.5px);
     left: 0;
@@ -73,8 +75,8 @@
       position: absolute;
       display: none;
 
-      left: 9px;
-      top: 5px;
+      left: 7px;
+      top: 2.5px;
       width: 5px;
       height: 10px;
       border: solid var(--secondaryColor);

@@ -31,14 +31,42 @@
   --positionYOpposite: calc(-1 * var(--distance));
 }
 
-.menuitem {
-  box-sizing: border-box;
-  cursor: pointer;
-  transition: color 0.3s, background-color 0.3s, box-shadow 0.4s, transform 0.4s;
+.utente_layout {
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+  min-height: 0;
+  width: 100%;
+  background-color: var(--baseColor);
 
   & * {
     box-sizing: border-box;
   }
+}
+
+.utente_header {
+  height: 64px;
+  padding: 0 50px;
+  color: var(--textColor);
+  line-height: 64px;
+  background: var(--baseColor);
+}
+
+.utente_footer {
+  padding: 24px 50px;
+  color: var(--textColor);
+  font-size: 14px;
+  background: var(--baseColor);
+}
+
+.utente_content {
+  flex: auto;
+  min-height: 0;
+}
+
+.menuitem {
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s, box-shadow 0.4s;
 
   &.horizontal {
     border-bottom: 5px solid rgba(0, 0, 0, 0);
@@ -70,11 +98,11 @@
   &.simple {
     &:hover {
       color: var(--secondaryColor);
-      transform: scale(1.05);
     }
 
     &.active {
       color: var(--secondaryColor);
+      font-weight: 800;
     }
   }
 
@@ -99,7 +127,6 @@
 
 .menuwrapper {
   width: fit-content;
-  box-sizing: border-box;
   min-width: 250px;
 
   &.horizontal {

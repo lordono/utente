@@ -37,8 +37,8 @@ const Space = ({
   const sizeStyle = size ? { gap: size } : {};
   const padStyle = { padding: `${py}px ${px}px` };
   const fullStyle = {};
-  if (full || w100) fullStyle.width = `calc(100% - ${px * 2}px)`;
-  if (full || h100) fullStyle.height = `calc(100% - ${py * 2}px)`;
+  if (full || w100) fullStyle.width = "100%";
+  if (full || h100) fullStyle.height = "100%";
 
   const spaceStyle = {
     ...sizeStyle,

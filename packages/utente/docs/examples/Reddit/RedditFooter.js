@@ -10,7 +10,7 @@ const footerBtnStyle = {
 };
 
 export const RedditFooter = props => {
-  const { comments, item, onBtnModal } = props;
+  const { comments, item, onBtnClick } = props;
   return (
     <Space align="center" justify="space-between" w100>
       <Space align="center" w100>
@@ -36,7 +36,7 @@ export const RedditFooter = props => {
       <Button
         style={footerBtnStyle}
         variant="shadow"
-        onClick={() => onBtnModal(item)}
+        onClick={() => onBtnClick(item)}
       >
         <Space align="center" w100>
           <i className="fas fa-info-circle"></i>

@@ -6,15 +6,7 @@ import { Button } from "@lieinapril/utente-button";
 import styles from "./styles.css";
 
 export const RedditNav = () => (
-  <Space
-    justify="space-between"
-    align="center"
-    colored
-    w100
-    px={20}
-    py={5}
-    className={styles.redditheader}
-  >
+  <Space justify="space-between" align="center" colored w100 py={5}>
     <Logo />
     <Input
       placeholder="Search Bold Bets"

@@ -74,6 +74,7 @@
 .modal {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
   background-color: var(--baseColor);
   color: var(--textColor);
   padding: auto;
@@ -88,6 +89,10 @@
 
   transform: translateY(-25px);
   opacity: 0;
+
+  & * {
+    box-sizing: border-box;
+  }
 
   &.visible {
     opacity: 1;

@@ -33,6 +33,7 @@
 
 .utente_typography {
   color: var(--textColor);
+  box-sizing: border-box;
   overflow-wrap: break-word;
 
   & u {
