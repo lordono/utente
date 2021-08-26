@@ -1,0 +1,46 @@
+{
+  "name": "@lieinapril/utente-timeline",
+  "version": "0.6.1",
+  "description": "Neumorphism - Vertical display timeline.",
+  "keywords": [],
+  "author": "Seow Jun Liang <seowjunliang@gmail.com>",
+  "license": "ISC",
+  "main": "dist/utente-timeline.cjs.js",
+  "module": "dist/utente-timeline.esm.js",
+  "src": "lib/utente-timeline.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lordono/utente.git"
+  },
+  "scripts": {
+    "build": "utente-builder",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/lordono/utente/issues"
+  },
+  "homepage": "https://github.com/lordono/utente#readme",
+  "devDependencies": {
+    "@lieinapril/utente-builder": "^0.6.0",
+    "@lieinapril/utente-space": "^0.6.0",
+    "@lieinapril/utente-theme": "^0.6.0",
+    "react": "^17.0.2"
+  },
+  "peerDependencies": {
+    "react": "17.x"
+  },
+  "dependencies": {
+    "clsx": "^1.1.1"
+  }
+}

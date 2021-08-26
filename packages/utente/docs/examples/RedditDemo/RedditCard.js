@@ -23,6 +23,13 @@ export const RedditCard = props => {
     width: "100%"
   };
 
+  const imgStyle = {
+    width: 100,
+    height: 65,
+    objectFit: "cover",
+    borderRadius: 5
+  };
+
   return (
     <Space w100 style={{ maxWidth: 800, margin: "5px 20px" }}>
       <Card
@@ -37,9 +44,12 @@ export const RedditCard = props => {
           <Space direction="vertical" full py={10}>
             <RedditHeader item={item} />
             <Space full direction="vertical" align="start">
-              <Paragraph className={styles.redditparagraph}>
-                {item.pitch}
-              </Paragraph>
+              <Space>
+                <img src={item.img} style={imgStyle} alt="reddit" />
+                <Paragraph className={styles.redditparagraph}>
+                  {item.pitch}
+                </Paragraph>
+              </Space>
               <Space>
                 {item.tags.map(i => (
                   <Tag key={i} size="small">

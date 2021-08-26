@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Divider } from "@lieinapril/utente-divider";
 import cx from "clsx";
-import styles from "./styles.css";
+import styles from "./styles.scss";
 
 const Panel = React.forwardRef((props, ref) => {
   const {
