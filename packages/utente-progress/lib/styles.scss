@@ -74,7 +74,8 @@
   &.bordered {
     .progress_outer .progress_inner {
       background-color: var(--baseColor);
-      border: 1px solid var(--textColor);
+      border-style: solid;
+      border-color: var(--textColor);
     }
   }
 

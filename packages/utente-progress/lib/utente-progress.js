@@ -22,7 +22,8 @@ const Progress = React.forwardRef((props, ref) => {
   );
 
   const innerStyle = {
-    height: size
+    height: size,
+    borderWidth: variant === "border" ? size / 6 : 0
   };
 
   const padded = shadowed ? size / 2 : 0;
