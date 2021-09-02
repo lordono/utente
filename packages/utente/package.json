@@ -37,6 +37,7 @@
     "@lieinapril/utente-modal": "^0.7.0",
     "@lieinapril/utente-progress": "^0.7.0",
     "@lieinapril/utente-radio": "^0.7.0",
+    "@lieinapril/utente-rate": "^0.7.0",
     "@lieinapril/utente-space": "^0.7.0",
     "@lieinapril/utente-steps": "^0.7.0",
     "@lieinapril/utente-switch": "^0.7.0",

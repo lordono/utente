@@ -31,45 +31,49 @@
   --positionYOpposite: calc(-1 * var(--distance));
 }
 
-.utente_layout {
+.rate_icon {
+  height: var(--rateSize);
+  width: var(--rateSize);
+  path {
+    fill: var(--muteColor);
+    transition: fill 0.3s ease-in-out;
+  }
+
+  &.rate_fill,
+  &.rate_shadow {
+    path {
+      fill: var(--muteColor);
+    }
+
+    &.rate_checked {
+      path {
+        fill: var(--secondaryColor);
+      }
+    }
+  }
+
+  &.rate_border {
+    path:first-of-type {
+      fill: var(--muteColor);
+    }
+    path:last-of-type {
+      fill: var(--secondaryTextColor);
+    }
+
+    &.rate_checked {
+      path:first-of-type {
+        fill: var(--secondaryColor);
+      }
+    }
+  }
+}
+
+.rate_container {
   display: flex;
-  flex: auto;
-  flex-direction: column;
-  min-height: 0;
-  width: 100%;
-  background-color: var(--baseColor);
+  gap: var(--rateGap);
+  cursor: pointer;
 
-  &.has_sider {
-    flex-direction: row;
+  &.rate_readonly {
+    cursor: normal;
   }
-
-  & * {
-    box-sizing: border-box;
-  }
-}
-
-.utente_header {
-  height: 64px;
-  padding: 0 50px;
-  color: var(--textColor);
-  line-height: 64px;
-  background: var(--baseColor);
-}
-
-.utente_footer {
-  padding: 24px 50px;
-  color: var(--textColor);
-  font-size: 14px;
-  background: var(--baseColor);
-}
-
-.utente_content {
-  flex: auto;
-  min-height: 0;
-}
-
-.utente_sider {
-  position: relative;
-  min-width: 0;
-  transition: all 0.2s;
 }

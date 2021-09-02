@@ -12,12 +12,28 @@ import styles from "./styles.scss";
  * - `Footer`: The bottom layout with the default style, in which any element can be nested, and must be placed in `Layout`.
  */
 const Layout = ({ className, variant, children, ...rest }) => {
+  const [hasSider, setHasSider] = React.useState(false);
+
+  React.useEffect(() => {
+    if (children) {
+      let checkSider = false;
+      React.Children.forEach(children, child => {
+        if (React.isValidElement(child) && child.type.name === "Sider") {
+          checkSider = true;
+        }
+      });
+      setHasSider(checkSider);
+    }
+  }, [children]);
+
   const classes = cx(
     styles.utente_layout,
+    hasSider && styles.has_sider,
     variant === "fill" && styles.filled,
     variant === "shadow" && styles.shadowed,
     className
   );
+
   return (
     <section className={classes} {...rest}>
       {children}
