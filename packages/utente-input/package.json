@@ -1,6 +1,6 @@
 {
   "name": "@lieinapril/utente-input",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "[Neumorphism] A basic widget for getting the user input is a text field. Keyboard and mouse can be used for providing or changing data.",
   "keywords": [],
   "author": "Seow Jun Liang <seowjunliang@gmail.com>",
