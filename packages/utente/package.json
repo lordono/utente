@@ -35,6 +35,7 @@
     "@lieinapril/utente-list": "^0.7.0",
     "@lieinapril/utente-menu": "^0.7.0",
     "@lieinapril/utente-modal": "^0.7.0",
+    "@lieinapril/utente-pagination": "^0.7.0",
     "@lieinapril/utente-progress": "^0.7.0",
     "@lieinapril/utente-radio": "^0.7.0",
     "@lieinapril/utente-rate": "^0.7.0",

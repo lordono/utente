@@ -1,6 +1,6 @@
-# `@lieinapril/utente-rate`
+# `@lieinapril/utente-pagination`
 
-> Neumorphism - a rate component.
+> Neumorphism - A long list can be divided into several pages using Pagination, and only one page will be loaded at a time.
 
 ## Documentation
 
@@ -11,7 +11,7 @@ Refer to the following [storybook](https://lordono.github.io/utente/).
 Install guide
 
 ```bash
-npm install @lieinapril/utente-rate
+npm install @lieinapril/utente-pagination
 ```
 
 ## Usage

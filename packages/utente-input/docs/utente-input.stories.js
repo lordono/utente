@@ -3,6 +3,7 @@ import React from "react";
 import { Input } from "../lib/utente-input";
 import { Button } from "@lieinapril/utente-button";
 import { Space } from "@lieinapril/utente-space";
+import { Theme } from "@lieinapril/utente-theme";
 
 export default {
   title: "Form/Input",
@@ -28,7 +29,31 @@ export const Primary = args => (
       backgroundColor: "#eeeeee"
     }}
   >
-    <Space size={20}>
+    <Theme color="#2c2f33">
+      <Space colored size={20}>
+        <Input
+          {...args}
+          placeholder="Type to search..."
+          style={{ width: 200 }}
+          size="small"
+          prefix={<i className="fas fa-search"></i>}
+        />
+        <Input
+          {...args}
+          placeholder="Password"
+          style={{ width: 200 }}
+          size="medium"
+          suffix={<i className="fas fa-eye-slash"></i>}
+        />
+        <Input
+          {...args}
+          placeholder="Type to search..."
+          size="large"
+          style={{ width: 200 }}
+        />
+      </Space>
+    </Theme>
+    <Space colored size={20}>
       <Input
         {...args}
         placeholder="Type to search..."

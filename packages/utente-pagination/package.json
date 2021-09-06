@@ -1,13 +1,13 @@
 {
-  "name": "@lieinapril/utente-input",
+  "name": "@lieinapril/utente-pagination",
   "version": "0.7.0",
-  "description": "[Neumorphism] A basic widget for getting the user input is a text field. Keyboard and mouse can be used for providing or changing data.",
+  "description": "Neumorphism - A long list can be divided into several pages using Pagination, and only one page will be loaded at a time.",
   "keywords": [],
   "author": "Seow Jun Liang <seowjunliang@gmail.com>",
   "license": "ISC",
-  "main": "dist/utente-input.cjs.js",
-  "module": "dist/utente-input.esm.js",
-  "src": "lib/utente-input.js",
+  "main": "dist/utente-pagination.cjs.js",
+  "module": "dist/utente-pagination.esm.js",
+  "src": "lib/utente-pagination.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -33,7 +33,6 @@
   "homepage": "https://github.com/lordono/utente#readme",
   "devDependencies": {
     "@lieinapril/utente-builder": "^0.7.0",
-    "@lieinapril/utente-button": "^0.7.0",
     "@lieinapril/utente-space": "^0.7.0",
     "@lieinapril/utente-theme": "^0.7.0",
     "react": "^17.0.2"
