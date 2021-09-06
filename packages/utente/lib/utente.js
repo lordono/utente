@@ -19,6 +19,8 @@ import { Menu, MenuItem } from "@lieinapril/utente-menu";
 import { Steps, Step } from "@lieinapril/utente-steps";
 import { Layout, Header, Footer, Content } from "@lieinapril/utente-layout";
 import { Theme } from "@lieinapril/utente-theme";
+import { Rate } from "@lieinapril/utente-rate";
+import { Pagination } from "@lieinapril/utente-pagination";
 
 export {
   Button,
@@ -50,5 +52,7 @@ export {
   Header,
   Footer,
   Content,
+  Rate,
+  Pagination,
   Theme
 };
