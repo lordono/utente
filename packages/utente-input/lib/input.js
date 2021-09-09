@@ -19,6 +19,8 @@ const Input = React.forwardRef((props, ref) => {
     variant,
     style,
     onChange,
+    isTextArea,
+    rows,
     onFocus,
     onBlur,
     ...rest
@@ -40,32 +42,63 @@ const Input = React.forwardRef((props, ref) => {
     className
   );
 
-  return (
-    <label className={classes} style={style}>
-      {prefix}
-      <input
-        {...rest}
-        className={styles.input}
-        ref={ref}
-        {...controlledValueProps}
-        onChange={e => onChange(e)}
-        onFocus={() => {
-          setFocus(true);
-          if (onFocus) onFocus();
-        }}
-        onBlur={() => {
-          setFocus(false);
-          if (onBlur) onBlur();
-        }}
-      />
-      {suffix}
-    </label>
+  const textAreaWrapClasses = cx(
+    styles.textarea_wrap,
+    focus && styles.focus,
+    variant === "fill" && styles.filled,
+    variant === "shadow" && styles.shadowed,
+    variant === "border" && styles.bordered
   );
+
+  const inputClasses = cx(
+    !isTextArea && styles.input,
+    isTextArea && size && styles[size]
+  );
+
+  const inputProps = {
+    ...rest,
+    className: inputClasses,
+    ref,
+    ...controlledValueProps,
+    onChange: e => onChange(e),
+    onFocus: () => {
+      setFocus(true);
+      if (onFocus) onFocus();
+    },
+    onBlur: () => {
+      setFocus(false);
+      if (onBlur) onBlur();
+    }
+  };
+
+  if (isTextArea) {
+    return (
+      <div className={textAreaWrapClasses}>
+        <textarea
+          {...inputProps}
+          rows={rows}
+          wrap="hard"
+          cols="10"
+          maxLength={10 * rows}
+        />
+      </div>
+    );
+  } else {
+    return (
+      <label className={classes} style={style}>
+        {prefix}
+        <input {...inputProps} />
+        {suffix}
+      </label>
+    );
+  }
 });
 
 Input.defaultProps = {
   variant: "fill",
-  size: "medium"
+  size: "medium",
+  isTextArea: false,
+  rows: 10
 };
 
 Input.propTypes = {
@@ -78,11 +111,11 @@ Input.propTypes = {
    */
   size: PropTypes.oneOf(["small", "medium", "large"]),
   /**
-   * icon prefix for input. e.g \<i className="fas fa-search" />
+   * icon prefix for input only. e.g \<i className="fas fa-search" />
    */
   prefix: PropTypes.node,
   /**
-   * icon suffix for input e.g \<i className="fas fa-search"/>
+   * icon suffix for input only e.g \<i className="fas fa-search"/>
    */
   suffix: PropTypes.node,
   /**
@@ -104,7 +137,15 @@ Input.propTypes = {
   /**
    * function when focus on input
    */
-  onFocus: PropTypes.func
+  onFocus: PropTypes.func,
+  /**
+   * specify to be a textarea
+   */
+  isTextArea: PropTypes.bool,
+  /**
+   * number of rows for textarea
+   */
+  rows: PropTypes.number
 };
 
 export default Input;

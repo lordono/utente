@@ -31,6 +31,73 @@
   --positionYOpposite: calc(-1 * var(--distance));
 }
 
+.textarea_wrap {
+  padding: 10px;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 10px;
+  border: 2px solid rgba(0, 0, 0, 0);
+
+  &.shadowed {
+    background-color: var(--baseColor);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0),
+      inset var(--positionX) var(--positionY) var(--blur) var(--darkColor),
+      inset var(--positionXOpposite) var(--positionYOpposite) var(--blur)
+        var(--lightColor);
+
+    &.focus {
+      border: 2px solid var(--muteColor);
+    }
+  }
+
+  &.filled {
+    background-color: var(--muteColor);
+    color: var(--textColor);
+
+    textarea {
+      background-color: var(--muteColor);
+    }
+
+    &.focus {
+      border: 2px solid var(--secondaryColor);
+    }
+  }
+
+  &.bordered {
+    border: 2px solid var(--muteColor);
+
+    & i,
+    &.input::placeholder {
+      color: var(--muteColor);
+    }
+
+    &.focus {
+      border: 2px solid var(--secondaryColor);
+    }
+  }
+
+  textarea {
+    color: var(--textColor);
+    background-color: var(--baseColor);
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    resize: both;
+
+    &.medium {
+      height: 25px;
+    }
+
+    &.small {
+      height: 16px;
+    }
+
+    &.large {
+      height: 34px;
+    }
+  }
+}
+
 .input_container {
   position: relative;
   box-sizing: border-box;
@@ -43,6 +110,7 @@
   background-color: var(--baseColor);
   color: var(--textColor);
   width: 100%;
+  cursor: text;
   border-radius: 10px;
   border: 2px solid rgba(0, 0, 0, 0);
   transition: box-shadow 0.6s cubic-bezier(0.79, 0.21, 0.06, 0.81), border 0.3s;

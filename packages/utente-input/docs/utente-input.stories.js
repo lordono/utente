@@ -30,7 +30,7 @@ export const Primary = args => (
     }}
   >
     <Theme color="#2c2f33">
-      <Space colored size={20}>
+      <Space colored size={20} py={20} px={20}>
         <Input
           {...args}
           placeholder="Type to search..."
@@ -51,9 +51,16 @@ export const Primary = args => (
           size="large"
           style={{ width: 200 }}
         />
+        <Input
+          {...args}
+          isTextArea
+          placeholder="Type to search..."
+          size="large"
+          style={{ width: 200 }}
+        />
       </Space>
     </Theme>
-    <Space colored size={20}>
+    <Space colored size={20} py={20} px={20}>
       <Input
         {...args}
         placeholder="Type to search..."
@@ -74,12 +81,20 @@ export const Primary = args => (
         size="large"
         style={{ width: 200 }}
       />
+      <Input
+        {...args}
+        isTextArea
+        placeholder="Type to search..."
+        size="large"
+        rows={5}
+        style={{ width: 200 }}
+      />
     </Space>
   </div>
 );
 
 Primary.args = {
-  variant: "fill"
+  variant: "shadow"
 };
 
 export const Controlled = args => {
