@@ -94,7 +94,8 @@ export const Primary = args => (
 );
 
 Primary.args = {
-  variant: "shadow"
+  variant: "shadow",
+  resize: "both"
 };
 
 export const Controlled = args => {

@@ -38,6 +38,20 @@
   border-radius: 10px;
   border: 2px solid rgba(0, 0, 0, 0);
 
+  textarea {
+    &.both {
+      resize: both;
+    }
+
+    &.vertical {
+      resize: vertical;
+    }
+
+    &.horizontal {
+      resize: horizontal;
+    }
+  }
+
   &.shadowed {
     background-color: var(--baseColor);
     box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(0, 0, 0, 0),

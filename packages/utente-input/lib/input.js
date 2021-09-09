@@ -21,6 +21,7 @@ const Input = React.forwardRef((props, ref) => {
     onChange,
     isTextArea,
     rows,
+    resize,
     onFocus,
     onBlur,
     ...rest
@@ -52,7 +53,8 @@ const Input = React.forwardRef((props, ref) => {
 
   const inputClasses = cx(
     !isTextArea && styles.input,
-    isTextArea && size && styles[size]
+    isTextArea && size && styles[size],
+    isTextArea && resize && styles[resize]
   );
 
   const inputProps = {
@@ -76,6 +78,7 @@ const Input = React.forwardRef((props, ref) => {
       <div className={textAreaWrapClasses}>
         <textarea
           {...inputProps}
+          style={style}
           rows={rows}
           wrap="hard"
           cols="10"
@@ -98,7 +101,8 @@ Input.defaultProps = {
   variant: "fill",
   size: "medium",
   isTextArea: false,
-  rows: 10
+  rows: 10,
+  resize: "both"
 };
 
 Input.propTypes = {
@@ -145,7 +149,11 @@ Input.propTypes = {
   /**
    * number of rows for textarea
    */
-  rows: PropTypes.number
+  rows: PropTypes.number,
+  /**
+   * resize type
+   */
+  resize: PropTypes.oneOf(["both", "vertical", "horizontal"])
 };
 
 export default Input;
