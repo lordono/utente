@@ -1,6 +1,6 @@
 {
   "name": "@lieinapril/utente-input",
-  "version": "0.7.4",
+  "version": "0.7.5",
   "description": "[Neumorphism] A basic widget for getting the user input is a text field. Keyboard and mouse can be used for providing or changing data.",
   "keywords": [],
   "author": "Seow Jun Liang <seowjunliang@gmail.com>",
@@ -33,8 +33,8 @@
   "homepage": "https://github.com/lordono/utente#readme",
   "devDependencies": {
     "@lieinapril/utente-builder": "^0.7.0",
-    "@lieinapril/utente-button": "^0.7.0",
-    "@lieinapril/utente-space": "^0.7.0",
+    "@lieinapril/utente-button": "^0.7.5",
+    "@lieinapril/utente-space": "^0.7.5",
     "@lieinapril/utente-theme": "^0.7.0",
     "react": "^17.0.2"
   },

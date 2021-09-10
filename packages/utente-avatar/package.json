@@ -1,6 +1,6 @@
 {
   "name": "@lieinapril/utente-avatar",
-  "version": "0.7.0",
+  "version": "0.7.5",
   "description": "[Neumorphism] Avatars can be used to represent people or objects. It supports images, icons or letters.",
   "keywords": [],
   "author": "Seow Jun Liang <seowjunliang@gmail.com>",
@@ -33,7 +33,7 @@
   "homepage": "https://github.com/lordono/utente#readme",
   "devDependencies": {
     "@lieinapril/utente-builder": "^0.7.0",
-    "@lieinapril/utente-space": "^0.7.0",
+    "@lieinapril/utente-space": "^0.7.5",
     "@lieinapril/utente-theme": "^0.7.0",
     "react": "^17.0.2"
   },

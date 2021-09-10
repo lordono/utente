@@ -1,6 +1,6 @@
 {
   "name": "@lieinapril/utente-steps",
-  "version": "0.7.0",
+  "version": "0.7.5",
   "description": "Steps is a navigation bar that guides users through the steps of a task.",
   "keywords": [],
   "author": "Seow Jun Liang <seowjunliang@gmail.com>",
@@ -40,8 +40,8 @@
     "react": "17.x"
   },
   "dependencies": {
-    "@lieinapril/utente-avatar": "^0.7.0",
-    "@lieinapril/utente-space": "^0.7.0",
+    "@lieinapril/utente-avatar": "^0.7.5",
+    "@lieinapril/utente-space": "^0.7.5",
     "clsx": "^1.1.1"
   }
 }

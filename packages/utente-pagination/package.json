@@ -1,6 +1,6 @@
 {
   "name": "@lieinapril/utente-pagination",
-  "version": "0.7.1",
+  "version": "0.7.5",
   "description": "Neumorphism - A long list can be divided into several pages using Pagination, and only one page will be loaded at a time.",
   "keywords": [],
   "author": "Seow Jun Liang <seowjunliang@gmail.com>",
@@ -33,7 +33,7 @@
   "homepage": "https://github.com/lordono/utente#readme",
   "devDependencies": {
     "@lieinapril/utente-builder": "^0.7.0",
-    "@lieinapril/utente-space": "^0.7.0",
+    "@lieinapril/utente-space": "^0.7.5",
     "@lieinapril/utente-theme": "^0.7.0",
     "react": "^17.0.2"
   },
