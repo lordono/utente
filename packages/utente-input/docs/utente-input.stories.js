@@ -56,7 +56,7 @@ export const Primary = args => (
           isTextArea
           placeholder="Type to search..."
           size="large"
-          style={{ width: 200 }}
+          style={{ width: "100%" }}
         />
       </Space>
     </Theme>
@@ -90,6 +90,14 @@ export const Primary = args => (
         style={{ width: 200 }}
       />
     </Space>
+
+    <Input
+      {...args}
+      isTextArea
+      placeholder="Type to search..."
+      size="large"
+      style={{ width: "auto" }}
+    />
   </div>
 );
 

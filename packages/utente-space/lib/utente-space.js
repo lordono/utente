@@ -7,23 +7,24 @@ import styles from "./styles.css";
  * ## When to use
  * Avoid components clinging together and set a unified space.
  */
-const Space = ({
-  colored,
-  children,
-  direction,
-  size,
-  full,
-  align,
-  justify,
-  wrap,
-  className,
-  px,
-  py,
-  w100,
-  h100,
-  style,
-  ...rest
-}) => {
+const Space = React.forwardRef((props, ref) => {
+  const {
+    colored,
+    children,
+    direction,
+    size,
+    full,
+    align,
+    justify,
+    wrap,
+    className,
+    px,
+    py,
+    w100,
+    h100,
+    style,
+    ...rest
+  } = props;
   const classes = cx(
     styles.space,
     colored && styles.colored,
@@ -48,11 +49,11 @@ const Space = ({
   };
 
   return (
-    <div {...rest} className={classes} style={spaceStyle}>
+    <div {...rest} ref={ref} className={classes} style={spaceStyle}>
       {children}
     </div>
   );
-};
+});
 
 Space.defaultProps = {
   direction: "horizontal",
