@@ -1,6 +1,6 @@
 {
   "name": "@lieinapril/utente-switch",
-  "version": "0.7.5",
+  "version": "0.7.7",
   "description": "[Neumorphism] Switching Selector.",
   "keywords": [],
   "author": "Seow Jun Liang <seowjunliang@gmail.com>",
@@ -33,7 +33,7 @@
   "homepage": "https://github.com/lordono/utente#readme",
   "devDependencies": {
     "@lieinapril/utente-builder": "^0.7.0",
-    "@lieinapril/utente-button": "^0.7.5",
+    "@lieinapril/utente-button": "^0.7.7",
     "@lieinapril/utente-space": "^0.7.5",
     "@lieinapril/utente-theme": "^0.7.0",
     "react": "^17.0.2"
