@@ -5,7 +5,14 @@ import styles from "./styles.scss";
 import { parseMenuList } from "./misc";
 
 const Menu = props => {
-  const { children, variant, onChange, defaultActiveKey, direction } = props;
+  const {
+    children,
+    variant,
+    onChange,
+    selectedKey = "",
+    defaultActiveKey,
+    direction
+  } = props;
 
   // get menuItems
   const menuItems = parseMenuList(children);
@@ -34,7 +41,9 @@ const Menu = props => {
   const childrenWithProps = React.Children.map(children, child => {
     if (React.isValidElement(child)) {
       return React.cloneElement(child, {
-        active: activeKey === child.key,
+        active: selectedKey
+          ? selectedKey === child.key
+          : activeKey === child.key,
         value: child.key,
         variant,
         direction,
@@ -73,6 +82,10 @@ Menu.propTypes = {
    * additional styles for element
    */
   style: PropTypes.object,
+  /**
+   * active item's key
+   */
+  selectedKey: PropTypes.string,
   /**
    * Initial active item's key
    */
