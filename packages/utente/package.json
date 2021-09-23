@@ -1,6 +1,6 @@
 {
   "name": "@lieinapril/utente",
-  "version": "0.7.5",
+  "version": "0.7.6",
   "description": "Utente UI Library",
   "keywords": [],
   "author": "Seow Jun Liang <seowjunliang@gmail.com>",
@@ -33,7 +33,7 @@
     "@lieinapril/utente-input": "^0.7.5",
     "@lieinapril/utente-layout": "^0.7.5",
     "@lieinapril/utente-list": "^0.7.5",
-    "@lieinapril/utente-menu": "^0.7.5",
+    "@lieinapril/utente-menu": "^0.7.6",
     "@lieinapril/utente-modal": "^0.7.5",
     "@lieinapril/utente-pagination": "^0.7.5",
     "@lieinapril/utente-progress": "^0.7.5",
